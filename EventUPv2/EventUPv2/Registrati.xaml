@@ -17,17 +17,132 @@
             HorizontalOptions="Center" 
             ></ic:CircleImage>
                 
-                <Entry x:Name="nome" Placeholder="Nome" FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
-                <Entry x:Name="cognome" Placeholder="Cognome"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
-                <Entry x:Name="sesso" Placeholder="Sesso"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
-                <Entry x:Name="data" Placeholder="Data di Nascita"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
-                <Entry x:Name="nazionalità" Placeholder="nazionalità"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
-                <Entry x:Name="titolo"  Placeholder="Titolo di Studio"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
-                <Entry x:Name="città"  Placeholder="Città di Residenza"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
-                <Entry x:Name="cf"  Placeholder="Codice Fiscale" MaxLength="16"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
-                <Entry x:Name="emailr_user"  Placeholder="E-mail"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
-                <Entry x:Name="passr_user" MaxLength="20" IsPassword="True" Placeholder="Password"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
-                <Entry x:Name="cpassr_user" MaxLength="20" IsPassword="True" Placeholder="Conferma Password"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
+                 <custom:CustomEntry 
+                                CornerRadius="20" 
+                                HeightRequest="40" 
+                                IsCurvedCornersEnabled="True" 
+                                BorderColor="BlueViolet" 
+                                Margin="20,50,20,20" 
+                                x:Name="nome"
+                                Placeholder="Nome" 
+                                FontSize="18" 
+                                BackgroundColor="White"
+                                PlaceholderColor="Gray" />
+                <custom:CustomEntry 
+                                CornerRadius="20" 
+                                HeightRequest="40" 
+                                IsCurvedCornersEnabled="True" 
+                                BorderColor="BlueViolet" 
+                                Margin="20,50,20,20" 
+                                x:Name="cognome" 
+                                Placeholder="Cognome"  
+                                FontSize="18" 
+                                BackgroundColor="White" 
+                                PlaceholderColor="Gray"/>
+                <custom:CustomEntry 
+                                CornerRadius="20" 
+                                HeightRequest="40" 
+                                IsCurvedCornersEnabled="True" 
+                                BorderColor="BlueViolet" 
+                                Margin="20,50,20,20" 
+                                x:Name="sesso" 
+                                Placeholder="Sesso"  
+                                FontSize="18"
+                                BackgroundColor="White"
+                                PlaceholderColor="Gray" />
+               <custom:CustomEntry 
+                                CornerRadius="20" 
+                                HeightRequest="40" 
+                                IsCurvedCornersEnabled="True" 
+                                BorderColor="BlueViolet" 
+                                Margin="20,50,20,20" 
+                                x:Name="data"
+                                Placeholder="Data di Nascita"
+                                FontSize="18"
+                                BackgroundColor="White"
+                                PlaceholderColor="Gray" />
+               <custom:CustomEntry 
+                                CornerRadius="20" 
+                                HeightRequest="40" 
+                                IsCurvedCornersEnabled="True" 
+                                BorderColor="BlueViolet" 
+                                Margin="20,50,20,20" 
+                                x:Name="nazionalità" 
+                                Placeholder="nazionalità"  
+                                FontSize="18" 
+                                BackgroundColor="White" 
+                                PlaceholderColor="Gray" />
+               <custom:CustomEntry 
+                                CornerRadius="20" 
+                                HeightRequest="40" 
+                                IsCurvedCornersEnabled="True" 
+                                BorderColor="BlueViolet" 
+                                Margin="20,50,20,20"  
+                                x:Name="titolo" 
+                                Placeholder="Titolo di Studio" 
+                                FontSize="18" 
+                                BackgroundColor="White" 
+                                PlaceholderColor="Gray" />
+               <custom:CustomEntry 
+                                CornerRadius="20" 
+                                HeightRequest="40" 
+                                IsCurvedCornersEnabled="True" 
+                                BorderColor="BlueViolet" 
+                                Margin="20,50,20,20" 
+                                x:Name="città"  
+                                Placeholder="Città di Residenza"  
+                                FontSize="18" 
+                                BackgroundColor="White" 
+                                PlaceholderColor="Gray" />
+               <custom:CustomEntry 
+                                CornerRadius="20" 
+                                HeightRequest="40" 
+                                IsCurvedCornersEnabled="True" 
+                                BorderColor="BlueViolet" 
+                                Margin="20,50,20,20"  
+                                x:Name="cf"  
+                                Placeholder="Codice Fiscale" 
+                                MaxLength="16"  
+                                FontSize="18" 
+                                BackgroundColor="White" 
+                                PlaceholderColor="Gray" />
+               <custom:CustomEntry 
+                                CornerRadius="20" 
+                                HeightRequest="40" 
+                                IsCurvedCornersEnabled="True" 
+                                BorderColor="BlueViolet" 
+                                Margin="20,50,20,20"  
+                                x:Name="emailr_user"  
+                                Placeholder="E-mail"  
+                                FontSize="18" 
+                                BackgroundColor="White" 
+                                PlaceholderColor="Gray" />
+               <custom:CustomEntry 
+                                CornerRadius="20" 
+                                HeightRequest="40" 
+                                IsCurvedCornersEnabled="True" 
+                                BorderColor="BlueViolet" 
+                                Margin="20,50,20,20"  
+                                x:Name="passr_user" 
+                                MaxLength="20" 
+                                IsPassword="True" 
+                                Placeholder="Password"  
+                                FontSize="18" 
+                                BackgroundColor="White" 
+                                PlaceholderColor="Gray" />
+               <custom:CustomEntry 
+                                CornerRadius="20" 
+                                HeightRequest="40" 
+                                IsCurvedCornersEnabled="True" 
+                                BorderColor="BlueViolet" 
+                                Margin="20,50,20,20"  
+                                x:Name="cpassr_user" 
+                                MaxLength="20"
+                                IsPassword="True" 
+                                Placeholder="Conferma Password"  
+                                FontSize="18" 
+                                BackgroundColor="White" 
+                                PlaceholderColor="Gray" />
                 <Button Margin="20,20,20,75" Text="Registrati" FontSize="15" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White"/>
 
             </StackLayout>
@@ -42,9 +157,9 @@
 
                     <ImageButton.Source>
                         <OnPlatform x:TypeArguments="ImageSource"
-					iOS="logo.png"
-					Android="logoAndroid.png"
-				/>
+                    iOS="logo.png"
+                    Android="logoAndroid.png"
+                />
                     </ImageButton.Source>
                     
                 </ImageButton>
