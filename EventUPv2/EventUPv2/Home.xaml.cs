@@ -10,20 +10,7 @@ namespace EventUPv2
         public HomePage()
         {
             InitializeComponent();
-            TableView Swit = new TableView
-            {
-                Intent = TableIntent.Form,
-                Root = new TableRoot
-                {
-                    new TableSection
-                    {
-                        new SwitchCell
-                        {
-                            Text = "SwitchCell:"
-                        }
-                    }
-                }
-            };
+
         }
     }
 }
