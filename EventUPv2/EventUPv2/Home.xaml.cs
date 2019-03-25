@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace EventUPv2
 {
-    public partial class Home : ContentPage
+    public partial class HomePage : TabbedPage
     {
-        public Home()
+        public HomePage()
         {
             InitializeComponent();
         }
