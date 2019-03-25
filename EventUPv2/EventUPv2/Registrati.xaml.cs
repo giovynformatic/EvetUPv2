@@ -19,7 +19,7 @@ namespace EventUPv2
         }
          async void RegisterUser(object sender, EventArgs args)
         {
-            JsonInterfaceUser JsonIN = new JsonInterfaceUser();
+            JsonInterface JsonIN = new JsonInterface();
             String n = nome.Text;
             String c = cognome.Text;
             String s = sesso.Text;
@@ -35,7 +35,7 @@ namespace EventUPv2
             if (String.Equals(p, cp))
             {
                  var us= new User(n,c,s,d,naz,tit,cit,codFisc,mail,p);
-               string res= JsonIN.RegisterCode(us);
+               string res= JsonIN.RegisterUserCode(us);
                 await DisplayAlert("Errore", res ,"OK");
             }
             else {
@@ -43,5 +43,26 @@ namespace EventUPv2
             }
         }
 
+        async void RegisterAdmin(object sender, EventArgs args)
+        {
+            JsonInterface JsonIN = new JsonInterface();
+            String na = nome_Azienda.Text;
+            String sed = sede.Text;
+            String piv = partitaiva.Text;
+            String mail = emailr_admin.Text;
+            String p = passr_admin.Text;
+            String cp = cpassr_admin.Text;
+
+            if (String.Equals(p, cp))
+            {
+                var ad = new Admin(na,sed,piv, mail, p);
+                string res = JsonIN.RegisterAdminCode(ad);
+                await DisplayAlert("Errore", res, "OK");
+            }
+            else
+            {
+                await DisplayAlert("Errore", "le password non corrispondono", "OK");
+            }
+        }
     }
 }

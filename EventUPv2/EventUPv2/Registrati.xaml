@@ -200,7 +200,7 @@
                                 IsCurvedCornersEnabled="True" 
                                 BorderColor="BlueViolet" 
                                 Margin="20,0,20,20" x:Name="cpassr_admin" MaxLength="20" IsPassword="True" Placeholder="Conferma Password"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"/>
-                <Button  Margin="75,20,75,75" Text="Registrati" FontSize="15" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White"/>
+                <Button  Margin="75,20,75,75" Text="Registrati" FontSize="15" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Clicked="RegisterAdmin"/>
 
             </StackLayout>
         </ScrollView>
