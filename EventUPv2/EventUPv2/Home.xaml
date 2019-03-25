@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:custom="clr-namespace:EventUPv2"
+             x:Class="EventUPv2.HomePage">
+    <!--Pages can be added as references or inline-->
+<ContentPage Title="Profilo">
+        <ScrollView BackgroundColor="White">
+            <StackLayout Margin="20,50,20,0" Spacing="32" >
+                <ic:CircleImage    
+            Margin="100,0,100,0"
+            Source ="logo.png"
+            Aspect="AspectFill"
+            HorizontalOptions="Center" 
+            ></ic:CircleImage>
+                
+                 
+                
+
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage>
+<ContentPage Title="Eventi">
+        <ScrollView BackgroundColor="White">
+            <StackLayout Margin="20,10,20,0" Spacing="32" >
+
+             
+
+                <Button Margin="20,20,20,75" Text="Registrati" FontSize="15" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage>
+</TabbedPage>
