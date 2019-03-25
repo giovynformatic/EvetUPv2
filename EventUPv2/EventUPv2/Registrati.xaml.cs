@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace EventUPv2
+namespace EventUPv2 
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Registrati : TabbedPage

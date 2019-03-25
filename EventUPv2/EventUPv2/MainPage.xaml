@@ -24,7 +24,7 @@
 
                 <Image.Source>
                     <OnPlatform x:TypeArguments="ImageSource"
-                    iOS="logo.png"
+                    iOS="logo.png" 
                     Android="logoAndroid.png"
                 />
                 </Image.Source>
