@@ -169,7 +169,7 @@
                                 
                                 IsCurvedCornersEnabled="True" 
                                 BorderColor="BlueViolet" 
-                                Margin="20,0,20,20"   x:Name="nome_Azienda" Placeholder="Nome Azienda" FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"/>
+                                Margin="20,50,20,20"   x:Name="nome_Azienda" Placeholder="Nome Azienda" FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"/>
                 <custom:CustomEntry 
                                 CornerRadius="20" 
                                 
