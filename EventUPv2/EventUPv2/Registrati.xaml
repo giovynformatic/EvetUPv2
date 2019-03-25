@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:custom="clr-namespace:EventUPv2"
              x:Class="EventUPv2.Registrati">
     <!--Pages can be added as references or inline-->
 <ContentPage Title="Privato">
         <ScrollView BackgroundColor="White">
             <StackLayout Margin="20,10,20,0" Spacing="32" >
-                <ImageButton x:Name="logo" BorderColor="Green" Margin="100,0,100,40">
-
-                    <ImageButton.Source>
-                        <OnPlatform x:TypeArguments="ImageSource"
-					iOS="logo.png"
-					Android="logoAndroid.png"
-				/>
-                    </ImageButton.Source>
-
-                </ImageButton>
+                <ic:CircleImage   
+            HeightRequest="150"   
+            WidthRequest="150"   
+            Margin="100,0,100,0"
+            Source ="logo.png"
+            Aspect="AspectFill"
+            HorizontalOptions="Center" 
+            ></ic:CircleImage>
+                
                 <Entry x:Name="nome" Placeholder="Nome" FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
                 <Entry x:Name="cognome" Placeholder="Cognome"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
                 <Entry x:Name="sesso" Placeholder="Sesso"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
