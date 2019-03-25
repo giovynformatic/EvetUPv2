@@ -24,7 +24,7 @@ namespace EventUPv2.iOS
                 Control.LeftViewMode = UITextFieldViewMode.Always;
                 Control.KeyboardAppearance = UIKeyboardAppearance.Dark;
                 Control.ReturnKeyType = UIReturnKeyType.Done;
-                Control.Layer.CornerRadius = Convert.ToSingle(view.CornerRadius)
+                Control.Layer.CornerRadius = Convert.ToSingle(view.CornerRadius);
                 Control.Layer.BorderColor = view.BorderColor.ToCGColor();
                 Control.Layer.BorderWidth = view.BorderWidth;
                 Control.ClipsToBounds = true;

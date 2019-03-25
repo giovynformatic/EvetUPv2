@@ -20,6 +20,13 @@ namespace EventUPv2
                 
                 
         }
+        async void OnLoginClicked(object sender, EventArgs args)
+        {
+
+            await Navigation.PushModalAsync(new HomePage());
+
+
+        }
 
     }
 }

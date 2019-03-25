@@ -70,7 +70,7 @@
                                 BackgroundColor="#white"  
                                 MaxLength="20"/>
             
-            <Button Margin="75,65,75,0" Text="Login" FontSize="18"   BackgroundColor="#6495ed" TextColor="White" BorderRadius="23"/>
+            <Button Margin="75,65,75,0" Text="Login" Clicked="OnLoginClicked" FontSize="18"   BackgroundColor="#6495ed" TextColor="White" BorderRadius="23"/>
             <Button Margin="20,20,20,0" Text="Forgot your password?" FontSize="18" BackgroundColor="White" TextColor="#6495ed" />
             <Button Margin="20,20,20,0" Text="Registrati" FontSize="18" BackgroundColor="White"  Clicked="OnRegisterClicked" TextColor="#6495ed" />
             

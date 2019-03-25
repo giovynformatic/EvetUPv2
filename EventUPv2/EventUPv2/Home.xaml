@@ -4,6 +4,7 @@
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              xmlns:custom="clr-namespace:EventUPv2"
              x:Class="EventUPv2.HomePage">
+    
     <!--Pages can be added as references or inline-->
 <ContentPage Title="Profilo">
         <ScrollView BackgroundColor="White">
@@ -13,10 +14,53 @@
             Source ="logo.png"
             Aspect="AspectFill"
             HorizontalOptions="Center" 
-            ></ic:CircleImage>
-                
-                 
-                
+            />
+                <Label x:Name="Utype" HorizontalTextAlignment="Center" Text="Utente" />
+             
+                <TableView Margin="0,0,0,0" Intent="Form"  WidthRequest="20" HeightRequest="40" BackgroundColor="White">
+     <TableRoot >
+        <TableSection >
+           <!--
+            <SwitchCell Text="New Mail" On="true" /> -->
+                            <TextCell x:Name="UserDataB" Text="Dati Utente" Detail="" />
+                            <TextCell x:Name="UserPassB" Text="Gestione Password" Detail="" />
+                            <TextCell x:Name="QrB" Text="Codice QR " Detail="" />
+                          
+            
+       
+            <!--
+                            <ViewCell>
+                      <StackLayout Orientation="Horizontal">
+                          <ic:CircleImage Source="https://png.icons8.com/message/ultraviolet/50/3498db" 
+                                          HorizontalOptions="Start"
+                                 VerticalOptions="Center" />
+                          <Label Text="left"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Center"
+                                 TextColor="#f35e20" />
+                          <Label Text="right"
+                                 HorizontalOptions="CenterAndExpand"
+                                 VerticalOptions="Center"
+                                 TextColor="#503026" />
+                                    <Switch IsToggled="{Binding RememberLastUser}"></Switch>
+                      </StackLayout>
+                  </ViewCell>-->
+            
+        </TableSection>
+                        <TableSection Title="Options" >
+                            
+                            <SwitchCell x:Name="PosSwitch" Text="Posizione" On="false" IsEnabled="false"/>
+                            <SwitchCell x:Name="PreSwitch" Text="Prenotazione Automatica" On="false" IsEnabled="false"  />
+                            <SwitchCell x:Name="notggSwitch" Text="Avvisami il giorno prima" On="false" />
+                            <SwitchCell x:Name="nothrSwitch" Text="Avvisami un'ora prima" On="false" />
+                            <SwitchCell x:Name="notPosSwitch" Text="Notifiche eventi vicini" On="false" />
+                        </TableSection>
+                        
+                        
+                        
+                         </TableRoot>
+   
+</TableView>
 
             </StackLayout>
         </ScrollView>
