@@ -23,8 +23,12 @@ namespace EventUPv2
         async void OnLoginClicked(object sender, EventArgs args)
         {
 
-            await Navigation.PushModalAsync(new HomePage());
-
+            if (pass.Text=="peppo" && email.Text=="Pippo") {
+                await Navigation.PushModalAsync(new HomePage());
+            }
+            else {
+                await DisplayAlert("Alert", "Password non Corretta!", "OK");
+            }
 
         }
 
