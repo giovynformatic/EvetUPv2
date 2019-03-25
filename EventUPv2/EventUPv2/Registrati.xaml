@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventUPv2.Registrati">
+    <!--Pages can be added as references or inline-->
+<ContentPage Title="Privato">
+        <ScrollView BackgroundColor="White">
+            <StackLayout Margin="20,10,20,0" Spacing="32" >
+                <ImageButton x:Name="logo" BorderColor="Green" Margin="100,0,100,40">
+
+                    <ImageButton.Source>
+                        <OnPlatform x:TypeArguments="ImageSource"
+					iOS="logo.png"
+					Android="logoAndroid.png"
+				/>
+                    </ImageButton.Source>
+
+                </ImageButton>
+                <Entry x:Name="nome" Placeholder="Nome" FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
+                <Entry x:Name="cognome" Placeholder="Cognome"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
+                <Entry x:Name="sesso" Placeholder="Sesso"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
+                <Entry x:Name="data" Placeholder="Data di Nascita"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
+                <Entry x:Name="nazionalità" Placeholder="nazionalità"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
+                <Entry x:Name="titolo"  Placeholder="Titolo di Studio"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
+                <Entry x:Name="città"  Placeholder="Città di Residenza"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
+                <Entry x:Name="cf"  Placeholder="Codice Fiscale" MaxLength="16"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
+                <Entry x:Name="emailr_user"  Placeholder="E-mail"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
+                <Entry x:Name="passr_user" MaxLength="20" IsPassword="True" Placeholder="Password"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
+                <Entry x:Name="cpassr_user" MaxLength="20" IsPassword="True" Placeholder="Conferma Password"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
+                <Button Margin="20,20,20,75" Text="Registrati" FontSize="15" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White"/>
+
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage>
+<ContentPage Title="Azienda">
+        <ScrollView BackgroundColor="White">
+            <StackLayout Margin="20,10,20,0" Spacing="32" >
+
+                <ImageButton x:Name="logor"  Margin="100,0,100,40"  >
+
+                    <ImageButton.Source>
+                        <OnPlatform x:TypeArguments="ImageSource"
+					iOS="logo.png"
+					Android="logoAndroid.png"
+				/>
+                    </ImageButton.Source>
+                    
+                </ImageButton>
+
+                <Entry x:Name="nome_Azienda" Placeholder="Nome Azienda" FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
+                <Entry x:Name="sede" Placeholder="Sede"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
+                <Entry x:Name="partitaiva" MaxLength="11" Placeholder="P.IVA"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
+                <Entry x:Name="emailr_admin"  Placeholder="E-mail"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
+                <Entry x:Name="passr_admin" MaxLength="20" IsPassword="True" Placeholder="Password"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
+                <Entry x:Name="cpassr_admin" MaxLength="20" IsPassword="True" Placeholder="Conferma Password"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"></Entry>
+                <Button Margin="20,20,20,75" Text="Registrati" FontSize="15" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage>
+</TabbedPage>
