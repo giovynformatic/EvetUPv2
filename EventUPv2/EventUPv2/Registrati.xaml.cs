@@ -19,7 +19,7 @@ namespace EventUPv2
         }
          async void RegisterUser(object sender, EventArgs args)
         {
-            JsonInterface JsonIN = new JsonInterface();
+            InterfacciaJson JsonIN = new InterfacciaJson();
             String n = nome.Text;
             String c = cognome.Text;
             String s = sesso.Text;
@@ -45,7 +45,7 @@ namespace EventUPv2
 
         async void RegisterAdmin(object sender, EventArgs args)
         {
-            JsonInterface JsonIN = new JsonInterface();
+            InterfacciaJson JsonIN = new InterfacciaJson();
             String na = nome_Azienda.Text;
             String sed = sede.Text;
             String piv = partitaiva.Text;

@@ -10,7 +10,6 @@ namespace EventUPv2
         public HomePage()
         {
             InitializeComponent();
-
         }
     }
 }

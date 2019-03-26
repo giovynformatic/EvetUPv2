@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace EventUPv2
 {
-    class JsonInterface
+    class InterfacciaJson
     {
         public String RegisterUserCode(User c)
         {
