@@ -22,48 +22,27 @@ namespace EventUPv2
         }
         void OnLoginClicked(object sender, EventArgs args)
         {
-            if (email.Text == "Pippo" && pass.Text == "peppo")
-            {
-                VerifyUser(email.Text, "Pippo", pass.Text, "peppo");
-            }else if(email.Text == "Admin" && pass.Text == "admin")
-            {
-                VerifyAdmin(email.Text, "Admin", pass.Text, "admin");
-            }
+
+                VerifyUser(email.Text, pass.Text);
+           
+               
+
                
             
 
         }
 
-        async void VerifyUser(string a, string b, string c, string d)
+        async void VerifyUser(string a, string b)
         {
-            if (a == b && c == d)
+            if (a == "User" && b == "user")
             {
                 await Navigation.PushModalAsync(new HomePage());
             }
-            else if (!string.IsNullOrEmpty(a) && a != b)
-            {
-                await DisplayAlert("Alert", "E-mail non Corretta!", "OK");
-            }
-            else if (string.IsNullOrEmpty(a))
-            {
-                await DisplayAlert("Alert", "E-mail non Inserita!", "OK");
-            }
-            else if (!string.IsNullOrEmpty(c) && c != d)
-            {
-                await DisplayAlert("Alert", "Password non Corretta!", "OK");
-            }
-            else if (string.IsNullOrEmpty(c))
-            {
-                await DisplayAlert("Alert", "Password non Inserita!", "OK");
-            }
-        }
-        async void VerifyAdmin(string a, string b, string c, string d)
-        {
-            if (a == b && c == d)
+            else if (a == "Admin" && b == "admin") 
             {
                 await Navigation.PushModalAsync(new HomePageAdmin());
             }
-            else if (!string.IsNullOrEmpty(a) && a != b)
+            else if (!string.IsNullOrEmpty(a) && a != "User" && a != "Admin")
             {
                 await DisplayAlert("Alert", "E-mail non Corretta!", "OK");
             }
@@ -71,15 +50,16 @@ namespace EventUPv2
             {
                 await DisplayAlert("Alert", "E-mail non Inserita!", "OK");
             }
-            else if (!string.IsNullOrEmpty(c) && c != d)
+            else if (!string.IsNullOrEmpty(b) && b != "user" && a != "admin")
             {
                 await DisplayAlert("Alert", "Password non Corretta!", "OK");
             }
-            else if (string.IsNullOrEmpty(c))
+            else if (string.IsNullOrEmpty(b))
             {
                 await DisplayAlert("Alert", "Password non Inserita!", "OK");
             }
         }
+
 
     }
 }
