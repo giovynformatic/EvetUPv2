@@ -15,15 +15,15 @@
             Aspect="AspectFill"
             HorizontalOptions="Center" 
             />
-                <Label x:Name="Utype" HorizontalTextAlignment="Center" Text="Utente" />
-             
-                <TableView Margin="0,0,0,0" Intent="Form"  WidthRequest="20" HeightRequest="40" BackgroundColor="White">
+                <Label x:Name="Utype" HorizontalTextAlignment="Center" Text="Utente"  FontSize="18"  />
+
+                <TableView Margin="0,0,0,0" Intent="Form"  WidthRequest="20" HeightRequest="40" BackgroundColor="White" >
      <TableRoot >
         <TableSection >
            <!--
             <SwitchCell Text="New Mail" On="true" /> -->
-                            <TextCell x:Name="UserDataB" Text="Dati Utente" Detail="" />
-                            <TextCell x:Name="UserPassB" Text="Gestione Password" Detail="" />
+                            <TextCell x:Name="UserDataB" Text="Dati Utente" Detail=""/>
+                            <TextCell x:Name="UserPassB" Text="Gestione Password"  Detail="" />
                             <TextCell x:Name="QrB" Text="Codice QR " Detail="" />
                           
             
@@ -48,8 +48,8 @@
             
         </TableSection>
                         <TableSection Title="Options" >
-                            
-                            <SwitchCell x:Name="PosSwitch" Text="Posizione" On="false" IsEnabled="false"/>
+
+                            <SwitchCell x:Name="PosSwitch" Text="Posizione"   On="false" IsEnabled="false"/>
                             <SwitchCell x:Name="PreSwitch" Text="Prenotazione Automatica" On="false" IsEnabled="false"  />
                             <SwitchCell x:Name="notggSwitch" Text="Avvisami il giorno prima" On="false" />
                             <SwitchCell x:Name="nothrSwitch" Text="Avvisami un'ora prima" On="false" />

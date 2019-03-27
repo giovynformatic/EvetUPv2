@@ -22,16 +22,46 @@ namespace EventUPv2
         }
         void OnLoginClicked(object sender, EventArgs args)
         {
-             Verify(email.Text, "Pippo", pass.Text, "peppo");
-
+            if (email.Text == "Pippo" && pass.Text == "peppo")
+            {
+                VerifyUser(email.Text, "Pippo", pass.Text, "peppo");
+            }else if(email.Text == "Admin" && pass.Text == "admin")
+            {
+                VerifyAdmin(email.Text, "Admin", pass.Text, "admin");
+            }
+               
+            
 
         }
 
-        async void Verify(string a, string b, string c, string d)
+        async void VerifyUser(string a, string b, string c, string d)
         {
             if (a == b && c == d)
             {
                 await Navigation.PushModalAsync(new HomePage());
+            }
+            else if (!string.IsNullOrEmpty(a) && a != b)
+            {
+                await DisplayAlert("Alert", "E-mail non Corretta!", "OK");
+            }
+            else if (string.IsNullOrEmpty(a))
+            {
+                await DisplayAlert("Alert", "E-mail non Inserita!", "OK");
+            }
+            else if (!string.IsNullOrEmpty(c) && c != d)
+            {
+                await DisplayAlert("Alert", "Password non Corretta!", "OK");
+            }
+            else if (string.IsNullOrEmpty(c))
+            {
+                await DisplayAlert("Alert", "Password non Inserita!", "OK");
+            }
+        }
+        async void VerifyAdmin(string a, string b, string c, string d)
+        {
+            if (a == b && c == d)
+            {
+                await Navigation.PushModalAsync(new HomePageAdmin());
             }
             else if (!string.IsNullOrEmpty(a) && a != b)
             {
