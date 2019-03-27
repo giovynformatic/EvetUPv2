@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
@@ -15,16 +15,17 @@
             Aspect="AspectFill"
             HorizontalOptions="Center" 
             />
-                <Label x:Name="Utype" HorizontalTextAlignment="Center" Text="Utente"  FontSize="18"  />
+                <Label x:Name="Utype" HorizontalTextAlignment="Center" Text="Utente"  FontSize="20"  />
 
                 <TableView Margin="0,0,0,0" Intent="Form"  WidthRequest="20" HeightRequest="40" BackgroundColor="White" >
      <TableRoot >
         <TableSection >
            <!--
             <SwitchCell Text="New Mail" On="true" /> -->
-                            <TextCell x:Name="UserDataB" Text="Dati Utente" Detail=""/>
-                            <TextCell x:Name="UserPassB" Text="Gestione Password"  Detail="" />
-                            <TextCell x:Name="QrB" Text="Codice QR " Detail="" />
+                            <ViewCell x:Name="UserDataB"><Label Text="Dati Utente" Font="18" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" /></ViewCell>
+                            <ViewCell x:Name="UserPassB"><Label Text="Gestione Password" Font="18" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" /></ViewCell>
+                             <ViewCell x:Name="QrB"><Label Text="Qr Code" Font="18" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" /></ViewCell>
+                           
                           
             
        
@@ -72,7 +73,6 @@
 
              
 
-                <Button Margin="20,20,20,75" Text="Registrati" FontSize="15" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White"/>
 
             </StackLayout>
         </ScrollView>
