@@ -26,7 +26,7 @@
                           
 
                         </TableSection>
-                        <TableSection Title="Options" >
+                        <TableSection Title="Options">
 
                          
                             <SwitchCell x:Name="PreSwitch" Text="Prenotazione Automatica" On="false" />

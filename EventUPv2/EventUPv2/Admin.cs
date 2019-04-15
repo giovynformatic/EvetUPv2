@@ -19,5 +19,7 @@ namespace EventUPv2
             this.email = email;
             this.pass = pass;
         }
+
+        
     }
 }

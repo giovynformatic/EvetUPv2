@@ -34,9 +34,10 @@ namespace EventUPv2
 
             if (String.Equals(p, cp))
             {
-                 var us= new User(n,c,s,d,naz,tit,cit,codFisc,mail,p);
-               string res= JsonIN.RegisterUserCode(us);
-                await DisplayAlert("Errore", res ,"OK");
+                /*  var us= new User(n,c,s,d,naz,tit,cit,codFisc,mail,p);
+                string res= JsonIN.RegisterUserCode(us);*/
+                await Navigation.PushModalAsync(new Interessi());
+              //  await DisplayAlert("Errore", res ,"OK");
             }
             else {
                 await DisplayAlert("Errore", "le password non corrispondono", "OK");
