@@ -22,8 +22,11 @@ namespace EventUPv2.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.Init(); 
+
+            global::Xamarin.Forms.Forms.Init();
             ImageCircleRenderer.Init();
+            Rg.Plugins.Popup.Popup.Init();
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

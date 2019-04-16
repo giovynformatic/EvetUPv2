@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage  xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              xmlns:custom="clr-namespace:EventUPv2"
@@ -22,9 +22,14 @@
         <TableSection >
            <!--
             <SwitchCell Text="New Mail" On="true" /> -->
+
                             <ViewCell x:Name="UserDataB"><Label Text="Dati Utente" Font="18" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" /></ViewCell>
                             <ViewCell x:Name="UserPassB"><Label Text="Gestione Password" Font="18" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" /></ViewCell>
                              <ViewCell x:Name="QrB"><Label Text="Qr Code" Font="18" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black"  /></ViewCell>
+
+                            <ViewCell x:Name="UserDataB" Tapped="datiAnagrafici"><Label Text="Dati Anagrafici" Font="18" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" /></ViewCell>
+                            <ViewCell x:Name="UserPassB" Tapped="gestionePassword"><Label Text="Gestione Password" Font="18" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" /></ViewCell>
+                             <ViewCell x:Name="QrB" Tapped="qrPage"><Label Text="Qr Code" Font="18" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" /></ViewCell>
                            
                           
             
@@ -50,8 +55,12 @@
         </TableSection>
                         <TableSection Title="Options"  >
 
+
                             <SwitchCell x:Name="PosSwitch" Text="Posizione"    On="false" />
                           
+
+                          
+                            <SwitchCell x:Name="PreSwitch" Text="Prenotazione Automatica" On="false" IsEnabled="false"  />
                             <SwitchCell x:Name="notggSwitch" Text="Avvisami il giorno prima" On="false" />
                             <SwitchCell x:Name="nothrSwitch" Text="Avvisami un'ora prima" On="false" />
                             <SwitchCell x:Name="notPosSwitch" Text="Notifiche eventi vicini" On="false" />

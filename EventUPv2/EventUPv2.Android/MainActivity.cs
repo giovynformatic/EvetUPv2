@@ -18,8 +18,10 @@ namespace EventUPv2.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
+
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             ImageCircleRenderer.Init();
+            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
     }

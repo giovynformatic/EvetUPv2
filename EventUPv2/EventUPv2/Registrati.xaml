@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              xmlns:custom="clr-namespace:EventUPv2"
              x:Class="EventUPv2.Registrati">
     <!--Pages can be added as references or inline-->
-<ContentPage Title="Privato">
-        <ScrollView BackgroundColor="White">
-            <StackLayout Margin="20,10,20,0" Spacing="32" >
-                <ic:CircleImage   
+
+    <ScrollView BackgroundColor="White">
+        <StackLayout Margin="20,10,20,0" Spacing="32" >
+            <ic:CircleImage   
             HeightRequest="150"   
             WidthRequest="150"   
             Margin="100,0,100,0"
@@ -16,8 +16,8 @@
             Aspect="AspectFill"
             HorizontalOptions="Center" 
             ></ic:CircleImage>
-                
-                 <custom:CustomEntry 
+
+            <custom:CustomEntry 
                                 CornerRadius="20" 
                                 HeightRequest="40" 
                                 IsCurvedCornersEnabled="True" 
@@ -28,7 +28,7 @@
                                 FontSize="18" 
                                 BackgroundColor="White"
                                 PlaceholderColor="Gray" />
-                <custom:CustomEntry 
+            <custom:CustomEntry 
                                 CornerRadius="20" 
                                 HeightRequest="40" 
                                 IsCurvedCornersEnabled="True" 
@@ -39,7 +39,7 @@
                                 FontSize="18" 
                                 BackgroundColor="White" 
                                 PlaceholderColor="Gray"/>
-                <custom:CustomEntry 
+            <custom:CustomEntry 
                                 CornerRadius="20" 
                                 HeightRequest="40" 
                                 IsCurvedCornersEnabled="True" 
@@ -50,7 +50,7 @@
                                 FontSize="18"
                                 BackgroundColor="White"
                                 PlaceholderColor="Gray" />
-               <custom:CustomEntry 
+            <custom:CustomEntry 
                                 CornerRadius="20" 
                                 HeightRequest="40" 
                                 IsCurvedCornersEnabled="True" 
@@ -61,7 +61,7 @@
                                 FontSize="18"
                                 BackgroundColor="White"
                                 PlaceholderColor="Gray" />
-               <custom:CustomEntry 
+            <custom:CustomEntry 
                                 CornerRadius="20" 
                                 HeightRequest="40" 
                                 IsCurvedCornersEnabled="True" 
@@ -72,7 +72,7 @@
                                 FontSize="18" 
                                 BackgroundColor="White" 
                                 PlaceholderColor="Gray" />
-               <custom:CustomEntry 
+            <custom:CustomEntry 
                                 CornerRadius="20" 
                                 HeightRequest="40" 
                                 IsCurvedCornersEnabled="True" 
@@ -83,7 +83,7 @@
                                 FontSize="18" 
                                 BackgroundColor="White" 
                                 PlaceholderColor="Gray" />
-               <custom:CustomEntry 
+            <custom:CustomEntry 
                                 CornerRadius="20" 
                                 HeightRequest="40" 
                                 IsCurvedCornersEnabled="True" 
@@ -94,7 +94,7 @@
                                 FontSize="18" 
                                 BackgroundColor="White" 
                                 PlaceholderColor="Gray" />
-               <custom:CustomEntry 
+            <custom:CustomEntry 
                                 CornerRadius="20" 
                                 HeightRequest="40" 
                                 IsCurvedCornersEnabled="True" 
@@ -106,7 +106,7 @@
                                 FontSize="18" 
                                 BackgroundColor="White" 
                                 PlaceholderColor="Gray" />
-               <custom:CustomEntry 
+            <custom:CustomEntry 
                                 CornerRadius="20" 
                                 HeightRequest="40" 
                                 IsCurvedCornersEnabled="True" 
@@ -117,7 +117,7 @@
                                 FontSize="18" 
                                 BackgroundColor="White" 
                                 PlaceholderColor="Gray" />
-               <custom:CustomEntry 
+            <custom:CustomEntry 
                                 CornerRadius="20" 
                                 HeightRequest="40" 
                                 IsCurvedCornersEnabled="True" 
@@ -130,7 +130,7 @@
                                 FontSize="18" 
                                 BackgroundColor="White" 
                                 PlaceholderColor="Gray" />
-               <custom:CustomEntry 
+            <custom:CustomEntry 
                                 CornerRadius="20" 
                                 HeightRequest="40" 
                                 IsCurvedCornersEnabled="True" 
@@ -143,66 +143,8 @@
                                 FontSize="18" 
                                 BackgroundColor="White" 
                                 PlaceholderColor="Gray" />
-                <Button Margin="75,20,75,75" Text="Registrati" FontSize="15" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Clicked="RegisterUser"/>
+            <Button Margin="75,20,75,75" Text="Registrati" FontSize="15" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Clicked="RegisterUser"/>
 
-            </StackLayout>
-        </ScrollView>
-
-    </ContentPage>
-<ContentPage Title="Azienda">
-        <ScrollView BackgroundColor="White">
-            <StackLayout Margin="20,10,20,0" Spacing="32" >
-
-                <ImageButton x:Name="logor"  Margin="100,0,100,40"  >
-
-                    <ImageButton.Source>
-                        <OnPlatform x:TypeArguments="ImageSource"
-                    iOS="logo.png"
-                    Android="logoAndroid.png"
-                />
-                    </ImageButton.Source>
-                    
-                </ImageButton>
-
-               <custom:CustomEntry 
-                                CornerRadius="20" 
-                                
-                                IsCurvedCornersEnabled="True" 
-                                BorderColor="BlueViolet" 
-                                Margin="20,50,20,20"   x:Name="nome_Azienda" Placeholder="Nome Azienda" FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"/>
-                <custom:CustomEntry 
-                                CornerRadius="20" 
-                                
-                                IsCurvedCornersEnabled="True" 
-                                BorderColor="BlueViolet" 
-                                Margin="20,0,20,20" x:Name="sede" Placeholder="Sede"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"/>
-               <custom:CustomEntry 
-                                CornerRadius="20" 
-                                
-                                IsCurvedCornersEnabled="True" 
-                                BorderColor="BlueViolet" 
-                                Margin="20,0,20,20" x:Name="partitaiva" MaxLength="11" Placeholder="P.IVA"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"/>
-               <custom:CustomEntry 
-                                CornerRadius="20" 
-                                
-                                IsCurvedCornersEnabled="True" 
-                                BorderColor="BlueViolet" 
-                                Margin="20,0,20,20" x:Name="emailr_admin"  Placeholder="E-mail"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"/>
-               <custom:CustomEntry 
-                                CornerRadius="20" 
-                                
-                                IsCurvedCornersEnabled="True" 
-                                BorderColor="BlueViolet" 
-                                Margin="20,0,20,20" x:Name="passr_admin" MaxLength="20" IsPassword="True" Placeholder="Password"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"/>
-               <custom:CustomEntry 
-                                CornerRadius="20" 
-                                
-                                IsCurvedCornersEnabled="True" 
-                                BorderColor="BlueViolet" 
-                                Margin="20,0,20,20" x:Name="cpassr_admin" MaxLength="20" IsPassword="True" Placeholder="Conferma Password"  FontSize="18" BackgroundColor="White" PlaceholderColor="Gray" HeightRequest="50"/>
-                <Button  Margin="75,20,75,75" Text="Registrati" FontSize="15" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Clicked="RegisterAdmin"/>
-
-            </StackLayout>
-        </ScrollView>
-    </ContentPage>
-</TabbedPage>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

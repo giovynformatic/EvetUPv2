@@ -19,15 +19,15 @@ namespace EventUPv2
 			InitializeComponent ();
          
             var listView = new Xamarin.Forms.ListView();
-            ObservableCollection<Azienda> aziende = new ObservableCollection<Azienda>();
+            ObservableCollection<Admin> aziende = new ObservableCollection<Admin>();
 
             listView.ItemsSource = aziende;
 
            
             for (int i = 0; i < 4; i++)
             {
-              //  String NomeAzienda = "ffvdfv";//prendere dati dal db
-                aziende.Add(new Azienda() { nome = "porcodio" });
+                //  String NomeAzienda = "ffvdfv";//prendere dati dal db
+                   // aziende.Add(new Admin() { NomeAzienda });
             }
 
             this.Content = new StackLayout
