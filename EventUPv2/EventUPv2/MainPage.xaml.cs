@@ -27,8 +27,8 @@ namespace EventUPv2
                 //VerifyUser(emailUser.Text, passUser.Text);
                 List<User> listaUtenti = new List<User>();
                 //listaUtenti=await App.UsManager.GetTasksAsync();// codice da usare per connessione back-end
-            var us1 = new User("Filippo", "Corni", "M", "18/09/1998", "italiana", "ingegnere", "Milano", "qwertyuiop", "filippo.corni@gmail.com", "cocco");
-            var us2 = new User("Giuseppe", "Gesualdo", "M", "17/11/1981", "italiana", "falegname", "Betlemme", "gesdrtyuim", "gesu.gesualdo@gmail.com", "asinello");
+            var us1 = new User("Filippo", "Corni", "M", "18/09/1998", "italiana", "ingegnere", "Milano", "qwertyuiop", "Filippo.corni@gmail.com", "cocco");
+            var us2 = new User("Giuseppe", "Gesualdo", "M", "17/11/1981", "italiana", "falegname", "Betlemme", "gesdrtyuim", "Gesu.gesualdo@gmail.com", "asinello");
             listaUtenti.Add(us1);
             listaUtenti.Add(us2);
             for (int a = 0; a < listaUtenti.Count; a++)
@@ -47,8 +47,8 @@ namespace EventUPv2
             //VerifyUser(emailUser.Text, passUser.Text);
             List<Admin> listaAziende = new List<Admin>();
             // listaAziende = await App.AdManager.GetTasksAsync();// codice da usare per connessione back-end
-            var ad1 = new Admin("EnerSetting", "Locorotondo","asd1234rt6f","setting@enersetting.com","alternanza");
-            var ad2 = new Admin("Barilla", "Modena", "modbar459q7", "admin@barilla.com", "pasta");
+            var ad1 = new Admin("EnerSetting", "Locorotondo","asd1234rt6f","Setting@enersetting.com","alternanza");
+            var ad2 = new Admin("Barilla", "Modena", "modbar459q7", "Admin@barilla.com", "pasta");
             listaAziende.Add(ad1);
             listaAziende.Add(ad2);
             for (int a=0;a<listaAziende.Count;a++)
