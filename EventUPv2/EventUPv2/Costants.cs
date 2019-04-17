@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using static Android.Bluetooth.BluetoothClass;
 
 namespace EventUPv2
 {
@@ -10,5 +11,6 @@ namespace EventUPv2
         //  public static string BaseAddress = Device.RuntimePlatform == Device.Android ? "https://10.0.2.2:5001" : "https://localhost:5001";
         //  public static string TodoItemsUrl = BaseAddress + "/api/todoitems/{0}";
         public static string UserUrl = null;
+        public static string AdminUrl = null;
     }
 }

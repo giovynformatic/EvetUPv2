@@ -5,34 +5,32 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using static Android.Provider.SyncStateContract;
 
 namespace EventUPv2
 {
-
-    public class RestServiceUser : IRestServiceUser
+   public class RestServiceAdmin : IRestServiceAdmin
     {
         HttpClient _client;
 
-        public List<User> Items { get; private set; }
+        public List<Admin> Items { get; private set; }
 
-        public RestServiceUser()
+        public RestServiceAdmin()
         {
             _client = new HttpClient();
         }
 
-        public async Task<List<User>> RefreshDataAsync()
+        public async Task<List<Admin>> RefreshDataAsync()
         {
-            Items = new List<User>();
+            Items = new List<Admin>();
 
-            var uri = new Uri(string.Format(Constants.UserUrl, string.Empty));
+            var uri = new Uri(string.Format(Constants.AdminUrl, string.Empty));
             try
             {
                 var response = await _client.GetAsync(uri);
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    Items = JsonConvert.DeserializeObject<List<User>>(content);
+                    Items = JsonConvert.DeserializeObject<List<Admin>>(content);
                 }
             }
             catch (Exception ex)
@@ -43,9 +41,9 @@ namespace EventUPv2
             return Items;
         }
 
-        public async Task SaveTodoItemAsync(User item, bool isNewItem = false)
+        public async Task SaveTodoItemAsync(Admin item, bool isNewItem = false)
         {
-            var uri = new Uri(string.Format(Constants.UserUrl, string.Empty));
+            var uri = new Uri(string.Format(Constants.AdminUrl, string.Empty));
 
             try
             {
@@ -73,6 +71,5 @@ namespace EventUPv2
                 Debug.WriteLine(@"\tERROR {0}", ex.Message);
             }
         }
-
     }
 }

@@ -4,28 +4,24 @@ using System.Threading.Tasks;
 
 namespace EventUPv2
 {
-   public class UserManager
+   public  class AdminManager
     {
+        IRestServiceAdmin restService;
 
-        IRestServiceUser restService;
-
-        public UserManager(IRestServiceUser service)
+        public AdminManager(IRestServiceAdmin service)
         {
             restService = service;
         }
 
-        public Task<List<User>> GetTasksAsync()
+        public Task<List<Admin>> GetTasksAsync()
         {
             return restService.RefreshDataAsync();
         }
 
-        public Task SaveTaskAsync(User item, bool isNewItem = false)
+        public Task SaveTaskAsync(Admin item, bool isNewItem = false)
         {
             return restService.SaveTodoItemAsync(item, isNewItem);
         }
-
-     
-
 
     }
 }

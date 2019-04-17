@@ -8,10 +8,13 @@ namespace EventUPv2
     public partial class App : Application
     {
         public static UserManager UsManager { get; private set; }
+        public static AdminManager AdManager { get; private set; }
         public App()
         {
             InitializeComponent();
             UsManager = new UserManager(new RestServiceUser());
+            
+            AdManager = new AdminManager(new RestServiceAdmin());
             MainPage = new MainPage();
         }
 
