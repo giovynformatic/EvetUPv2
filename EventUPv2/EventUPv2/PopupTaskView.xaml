@@ -4,14 +4,50 @@ xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 x:Class="EventUPv2.PopupTaskView">
-  <TableView Margin="0,0,0,0" Intent="Form"  WidthRequest="20" HeightRequest="40" BackgroundColor="White" >
-     <TableRoot >
-        <TableSection >
-                
-                
-                  <SwitchCell x:Name="PosSwitch" Text="Posizione"   On="false" IsEnabled="false"/>
-                </TableSection>
-            </TableRoot>
-   
-</TableView>
+    
+    <TableView Margin="50,50,50,50" Intent="Form"  WidthRequest="20" HeightRequest="40" BackgroundColor="White" >
+         <TableRoot >
+             <TableSection >
+            
+                <ViewCell >
+                    <Label Text="Nome: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
+                    <Label x:Name="NomeP" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                </ViewCell>
+                <ViewCell >
+                    <Label Text="Cognome: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
+                    <Label x:Name="CognomeP" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                </ViewCell>
+                <ViewCell >
+                    <Label Text="Sessso: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
+                    <Label x:Name="SessoP" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                </ViewCell>
+                <ViewCell >
+                    <Label Text="Data di Nascita: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
+                    <Label x:Name="DataP" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                </ViewCell>
+                <ViewCell >
+                    <Label Text="Nazionalità: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
+                    <Label x:Name="NazP" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                </ViewCell>
+                <ViewCell >
+                    <Label Text="Titolo di Studio: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
+                    <Label x:Name="TitoloP" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                </ViewCell>
+                <ViewCell >
+                    <Label Text="Città: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
+                    <Label x:Name="CittaP" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                </ViewCell>
+                <ViewCell >
+                    <Label Text="Codice Fiscale: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
+                    <Label x:Name="CfP" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                </ViewCell>
+                <ViewCell >
+                    <Label Text="E-Mail: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
+                    <Label x:Name="EmailP" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                </ViewCell>
+              
+            </TableSection>
+        </TableRoot>
+
+    </TableView>
 </popup:PopupPage>
