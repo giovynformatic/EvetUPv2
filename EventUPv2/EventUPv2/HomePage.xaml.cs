@@ -25,10 +25,10 @@ namespace EventUPv2
             PopupNavigation.Instance.PushAsync(new GestionePasswordPopup());
 
         }
-        async void qrPage(object sender, EventArgs args)
+        public void qrPage(object sender, EventArgs args)
         {
 
-            await DisplayAlert("OK", "page qr", "OK");
+            PopupNavigation.Instance.PushAsync(new QrCodePopup());
 
         }
 

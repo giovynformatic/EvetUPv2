@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace EventUPv2
 {
-    public partial class QrCodePage : ContentPage
+    public partial class QrCodePopup 
     {
-        public QrCodePage()
+        public QrCodePopup()
         {
             InitializeComponent();
         }

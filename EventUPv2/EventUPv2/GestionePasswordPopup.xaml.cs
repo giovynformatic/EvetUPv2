@@ -11,5 +11,10 @@ namespace EventUPv2
         {
             InitializeComponent();
         }
+
+        async void ModifyButton(object sender, EventArgs args)
+        {
+            await DisplayAlert("Alert", "Modificato", "OK");
+        }
     }
 }

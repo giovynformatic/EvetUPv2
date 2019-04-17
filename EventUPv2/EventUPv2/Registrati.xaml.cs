@@ -38,7 +38,7 @@ namespace EventUPv2
                 var us= new User(n,c,s,d,naz,tit,cit,codFisc,mail,p);
                 await App.UsManager.SaveTaskAsync(us, isNewItem);
                 await Navigation.PopAsync();
-                await Navigation.PushModalAsync(new Interessi());
+
                 await DisplayAlert("Errore", "" ,"OK");
             }
             else {
