@@ -10,6 +10,8 @@ namespace EventUPv2
         {
             InitializeComponent();
 
+
+
             NomeP.Text = "filippo";
             CognomeP.Text = "biase";
             SessoP.Text = "M";
