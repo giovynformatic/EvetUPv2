@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace EventUPv2
 {
-    public partial class DatiAnagrafici : ContentPage
+    public partial class GestionePasswordPopup 
     {
-        public DatiAnagrafici()
+        public GestionePasswordPopup()
         {
             InitializeComponent();
         }
