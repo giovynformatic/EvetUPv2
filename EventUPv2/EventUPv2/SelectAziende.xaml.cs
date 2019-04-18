@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -27,6 +28,18 @@ namespace EventUPv2
 
             InitializeComponent();
             BindingContext = new MultiSelectViewModel(SelectedData);
+        }
+
+        public ICommand FinishCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    Navigation.PopAsync();
+                });
+            }
+
         }
     }
 }

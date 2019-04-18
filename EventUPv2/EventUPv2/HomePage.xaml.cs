@@ -31,6 +31,12 @@ namespace EventUPv2
             PopupNavigation.Instance.PushAsync(new QrCodePopup());
 
         }
+        async void aziende(object sender, EventArgs args)
+        {
+
+            await Navigation.PushModalAsync(new SelectAziende());
+
+        }
 
     }
 }

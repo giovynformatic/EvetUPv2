@@ -27,6 +27,7 @@
                             <ViewCell x:Name="UserDataB" Tapped="datiAnagrafici"><Label Text="Dati Anagrafici" Font="18" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" /></ViewCell>
                             <ViewCell x:Name="UserPassB" Tapped="gestionePassword"><Label Text="Gestione Password" Font="18" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" /></ViewCell>
                              <ViewCell x:Name="QrB" Tapped="qrPage"><Label Text="Qr Code" Font="18" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" /></ViewCell>
+                            <ViewCell x:Name="Aziende" Tapped="aziende"><Label Text="Aziende Preferite" Font="18" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" /></ViewCell>
                            
                           
             
