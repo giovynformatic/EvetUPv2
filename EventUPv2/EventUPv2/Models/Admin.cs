@@ -20,6 +20,6 @@ namespace EventUPv2
             this.pass = pass;
         }
 
-        
+
     }
 }

@@ -13,20 +13,32 @@ namespace EventUPv2
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SelectAziende : ContentPage
     {
-
+          
         public SelectAziende()
         {
-            List<SelectableData<ExampleData>> SelectedData = new List<SelectableData<ExampleData>>()
-            {
-                new SelectableData<ExampleData>() { Data = new ExampleData() { Name = "Test1", Description = "Description1" } },
-                new SelectableData<ExampleData>() { Data = new ExampleData() { Name = "Test2", Description = "Description2" } },
-                new SelectableData<ExampleData>() { Data = new ExampleData() { Name = "Test3", Description = "Description3" } },
-                new SelectableData<ExampleData>() { Data = new ExampleData() { Name = "Test4", Description = "Description4" } },
-                new SelectableData<ExampleData>() { Data = new ExampleData() { Name = "Test5", Description = "Description5" } }
-            };
-
-
             InitializeComponent();
+            List<SelectableData<ExampleData>> SelectedData = new List<SelectableData<ExampleData>>();
+            List<Admin> listaAziende = new List<Admin>();
+            // listaAziende = await App.AdManager.GetTasksAsync();// codice da usare per connessione back-end
+            var ad1 = new Admin("EnerSetting", "Locorotondo", "asd1234rt6f", "Setting@enersetting.com", "alternanza");
+            var ad2 = new Admin("Barilla", "Modena", "modbar459q7", "Admin@barilla.com", "pasta");
+            listaAziende.Add(ad1);
+            listaAziende.Add(ad2);
+            for (int a = 0; a < listaAziende.Count(); a++)
+            {
+                /* SelectedData = new List<SelectableData<ExampleData>>()
+             {
+                 new SelectableData<ExampleData>() { Data = new ExampleData() { NomeAzienda = listaAziende.ElementAt(a).NomeAzienda} }
+
+             };*/
+                SelectedData.Add(new SelectableData<ExampleData>() { Data = new ExampleData() { NomeAzienda = listaAziende.ElementAt(a).NomeAzienda } });
+            }
+           
+           
+            
+
+
+
             BindingContext = new MultiSelectViewModel(SelectedData);
         }
 
@@ -41,5 +53,14 @@ namespace EventUPv2
             }
 
         }
+
+       private async Task<List<Admin>> OttieniAziendeAsync()
+        {
+            List<Admin> Aziende = new List<Admin>();
+            Aziende = await App.AdManager.GetTasksAsync();// codice da usare per connessione back-end
+            return Aziende;
+        }
+       
+
     }
 }

@@ -13,8 +13,8 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <StackLayout VerticalOptions="CenterAndExpand">
-                                <Label Text="{Binding Data.Name}"  />
-                                <Label Text="{Binding Data.Description}" FontSize="10" />
+                                <Label Text="{Binding Data.NomeAzienda}"  />
+                                
                             </StackLayout>
                             <Switch IsToggled="{Binding Selected}" Grid.Column="1" />
                         </Grid>

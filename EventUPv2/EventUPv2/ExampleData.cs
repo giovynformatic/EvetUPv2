@@ -1,19 +1,26 @@
-﻿namespace EventUPv2
+﻿using System;
+
+namespace EventUPv2
 {
 	public class ExampleData
 	{
-		public string Name { get; set; }
+        public String NomeAzienda { get; set; }
+        public String Sede { get; set; }
+        public String piva { get; set; }
+        public String email { get; set; }
+        public String pass { get; set; }
 
-		public string Description { get; set; }
 
-
-		public ExampleData Clone()
+        public ExampleData Clone()
 		{
 			return new ExampleData()
 			{
-				Name = Name,
-				Description = Description
-			};
+                NomeAzienda = NomeAzienda,
+                Sede = Sede,
+                piva = piva,
+                email = email,
+                pass = pass
+            };
 			
 		}
 
