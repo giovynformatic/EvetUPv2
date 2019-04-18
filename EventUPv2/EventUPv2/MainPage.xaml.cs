@@ -10,7 +10,8 @@ namespace EventUPv2
 {
     public partial class MainPage : TabbedPage
     {
-       
+        public List<User> listaUtenti;
+        public List<Admin> listaAziende;
         public MainPage()
         {
             InitializeComponent();
@@ -19,21 +20,15 @@ namespace EventUPv2
         async void OnRegisterUserClicked(object sender, EventArgs args)
         {
            // await DisplayAlert("Alert", passUser.Text, "OK");
-            await Navigation.PushModalAsync(new Registrati());
+            await Navigation.PushAsync(new Registrati());
 
 
         }
         async void OnLoginUserClicked(object sender, EventArgs args)
         {
 
-                //VerifyUser(emailUser.Text, passUser.Text);
-                List<User> listaUtenti = new List<User>();
-            Boolean[] inters = new Boolean[7] { true, false, false, true, false, false, false};
-            //listaUtenti=await App.UsManager.GetTasksAsync();// codice da usare per connessione back-end
-            var us1 = new User("Filippo", "Corni", "M", "18/09/1998", "italiana", "ingegnere", "Milano", "qwertyuiop", "Filippo.corni@gmail.com", "cocco",inters);
-            var us2 = new User("Giuseppe", "Gesualdo", "M", "17/11/1981", "italiana", "falegname", "Betlemme", "gesdrtyuim", "Gesu.gesualdo@gmail.com", "asinello",inters);
-            listaUtenti.Add(us1);
-            listaUtenti.Add(us2);
+            //VerifyUser(emailUser.Text, passUser.Text);
+            await AssegnaUtenti();
             int acces = 0;
             Boolean AccesCons=false;
             for (int a = 0; a < listaUtenti.Count; a++)
@@ -63,12 +58,7 @@ namespace EventUPv2
         {
 
             //VerifyUser(emailUser.Text, passUser.Text);
-            List<Admin> listaAziende = new List<Admin>();
-            // listaAziende = await App.AdManager.GetTasksAsync();// codice da usare per connessione back-end
-            var ad1 = new Admin("EnerSetting", "Locorotondo","asd1234rt6f","Setting@enersetting.com","alternanza");
-            var ad2 = new Admin("Barilla", "Modena", "modbar459q7", "Admin@barilla.com", "pasta");
-            listaAziende.Add(ad1);
-            listaAziende.Add(ad2);
+            await AssegnaAziende();
             int acces = 0;
             Boolean AccesCons = false;
             for (int a=0;a<listaAziende.Count;a++)
@@ -76,7 +66,7 @@ namespace EventUPv2
                 if (emailAdmin.Text == listaAziende.ElementAt(a).email && passAdmin.Text == listaAziende.ElementAt(a).pass)
                 {
                     Constants.CurrentAdmin = listaAziende.ElementAt(a);
-                    await Navigation.PushModalAsync(new HomePageAdmin());
+                    await Navigation.PushAsync(new HomePageAdmin());
                     AccesCons = true;
                     break;
                         
@@ -93,7 +83,7 @@ namespace EventUPv2
                 await DisplayAlert("Attenzione", "E-mail o Password non corretta!", "OK");
             }
         }
-        async void VerifyUser(string a, string b)
+        /*async void VerifyUser(string a, string b)
         {
             if (a == "User" && b == "user")
             {
@@ -119,9 +109,43 @@ namespace EventUPv2
             {
                 await DisplayAlert("Alert", "Password non Inserita!", "OK");
             }
+        }*/
+
+        async Task AssegnaAziende()
+        {
+            listaAziende = new List<Admin>();
+            // listaAziende = await App.AdManager.GetTasksAsync();// codice da usare per connessione back-end
+            var ad1 = new Admin("EnerSetting", "Locorotondo", "asd1234rt6f", "Setting@enersetting.com", "alternanza");
+            var ad2 = new Admin("Barilla", "Modena", "modbar459q7", "Admin@barilla.com", "pasta");
+            var ad3 = new Admin("ILVA", "Taranto", "dbbsjbkjsdab", "Ilva@ilva.com", "ferro");
+            Boolean[] val = new Boolean[] { false, true };
+            listaAziende.Add(ad1);
+            listaAziende.Add(ad2);
+            listaAziende.Add(ad3);
+            Constants.listaAziende = listaAziende;
+            
         }
 
-
+        async Task AssegnaUtenti()
+        {
+            listaUtenti = new List<User>();
+            Boolean[] inters = new Boolean[7] { true, false, false, true, false, false, false };
+            await AssegnaAziende();
+            String[] az = new String[listaAziende.Count];
+            Boolean[] val = new Boolean[listaAziende.Count];
+            val[0] = true;
+            val[1] = false;
+            val[3] = true;
+            for (int x = 0; x < listaAziende.Count; x++)
+            {
+                az[x] = listaAziende.ElementAt(x).NomeAzienda;
+            }
+            //listaUtenti=await App.UsManager.GetTasksAsync();// codice da usare per connessione back-end
+            var us1 = new User("Filippo", "Corni", "M", "18/09/1998", "italiana", "ingegnere", "Milano", "qwertyuiop", "Filippo.corni@gmail.com", "cocco", inters,az,val);
+            var us2 = new User("Giuseppe", "Gesualdo", "M", "17/11/1981", "italiana", "falegname", "Betlemme", "gesdrtyuim", "Gesu.gesualdo@gmail.com", "asinello", inters,az,val);
+            listaUtenti.Add(us1);
+            listaUtenti.Add(us2);
+        }
 
 
     }

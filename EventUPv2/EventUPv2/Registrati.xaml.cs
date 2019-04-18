@@ -12,6 +12,7 @@ namespace EventUPv2
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Registrati : ContentPage
     {
+        public List<Admin> listaAziende;
         bool isNewItem;
         public Registrati (bool isNew = false)
         {
@@ -36,10 +37,16 @@ namespace EventUPv2
             if (String.Equals(p, cp))
             {
                 Boolean[] inters = new Boolean[6] { false, false, false, false, false, false };
-                var us= new User(n,c,s,d,naz,tit,cit,codFisc,mail,p,inters);
+                await AssegnaAziende();
+                String[] az = new String[listaAziende.Count];
+                Boolean[] val = new Boolean[listaAziende.Count];
+                val[0] = false;
+                val[1] = false;
+                val[3] = false;
+                var us= new User(n,c,s,d,naz,tit,cit,codFisc,mail,p,inters,az,val);
                 // await App.UsManager.SaveTaskAsync(us, isNewItem);//codice back-end
                 Constants.CurrentUser = us;
-                await Navigation.PushModalAsync(new RegistratiInteressi());
+                await Navigation.PushAsync(new RegistratiInteressi());
 
                 
             }
@@ -48,6 +55,17 @@ namespace EventUPv2
             }
         }
 
-       
+        async Task AssegnaAziende()
+        {
+            listaAziende = new List<Admin>();
+            // listaAziende = await App.AdManager.GetTasksAsync();// codice da usare per connessione back-end
+            var ad1 = new Admin("EnerSetting", "Locorotondo", "asd1234rt6f", "Setting@enersetting.com", "alternanza");
+            var ad2 = new Admin("Barilla", "Modena", "modbar459q7", "Admin@barilla.com", "pasta");
+            var ad3 = new Admin("ILVA", "Taranto", "dbbsjbkjsdab", "Ilva@ilva.com", "ferro");
+            listaAziende.Add(ad1);
+            listaAziende.Add(ad2);
+            listaAziende.Add(ad3);
+        }
+
     }
 }
