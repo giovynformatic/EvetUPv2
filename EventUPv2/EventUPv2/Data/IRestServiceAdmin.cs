@@ -11,5 +11,6 @@ namespace EventUPv2
         Task<List<Admin>> RefreshDataAsync();
 
         Task SaveTodoItemAsync(Admin item, bool isNewItem);
+        Task DeleteTodoItemAsync(Admin ad);
     }
 }

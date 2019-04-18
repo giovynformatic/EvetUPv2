@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<popup:PopupPage 
+xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+x:Class="EventUPv2.PopupTaskViewAzienda">
+
+    <TableView Margin="50,270,50,270" Intent="Form"  WidthRequest="20" HeightRequest="40" BackgroundColor="White" >
+        <TableRoot >
+            <TableSection >
+
+                <ViewCell >
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="uno" Text="     Nome Azienda: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
+                        <Label x:Name="NomeAzienda" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                    </StackLayout>
+                </ViewCell>
+             
+                <ViewCell >
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="tre" Text="     Sede: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
+                        <Label x:Name="Sede" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell >
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="quattro" Text="     P.iva: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
+                        <Label x:Name="Piva" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell >
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="cinque" Text="     email: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
+                        <Label x:Name="email" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>
+        </TableRoot>
+
+    </TableView>
+</popup:PopupPage>

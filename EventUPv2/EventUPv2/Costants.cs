@@ -11,5 +11,7 @@ namespace EventUPv2
         //  public static string TodoItemsUrl = BaseAddress + "/api/todoitems/{0}";
         public static string UserUrl = null;
         public static string AdminUrl = null;
+        public static Admin CurrentAdmin = null;
+        public static User CurrentUser = null;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rg.Plugins.Popup.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,20 @@ namespace EventUPv2
         public HomePageAdmin ()
         {
             InitializeComponent();
+            Utype.Text = Constants.CurrentAdmin.NomeAzienda;
+        }
+        public void datiAzienda(object sender, EventArgs args)
+        {
+
+
+            PopupNavigation.Instance.PushAsync(new PopupTaskViewAzienda());
+
+        }
+        public void gestionePasswordAzienda(object sender, EventArgs args)
+        {
+
+            PopupNavigation.Instance.PushAsync(new GestionePasswordPopupAzienda());
+
         }
     }
 }

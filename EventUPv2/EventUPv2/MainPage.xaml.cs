@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using static Android.Provider.SyncStateContract;
+
 namespace EventUPv2
 {
     public partial class MainPage : TabbedPage
@@ -31,13 +33,28 @@ namespace EventUPv2
             var us2 = new User("Giuseppe", "Gesualdo", "M", "17/11/1981", "italiana", "falegname", "Betlemme", "gesdrtyuim", "Gesu.gesualdo@gmail.com", "asinello");
             listaUtenti.Add(us1);
             listaUtenti.Add(us2);
+            int acces = 0;
+            Boolean AccesCons=false;
             for (int a = 0; a < listaUtenti.Count; a++)
             {
                 if (emailUser.Text == listaUtenti.ElementAt(a).email && passUser.Text == listaUtenti.ElementAt(a).pass)
                 {
+                    Constants.CurrentUser = listaUtenti.ElementAt(a);
                     await Navigation.PushModalAsync(new HomePage());
+                    AccesCons = true;
+                    break;
                     
                 }
+                else
+                {
+                    
+                    acces = 1;
+                }
+
+            }
+            if (acces!=0 && AccesCons==false)
+            {
+                await DisplayAlert("Attenzione", "E-mail o Password non corretta!", "OK");
             }
 
         }
@@ -51,12 +68,28 @@ namespace EventUPv2
             var ad2 = new Admin("Barilla", "Modena", "modbar459q7", "Admin@barilla.com", "pasta");
             listaAziende.Add(ad1);
             listaAziende.Add(ad2);
+            int acces = 0;
+            Boolean AccesCons = false;
             for (int a=0;a<listaAziende.Count;a++)
             {
                 if (emailAdmin.Text == listaAziende.ElementAt(a).email && passAdmin.Text == listaAziende.ElementAt(a).pass)
                 {
+                    Constants.CurrentAdmin = listaAziende.ElementAt(a);
                     await Navigation.PushModalAsync(new HomePageAdmin());
+                    AccesCons = true;
+                    break;
+                        
                 }
+                else
+                {
+                    acces = 1;
+                    
+                }
+            }
+
+           if (acces!= 0 && AccesCons == false)
+            {
+                await DisplayAlert("Attenzione", "E-mail o Password non corretta!", "OK");
             }
         }
         async void VerifyUser(string a, string b)
@@ -86,6 +119,8 @@ namespace EventUPv2
                 await DisplayAlert("Alert", "Password non Inserita!", "OK");
             }
         }
+
+
 
 
     }

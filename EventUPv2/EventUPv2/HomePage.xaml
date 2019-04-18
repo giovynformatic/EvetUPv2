@@ -15,7 +15,7 @@
             Aspect="AspectFill"
             HorizontalOptions="Center" 
             />
-                <Label x:Name="Utype" HorizontalTextAlignment="Center" Text="Utente"  FontSize="20"  />
+                <Label x:Name="Utype" HorizontalTextAlignment="Center"  FontSize="20"  />
 
                 <TableView Margin="0,0,0,0" Intent="Form"  WidthRequest="20" HeightRequest="40" BackgroundColor="White" >
      <TableRoot >
@@ -57,7 +57,7 @@
                           
 
                           
-                            <SwitchCell x:Name="PreSwitch" Text="Prenotazione Automatica" On="false" IsEnabled="false"  />
+                        
                             <SwitchCell x:Name="notggSwitch" Text="Avvisami il giorno prima" On="false" />
                             <SwitchCell x:Name="nothrSwitch" Text="Avvisami un'ora prima" On="false" />
                             <SwitchCell x:Name="notPosSwitch" Text="Notifiche eventi vicini" On="false" />

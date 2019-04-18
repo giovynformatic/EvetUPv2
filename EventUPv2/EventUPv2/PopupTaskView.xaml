@@ -4,8 +4,8 @@ xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 x:Class="EventUPv2.PopupTaskView">
-    
-    <TableView Margin="50,200,50,200" Intent="Form"  WidthRequest="20" HeightRequest="40" BackgroundColor="White" >
+
+    <TableView Margin="50,150,50,150" Intent="Form"  WidthRequest="20" HeightRequest="40" BackgroundColor="White" >
          <TableRoot >
              <TableSection >
             

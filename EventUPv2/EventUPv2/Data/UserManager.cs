@@ -23,8 +23,11 @@ namespace EventUPv2
         {
             return restService.SaveTodoItemAsync(item, isNewItem);
         }
+        public Task DeleteTaskAsync(User us)
+        {
+            return restService.DeleteTodoItemAsync(us);
+        }
 
-     
 
 
     }

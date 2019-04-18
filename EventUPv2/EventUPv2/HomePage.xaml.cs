@@ -11,7 +11,7 @@ namespace EventUPv2
         public HomePage()
         {
             InitializeComponent();
-
+            Utype.Text=Constants.CurrentUser.Cognome+" "+Constants.CurrentUser.Nome;
         }
         public void datiAnagrafici(object sender, EventArgs args) {
 

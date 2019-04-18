@@ -71,5 +71,24 @@ namespace EventUPv2
                 Debug.WriteLine(@"\tERROR {0}", ex.Message);
             }
         }
+        public async Task DeleteTodoItemAsync(Admin ad)
+        {
+            var uri = new Uri(string.Format(Constants.UserUrl, ad));
+
+            try
+            {
+                var response = await _client.DeleteAsync(uri);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    Debug.WriteLine(@"\tTodoItem successfully deleted.");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"\tERROR {0}", ex.Message);
+            }
+        }
     }
 }

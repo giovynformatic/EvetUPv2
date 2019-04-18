@@ -9,7 +9,7 @@ namespace EventUPv2
         Task<List<User>> RefreshDataAsync();
 
         Task SaveTodoItemAsync(User item, bool isNewItem);
+        Task DeleteTodoItemAsync(User us);
 
-        
     }
 }

@@ -12,15 +12,15 @@ namespace EventUPv2
 
 
 
-            NomeP.Text = "filippo";
-            CognomeP.Text = "biase";
-            SessoP.Text = "M";
-            DataP.Text = "18/09/1998";
-            NazP.Text = "Italiana";
-            TitoloP.Text = "Ingegnere";
-            CittaP.Text = "Grottaglie";
-            CfP.Text = "flpbse";
-            EmailP.Text = "filippobiase@gmail.com";
+            NomeP.Text = Constants.CurrentUser.Nome;
+            CognomeP.Text = Constants.CurrentUser.Cognome;
+            SessoP.Text = Constants.CurrentUser.Sesso;
+            DataP.Text = Constants.CurrentUser.Data;
+            NazP.Text = Constants.CurrentUser.Nazionalità;
+            TitoloP.Text = Constants.CurrentUser.titolo;
+            CittaP.Text = Constants.CurrentUser.Città;
+            CfP.Text = Constants.CurrentUser.cf;
+            EmailP.Text = Constants.CurrentUser.email;
 
         }
     }

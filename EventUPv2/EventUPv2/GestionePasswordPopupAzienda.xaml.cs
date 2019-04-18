@@ -1,27 +1,31 @@
 ﻿using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace EventUPv2
 {
-    public partial class GestionePasswordPopup 
-    {
-        public GestionePasswordPopup()
-        {
-            InitializeComponent();
-        }
-
+	
+	public partial class GestionePasswordPopupAzienda 
+	{
+		public GestionePasswordPopupAzienda ()
+		{
+			InitializeComponent ();
+		}
         async void ModifyButton(object sender, EventArgs args)
         {
-            if (oldpass.Text == Constants.CurrentUser.pass)
+            if (oldpass.Text == Constants.CurrentAdmin.pass)
             {
                 if (newpass.Text == confirm.Text)
                 {
-                  //  await App.UsManager.DeleteTaskAsync(Constants.CurrentUser);//codice per back-end
-                    Constants.CurrentUser.pass = newpass.Text;
-                    //   await App.UsManager.SaveTaskAsync(Constants.CurrentUser);//codice per back-end
+                    //  await App.AdManager.DeleteTaskAsync(Constants.CurrentAdmin);//codice per back-end
+                    Constants.CurrentAdmin.pass = newpass.Text;
+                    //   await App.AdManager.SaveTaskAsync(Constants.CurrentAdmin);//codice per back-end
                     await DisplayAlert("Attenzione", "Password modificata", "OK");
                     await PopupNavigation.Instance.PopAsync();
                 }
@@ -34,7 +38,7 @@ namespace EventUPv2
             {
                 await DisplayAlert("Attenzione", "la vecchia password è sbagliata", "OK");
             }
-           
+
         }
     }
 }
