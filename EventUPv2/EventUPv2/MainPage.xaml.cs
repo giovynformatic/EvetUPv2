@@ -28,9 +28,10 @@ namespace EventUPv2
 
                 //VerifyUser(emailUser.Text, passUser.Text);
                 List<User> listaUtenti = new List<User>();
-                //listaUtenti=await App.UsManager.GetTasksAsync();// codice da usare per connessione back-end
-            var us1 = new User("Filippo", "Corni", "M", "18/09/1998", "italiana", "ingegnere", "Milano", "qwertyuiop", "Filippo.corni@gmail.com", "cocco");
-            var us2 = new User("Giuseppe", "Gesualdo", "M", "17/11/1981", "italiana", "falegname", "Betlemme", "gesdrtyuim", "Gesu.gesualdo@gmail.com", "asinello");
+            Boolean[] inters = new Boolean[7] { false, false, false, false, false, false, false};
+            //listaUtenti=await App.UsManager.GetTasksAsync();// codice da usare per connessione back-end
+            var us1 = new User("Filippo", "Corni", "M", "18/09/1998", "italiana", "ingegnere", "Milano", "qwertyuiop", "Filippo.corni@gmail.com", "cocco",inters);
+            var us2 = new User("Giuseppe", "Gesualdo", "M", "17/11/1981", "italiana", "falegname", "Betlemme", "gesdrtyuim", "Gesu.gesualdo@gmail.com", "asinello",inters);
             listaUtenti.Add(us1);
             listaUtenti.Add(us2);
             int acces = 0;

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EventUPv2.RegistratiInteressi">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <TableView Margin="0,0,0,40" Intent="Form"  WidthRequest="20" HeightRequest="40" BackgroundColor="White" >
+                <TableRoot >
+                    <TableSection Title="Interessi"  >
+                        <SwitchCell x:Name="elettronicaSwitch" Text="elettronica"  />
+                        <SwitchCell x:Name="informaticaSwitch" Text="Informatica"  />
+                        <SwitchCell x:Name="architetturaSwitch" Text="Architettura"  />
+                        <SwitchCell x:Name="arteSwitch" Text="Arte"  />
+                        <SwitchCell x:Name="musicaSwitch" Text="Musica"  />
+                        <SwitchCell x:Name="lingueSwitch" Text="Lingue"  />
+                        
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <Button Margin="75,20,75,75" Text="Avanti" FontSize="15" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Clicked="AvantiUser2"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

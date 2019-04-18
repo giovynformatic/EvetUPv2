@@ -18,7 +18,7 @@ namespace EventUPv2
             InitializeComponent();
             isNewItem = isNew;
         }
-         async void RegisterUser(object sender, EventArgs args)
+         async void AvantiUser(object sender, EventArgs args)
         {
             
             String n = nome.Text;
@@ -35,11 +35,13 @@ namespace EventUPv2
 
             if (String.Equals(p, cp))
             {
-                var us= new User(n,c,s,d,naz,tit,cit,codFisc,mail,p);
-                await App.UsManager.SaveTaskAsync(us, isNewItem);
-                await Navigation.PopAsync();
+                Boolean[] inters = new Boolean[6] { false, false, false, false, false, false };
+                var us= new User(n,c,s,d,naz,tit,cit,codFisc,mail,p,inters);
+                // await App.UsManager.SaveTaskAsync(us, isNewItem);//codice back-end
+                Constants.CurrentUser = us;
+                await Navigation.PushModalAsync(new RegistratiInteressi());
 
-                await DisplayAlert("Errore", "" ,"OK");
+                
             }
             else {
                 await DisplayAlert("Errore", "le password non corrispondono", "OK");

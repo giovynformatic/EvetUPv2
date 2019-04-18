@@ -143,7 +143,7 @@
                                 FontSize="18" 
                                 BackgroundColor="White" 
                                 PlaceholderColor="Gray" />
-            <Button Margin="75,20,75,75" Text="Registrati" FontSize="15" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Clicked="RegisterUser"/>
+            <Button Margin="75,20,75,75" Text="Avanti" FontSize="15" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Clicked="AvantiUser"/>
 
         </StackLayout>
     </ScrollView>
