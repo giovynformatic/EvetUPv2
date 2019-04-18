@@ -34,7 +34,14 @@ namespace EventUPv2
         async void aziende(object sender, EventArgs args)
         {
 
-            await Navigation.PushModalAsync(new SelectAziende());
+            await Navigation.PushAsync(new SelectAziende());
+
+        }
+
+        async void interest(object sender, EventArgs args)
+        {
+
+            await Navigation.PushAsync(new RegistratiInteressi());
 
         }
 

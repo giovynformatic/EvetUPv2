@@ -27,7 +27,8 @@ namespace EventUPv2
         {
             Boolean[] inters = new Boolean[6] { elettronicaSwitch.On, informaticaSwitch.On, architetturaSwitch.On, arteSwitch.On, musicaSwitch.On, lingueSwitch.On };
             Constants.CurrentUser.interessi = inters;
-          //  Console.WriteLine("inters[2].ToString() returns {0}", inters[2]);
+            //  Console.WriteLine("inters[2].ToString() returns {0}", inters[2]);
+            await Navigation.PopAsync();
             
         }
     }

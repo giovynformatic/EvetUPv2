@@ -28,7 +28,7 @@ namespace EventUPv2
 
                 //VerifyUser(emailUser.Text, passUser.Text);
                 List<User> listaUtenti = new List<User>();
-            Boolean[] inters = new Boolean[7] { false, false, false, false, false, false, false};
+            Boolean[] inters = new Boolean[7] { true, false, false, true, false, false, false};
             //listaUtenti=await App.UsManager.GetTasksAsync();// codice da usare per connessione back-end
             var us1 = new User("Filippo", "Corni", "M", "18/09/1998", "italiana", "ingegnere", "Milano", "qwertyuiop", "Filippo.corni@gmail.com", "cocco",inters);
             var us2 = new User("Giuseppe", "Gesualdo", "M", "17/11/1981", "italiana", "falegname", "Betlemme", "gesdrtyuim", "Gesu.gesualdo@gmail.com", "asinello",inters);
@@ -41,7 +41,7 @@ namespace EventUPv2
                 if (emailUser.Text == listaUtenti.ElementAt(a).email && passUser.Text == listaUtenti.ElementAt(a).pass)
                 {
                     Constants.CurrentUser = listaUtenti.ElementAt(a);
-                    await Navigation.PushModalAsync(new HomePage());
+                    await Navigation.PushAsync(new HomePage());
                     AccesCons = true;
                     break;
                     

@@ -15,7 +15,7 @@ namespace EventUPv2
             UsManager = new UserManager(new RestServiceUser());
             
             AdManager = new AdminManager(new RestServiceAdmin());
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
