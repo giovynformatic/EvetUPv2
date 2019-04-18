@@ -18,7 +18,9 @@ namespace EventUPv2
         public String email { get; set; }
         public String pass { get; set; }
         public Boolean[] interessi { get; set; }
-        public User(String Nome, String Cognome, String Sesso, String Data, String Nazionalità, String titolo, String Città, String cf, String email, String pass,Boolean[] interessi)
+        public String[] aziende { get; set; }
+        public Boolean[] valAz { get; set; }
+        public User(String Nome, String Cognome, String Sesso, String Data, String Nazionalità, String titolo, String Città, String cf, String email, String pass,Boolean[] interessi, String[] aziende,Boolean[] valAz)
         {
             this.Nome = Nome; 
             this.Cognome = Cognome;
@@ -31,6 +33,8 @@ namespace EventUPv2
             this.email = email;
             this.pass = pass;
             this.interessi = interessi;
+            this.aziende = aziende;
+            this.valAz = valAz;
         }
     }
 }

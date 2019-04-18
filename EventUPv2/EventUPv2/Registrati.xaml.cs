@@ -42,7 +42,7 @@ namespace EventUPv2
                 Boolean[] val = new Boolean[listaAziende.Count];
                 val[0] = false;
                 val[1] = false;
-                val[3] = false;
+                val[2] = false;
                 var us= new User(n,c,s,d,naz,tit,cit,codFisc,mail,p,inters,az,val);
                 // await App.UsManager.SaveTaskAsync(us, isNewItem);//codice back-end
                 Constants.CurrentUser = us;

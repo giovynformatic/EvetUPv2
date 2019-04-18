@@ -135,7 +135,7 @@ namespace EventUPv2
             Boolean[] val = new Boolean[listaAziende.Count];
             val[0] = true;
             val[1] = false;
-            val[3] = true;
+            val[2] = true;
             for (int x = 0; x < listaAziende.Count; x++)
             {
                 az[x] = listaAziende.ElementAt(x).NomeAzienda;
