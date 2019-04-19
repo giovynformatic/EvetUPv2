@@ -14,6 +14,7 @@ namespace EventUPv2
         public static Admin CurrentAdmin = null;
         public static User CurrentUser = null;
         public static List<Admin> listaAziende;
+        
   
     }
 }

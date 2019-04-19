@@ -4,25 +4,27 @@
              x:Class="EventUPv2.SelectAziende">
     <ContentPage.Content>
         <ListView ItemsSource="{Binding DataList}" Margin="20">
-            <ListView.ItemTemplate>
+            <ListView.ItemTemplate >
                 <DataTemplate>
                     <ViewCell>
-                        <Grid Margin="0,0,0,10">
+                        <Grid Margin="0,0,0,0" BackgroundColor="White">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />
+                                
                             </Grid.ColumnDefinitions>
-                            <StackLayout VerticalOptions="CenterAndExpand">
-                                <Label Text="{Binding Data.NomeAzienda}"  />
+                            <StackLayout VerticalOptions="CenterAndExpand" BackgroundColor="White">
+                                <Label  BackgroundColor="White" Text="{Binding Data.NomeAzienda}"  />
                                 
                             </StackLayout>
-                            <Switch IsToggled="{Binding Selected}" Grid.Column="1" />
+                            <Switch x:Name="{Binding Data.NomeAzienda}"  IsToggled="{Binding Selected}" Grid.Column="1" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
             <ListView.Footer>
-                <Button Text="Finished" Command="{Binding FinishCommand}" />
+                
+                <Button x:Name="aziendeButton" Text="Salva Aziende" Margin="75,20,75,75"  FontSize="Small" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Clicked="InteressiUser"/>
             </ListView.Footer>
         </ListView>
     </ContentPage.Content>

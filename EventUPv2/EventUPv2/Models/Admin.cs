@@ -6,6 +6,7 @@ namespace EventUPv2
 {
      public  class Admin
     {
+        public int id { get; set; }
         public String NomeAzienda { get; set; }
         public String Sede { get; set; }
         public String piva { get; set; }

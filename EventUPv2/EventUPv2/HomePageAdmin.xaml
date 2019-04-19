@@ -8,7 +8,7 @@
     <!--Pages can be added as references or inline-->
     <ContentPage Title="Profilo">
         <ScrollView BackgroundColor="White">
-            <StackLayout Margin="20,50,20,0" Spacing="32" >
+            <StackLayout Margin="20,20,20,0" Spacing="32" >
                 <ic:CircleImage    
             Margin="100,0,100,0"
             Source ="logo.png"
@@ -21,16 +21,17 @@
                     <TableRoot >
                         <TableSection >
 
-                            <ViewCell x:Name="UserDataB" Tapped="datiAzienda"><Label Text="Dati Azienda" Font="18" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" /></ViewCell>
-                            <ViewCell x:Name="UserPassB" Tapped="gestionePasswordAzienda"><Label Text="Gestione Password" Font="18" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" /></ViewCell>
+                            <ViewCell x:Name="UserDataB" Tapped="datiAzienda"><Label Text="Dati Azienda" Font="Medium" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" /></ViewCell>
+                            <ViewCell x:Name="UserPassB" Tapped="gestionePasswordAzienda"><Label Text="Gestione Password" Font="Medium" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" /></ViewCell>
                           
 
                         </TableSection>
-                        <TableSection Title="Options">
+                      <!--  <TableSection Title="Options">
 
                          
                             <SwitchCell x:Name="PreSwitch" Text="Prenotazione Automatica" On="false" />
-                        </TableSection>
+                        </TableSection>  
+                        -->
 
 
 

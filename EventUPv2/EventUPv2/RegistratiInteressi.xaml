@@ -18,7 +18,7 @@
                     </TableSection>
                 </TableRoot>
             </TableView>
-            <Button Margin="75,20,75,75" Text="Avanti" FontSize="15" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Clicked="AvantiUser2"/>
+            <Button x:Name="interessiButton" Text="salva interessi" Margin="75,20,75,75"  FontSize="Small" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Clicked="FinishInteressi"/>
 
         </StackLayout>
     </ContentPage.Content>

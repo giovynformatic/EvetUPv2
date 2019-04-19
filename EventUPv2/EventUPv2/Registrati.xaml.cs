@@ -18,43 +18,60 @@ namespace EventUPv2
         {
             InitializeComponent();
             isNewItem = isNew;
-        }
-         async void AvantiUser(object sender, EventArgs args)
-        {
+            sesso.SelectedIndex = 0;
             
-            String n = nome.Text;
-            String c = cognome.Text;
-            String s = sesso.Text;
-            String d = data.Text;
-            String naz = nazionalità.Text;
-            String tit = titolo.Text;
-            String cit = città.Text;
-            String codFisc = cf.Text;
-            String mail = emailr_user.Text;
-            String p = passr_user.Text;
-            String cp = cpassr_user.Text;
-
-            if (String.Equals(p, cp))
-            {
-                Boolean[] inters = new Boolean[6] { false, false, false, false, false, false };
-                await AssegnaAziende();
-                String[] az = new String[listaAziende.Count];
-                Boolean[] val = new Boolean[listaAziende.Count];
-                val[0] = false;
-                val[1] = false;
-                val[2] = false;
-                var us= new User(n,c,s,d,naz,tit,cit,codFisc,mail,p,inters,az,val);
-                // await App.UsManager.SaveTaskAsync(us, isNewItem);//codice back-end
-                Constants.CurrentUser = us;
-                await Navigation.PushAsync(new RegistratiInteressi());
-
-                
-            }
-            else {
-                await DisplayAlert("Errore", "le password non corrispondono", "OK");
-            }
         }
+        async void CompletaUser(object sender, EventArgs args)
+        {
+            if (condizioni.Checked)
+            {
+                if (nome.Text != null && cognome.Text != null && emailr_user.Text != null && passr_user != null)
+                {
+                    String n = nome.Text;
+                    String c = cognome.Text;
+                    String s = sesso.SelectedItem.ToString();
+                    String d = data.Date.ToString().Substring(0, 10);
+                    String naz = nazionalità.Text;
+                    String tit = titolo.Text;
+                    String cit = città.Text;
+                    String codFisc = cf.Text;
+                    String mail = emailr_user.Text;
+                    String p = passr_user.Text;
+                    String cp = cpassr_user.Text;
 
+                    if (String.Equals(p, cp))
+                    {
+                        Boolean[] inters = new Boolean[6] { false, false, false, false, false, false };
+                        await AssegnaAziende();
+                        String[] az = new String[listaAziende.Count];
+                        Boolean[] val = new Boolean[listaAziende.Count];
+                        val[0] = false;
+                        val[1] = false;
+                        val[2] = false;
+                        var us = new User(n, c, s, d, naz, tit, cit, codFisc, mail, p, inters, az, val);
+
+                        Constants.CurrentUser = us;
+                        await Navigation.PushAsync(new RegistratiInteressi());
+
+
+                    }
+                    else
+                    {
+                        await DisplayAlert("Errore", "le password non corrispondono", "OK");
+                    }
+                }
+                else
+                { await DisplayAlert("Attenzione", "I campi nome, cognome, email e password sono obbligatori", "OK"); }
+            }
+            else
+            {
+                    await DisplayAlert("Attenzione", "Prima di procedere è necessario accettare i termini e le condizioni d'uso", "OK");
+
+            }
+                
+            
+        }
+     
         async Task AssegnaAziende()
         {
             listaAziende = new List<Admin>();
@@ -66,6 +83,9 @@ namespace EventUPv2
             listaAziende.Add(ad2);
             listaAziende.Add(ad3);
         }
+        
+
+
 
     }
 }

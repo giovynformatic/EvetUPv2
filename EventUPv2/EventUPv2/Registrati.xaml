@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              xmlns:custom="clr-namespace:EventUPv2"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
              x:Class="EventUPv2.Registrati">
     <!--Pages can be added as references or inline-->
 
@@ -22,10 +23,10 @@
                                 HeightRequest="40" 
                                 IsCurvedCornersEnabled="True" 
                                 BorderColor="BlueViolet" 
-                                Margin="20,50,20,20" 
+                                Margin="20,0,20,20" 
                                 x:Name="nome"
                                 Placeholder="Nome" 
-                                FontSize="18" 
+                                FontSize="Medium" 
                                 BackgroundColor="White"
                                 PlaceholderColor="Gray" />
             <custom:CustomEntry 
@@ -36,10 +37,10 @@
                                 Margin="20,0,20,20" 
                                 x:Name="cognome" 
                                 Placeholder="Cognome"  
-                                FontSize="18" 
+                                FontSize="Medium" 
                                 BackgroundColor="White" 
                                 PlaceholderColor="Gray"/>
-            <custom:CustomEntry 
+           <!-- <custom:CustomEntry 
                                 CornerRadius="20" 
                                 HeightRequest="40" 
                                 IsCurvedCornersEnabled="True" 
@@ -47,10 +48,29 @@
                                 Margin="20,0,20,20" 
                                 x:Name="sesso" 
                                 Placeholder="Sesso"  
-                                FontSize="18"
+                                FontSize="Medium"
                                 BackgroundColor="White"
-                                PlaceholderColor="Gray" />
-            <custom:CustomEntry 
+                                PlaceholderColor="Gray" />-->
+            <custom:CustomPicker
+                                x:Name="sesso" 
+                                ItemDisplayBinding="sesso"  
+                                CornerRadius="20" 
+                                HeightRequest="40" 
+                                IsCurvedCornersEnabled="True" 
+                                BorderColor="BlueViolet" 
+                                Margin="20,0,20,20"  
+                                FontSize="Medium"
+                                BackgroundColor="White">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Sesso</x:String>
+                        <x:String>Maschio</x:String>
+                        <x:String>Femmina</x:String>
+                        <x:String>Altro</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </custom:CustomPicker>
+            <!-- <custom:CustomEntry 
                                 CornerRadius="20" 
                                 HeightRequest="40" 
                                 IsCurvedCornersEnabled="True" 
@@ -58,9 +78,21 @@
                                 Margin="20,0,20,20" 
                                 x:Name="data"
                                 Placeholder="Data di Nascita"
-                                FontSize="18"
+                                FontSize="Medium"
                                 BackgroundColor="White"
-                                PlaceholderColor="Gray" />
+                                PlaceholderColor="Gray" />-->
+            <custom:CustomDatePicker    
+                            CornerRadius="20" 
+                            HeightRequest="40" 
+                            IsCurvedCornersEnabled="True" 
+                            BorderColor="BlueViolet" 
+                            Margin="20,0,20,20" 
+                            x:Name="data"
+                            MinimumDate="01/01/1900"
+                            MaximumDate="01/01/2090"
+                            FontSize="Medium"
+                            BackgroundColor="White"
+                                />
             <custom:CustomEntry 
                                 CornerRadius="20" 
                                 HeightRequest="40" 
@@ -69,7 +101,7 @@
                                 Margin="20,0,20,20" 
                                 x:Name="nazionalità" 
                                 Placeholder="nazionalità"  
-                                FontSize="18" 
+                                FontSize="Medium" 
                                 BackgroundColor="White" 
                                 PlaceholderColor="Gray" />
             <custom:CustomEntry 
@@ -80,7 +112,7 @@
                                 Margin="20,0,20,20"  
                                 x:Name="titolo" 
                                 Placeholder="Titolo di Studio" 
-                                FontSize="18" 
+                                FontSize="Medium" 
                                 BackgroundColor="White" 
                                 PlaceholderColor="Gray" />
             <custom:CustomEntry 
@@ -91,7 +123,7 @@
                                 Margin="20,0,20,20" 
                                 x:Name="città"  
                                 Placeholder="Città di Residenza"  
-                                FontSize="18" 
+                                FontSize="Medium" 
                                 BackgroundColor="White" 
                                 PlaceholderColor="Gray" />
             <custom:CustomEntry 
@@ -103,10 +135,11 @@
                                 x:Name="cf"  
                                 Placeholder="Codice Fiscale" 
                                 MaxLength="16"  
-                                FontSize="18" 
+                                FontSize="Medium" 
                                 BackgroundColor="White" 
                                 PlaceholderColor="Gray" />
-            <custom:CustomEntry 
+            <custom:CustomEntry
+                                Keyboard="Email"
                                 CornerRadius="20" 
                                 HeightRequest="40" 
                                 IsCurvedCornersEnabled="True" 
@@ -114,7 +147,7 @@
                                 Margin="20,0,20,20"  
                                 x:Name="emailr_user"  
                                 Placeholder="E-mail"  
-                                FontSize="18" 
+                                FontSize="Medium" 
                                 BackgroundColor="White" 
                                 PlaceholderColor="Gray" />
             <custom:CustomEntry 
@@ -127,7 +160,7 @@
                                 MaxLength="20" 
                                 IsPassword="True" 
                                 Placeholder="Password"  
-                                FontSize="18" 
+                                FontSize="Medium" 
                                 BackgroundColor="White" 
                                 PlaceholderColor="Gray" />
             <custom:CustomEntry 
@@ -140,10 +173,14 @@
                                 MaxLength="20"
                                 IsPassword="True" 
                                 Placeholder="Conferma Password"  
-                                FontSize="18" 
+                                FontSize="Medium" 
                                 BackgroundColor="White" 
                                 PlaceholderColor="Gray" />
-            <Button Margin="75,20,75,75" Text="Avanti" FontSize="15" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Clicked="AvantiUser"/>
+            <controls:CheckBox x:Name="condizioni" DefaultText="Accetta termini e condizioni d'uso" HorizontalOptions="FillAndExpand" FontSize="18"/>
+
+            <!--  <Button x:Name="Interessi" Margin="75,20,75,10" Text="Seleziona interessi" FontSize="15" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Clicked="InteressiUser"/>
+                <Button x:Name="Aziende" Margin="75,20,75,10" Text="Seleziona Aziende" FontSize="15" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Clicked="AziendeUser"/>-->
+                <Button x:Name="Completa" Margin="75,20,75,75" Text="Avanti" FontSize="Small" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Clicked="CompletaUser"/>
 
         </StackLayout>
     </ScrollView>

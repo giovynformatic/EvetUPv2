@@ -12,7 +12,9 @@ namespace EventUPv2
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class RegistratiInteressi : ContentPage
 	{
-		public RegistratiInteressi ()
+        
+
+        public RegistratiInteressi ()
 		{
 			InitializeComponent ();
             elettronicaSwitch.On = Constants.CurrentUser.interessi.ElementAt(0);
@@ -22,14 +24,37 @@ namespace EventUPv2
             musicaSwitch.On = Constants.CurrentUser.interessi.ElementAt(4);
             lingueSwitch.On = Constants.CurrentUser.interessi.ElementAt(5);
 
+ 
         }
-        async void AvantiUser2(object sender, EventArgs args)
+        async void FinishInteressi(object sender, EventArgs args)
         {
             Boolean[] inters = new Boolean[6] { elettronicaSwitch.On, informaticaSwitch.On, architetturaSwitch.On, arteSwitch.On, musicaSwitch.On, lingueSwitch.On };
-            Constants.CurrentUser.interessi = inters;
-            //  Console.WriteLine("inters[2].ToString() returns {0}", inters[2]);
-            await Navigation.PopAsync();
+
+            IReadOnlyList<Page> pagine = Navigation.NavigationStack;
             
+            if (pagine.ElementAt(pagine.Count - 2).ToString() == "EventUPv2.Registrati")//utilizzo count-2 perchè all'interno della pila di navigazione da la pagina precedente
+            {
+                Constants.CurrentUser.interessi = inters;
+                await Navigation.PushAsync(new SelectAziende());
+               // Console.WriteLine("pagine.ToString() returns {0}", pagine.ElementAt(pagine.Count - 2).ToString());
+            }
+            else
+            {
+                if (pagine.ElementAt(pagine.Count - 2).ToString() == "EventUPv2.HomePage")//utilizzo count-2 perchè all'interno della pila di navigazione da la pagina precedente
+                {
+                    await Navigation.PopAsync();
+                    //await App.UsManager.DeleteTaskAsync(Constants.CurrentUser);//codice da usare per connesione backend
+                    Constants.CurrentUser.interessi = inters;
+                   // Console.WriteLine("pagine.ToString() returns {0}", pagine.ElementAt(pagine.Count - 2).ToString());
+                    //  await App.UsManager.SaveTaskAsync(Constants.CurrentUser);//codice da usare per connesione backend
+                }
+            }
+            /*for (int i = 0; i < pagine.Count; i++)
+            {
+                EventUPv2.SelectAziende
+                String s = pagine.ElementAt(i).ToString();
+                Console.WriteLine("pagine.ToString() returns {0}",s);
+            }*/
         }
     }
 }

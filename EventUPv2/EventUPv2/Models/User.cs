@@ -6,7 +6,7 @@ namespace EventUPv2
 {
    public  class User
     {
-        
+        public int id { get; set; }
         public String Nome { get; set; }
         public String Cognome { get; set; }
         public String Sesso { get; set; }

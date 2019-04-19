@@ -44,6 +44,7 @@
                                 />   -->
             
             <custom:CustomEntry x:Name="emailUser" 
+                                Keyboard="Email"
                                 CornerRadius="20" 
                                 HeightRequest="40" 
                                 IsCurvedCornersEnabled="True" 
@@ -52,7 +53,7 @@
                                 PlaceholderColor="Gray" 
                                 TextColor="Black"  
                                 Placeholder="E-mail" 
-                                FontSize="18" 
+                                FontSize="Medium" 
                                 BackgroundColor="#White" />
 
                 <custom:CustomEntry x:Name="passUser" 
@@ -65,13 +66,13 @@
                                 Margin="20,0,20,20" 
                                 IsPassword="True" 
                                 Placeholder="Password"  
-                                FontSize="18" 
+                                FontSize="Medium" 
                                 BackgroundColor="#white"  
                                 MaxLength="20"/>
 
-                <Button Margin="75,65,75,0" Text="Login" Clicked="OnLoginUserClicked" FontSize="18"   BackgroundColor="#6495ed" TextColor="White" BorderRadius="23"/>
-                 <Button Margin="20,20,20,0" Text="Forgot your password?" FontSize="18" BackgroundColor="White" TextColor="#6495ed" />
-                <Button Margin="20,20,20,0" Text="Registrati" FontSize="18" BackgroundColor="White"  Clicked="OnRegisterUserClicked" TextColor="#6495ed" />
+                <Button Margin="75,20,75,0" Text="Login" Clicked="OnLoginUserClicked" FontSize="Small"   BackgroundColor="#6495ed" TextColor="White" BorderRadius="23"/>
+                 <Button Margin="20,20,20,0" Text="Forgot your password?" FontSize="Small" BackgroundColor="White" TextColor="#6495ed" />
+                <Button Margin="20,20,20,0" Text="Registrati" FontSize="Small" BackgroundColor="#ffffff"  Clicked="OnRegisterUserClicked" TextColor="#6495ed" />
             
         </StackLayout>
 
@@ -118,6 +119,7 @@
                                 />   -->
 
                 <custom:CustomEntry x:Name="emailAdmin" 
+                                Keyboard="Email"
                                 CornerRadius="20" 
                                 HeightRequest="40" 
                                 IsCurvedCornersEnabled="True" 
@@ -126,7 +128,7 @@
                                 PlaceholderColor="Gray" 
                                 TextColor="Black"  
                                 Placeholder="E-mail" 
-                                FontSize="18" 
+                                FontSize="Medium" 
                                 BackgroundColor="#White" />
 
                 <custom:CustomEntry x:Name="passAdmin" 
@@ -139,12 +141,12 @@
                                 Margin="20,0,20,20" 
                                 IsPassword="True" 
                                 Placeholder="Password"  
-                                FontSize="18" 
+                                FontSize="Medium" 
                                 BackgroundColor="#white"  
                                 MaxLength="20"/>
 
-                <Button Margin="75,65,75,0" Text="Login" Clicked="OnLoginAdminClicked" FontSize="18"   BackgroundColor="#6495ed" TextColor="White" BorderRadius="23"/>
-                <Button Margin="20,20,20,0" Text="Forgot your password?" FontSize="18" BackgroundColor="White" TextColor="#6495ed" />
+                <Button Margin="75,20,75,0" Text="Login" Clicked="OnLoginAdminClicked" FontSize="Small"   BackgroundColor="#6495ed" TextColor="White" BorderRadius="23"/>
+                <Button Margin="20,20,20,0" Text="Forgot your password?" FontSize="Small" BackgroundColor="White" TextColor="#6495ed" />
                
 
             </StackLayout>

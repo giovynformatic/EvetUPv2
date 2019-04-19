@@ -12,55 +12,55 @@ x:Class="EventUPv2.PopupTaskView">
                 <ViewCell >
                     <StackLayout Orientation="Horizontal">
                         <Label x:Name="uno" Text="     Nome: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
-                        <Label x:Name="NomeP" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                        <Label x:Name="NomeP" Text="" Font="Medium" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
                     </StackLayout>
                 </ViewCell>
                 <ViewCell >
                     <StackLayout Orientation="Horizontal">
                         <Label x:Name="due" Text="     Cognome: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
-                        <Label x:Name="CognomeP" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                        <Label x:Name="CognomeP" Text="" Font="Medium" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
                 </StackLayout>
                 </ViewCell>
                 <ViewCell >
                     <StackLayout Orientation="Horizontal">
                         <Label x:Name="tre" Text="     Sessso: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
-                        <Label x:Name="SessoP" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                        <Label x:Name="SessoP" Text="" Font="Medium" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
                     </StackLayout>    
                 </ViewCell>
                 <ViewCell >
                     <StackLayout Orientation="Horizontal">
                         <Label x:Name="quattro" Text="     Data di Nascita: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
-                        <Label x:Name="DataP" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                        <Label x:Name="DataP" Text="" Font="Medium" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
                     </StackLayout>
                 </ViewCell>
                 <ViewCell >
                     <StackLayout Orientation="Horizontal">
                         <Label x:Name="cinque" Text="     Nazionalità: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
-                        <Label x:Name="NazP" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                        <Label x:Name="NazP" Text="" Font="Medium" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
                     </StackLayout>
                 </ViewCell>
                 <ViewCell >
                     <StackLayout Orientation="Horizontal">
                         <Label x:Name="sei" Text="     Titolo di Studio: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
-                        <Label x:Name="TitoloP" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                        <Label x:Name="TitoloP" Text="" Font="Medium" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
                     </StackLayout>
                 </ViewCell>
                 <ViewCell >
                     <StackLayout Orientation="Horizontal">
                         <Label x:Name="sette" Text="     Città: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
-                        <Label x:Name="CittaP" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                        <Label x:Name="CittaP" Text="" Font="Medium" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
                     </StackLayout>
                 </ViewCell>
                 <ViewCell >
                     <StackLayout Orientation="Horizontal">
                         <Label x:Name="otto" Text="     Codice Fiscale: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
-                        <Label x:Name="CfP" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                        <Label x:Name="CfP" Text="" Font="Medium" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
                     </StackLayout>
                 </ViewCell>
                 <ViewCell >
                     <StackLayout Orientation="Horizontal">
                         <Label x:Name="nove" Text="     E-Mail: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
-                        <Label x:Name="EmailP" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                        <Label x:Name="EmailP" Text="" Font="Medium" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
                     </StackLayout>
                 </ViewCell>
               

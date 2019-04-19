@@ -12,26 +12,26 @@ x:Class="EventUPv2.PopupTaskViewAzienda">
                 <ViewCell >
                     <StackLayout Orientation="Horizontal">
                         <Label x:Name="uno" Text="     Nome Azienda: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
-                        <Label x:Name="NomeAzienda" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                        <Label x:Name="NomeAzienda" Text="" Font="Medium" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
                     </StackLayout>
                 </ViewCell>
              
                 <ViewCell >
                     <StackLayout Orientation="Horizontal">
                         <Label x:Name="tre" Text="     Sede: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
-                        <Label x:Name="Sede" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                        <Label x:Name="Sede" Text="" Font="Medium" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
                     </StackLayout>
                 </ViewCell>
                 <ViewCell >
                     <StackLayout Orientation="Horizontal">
                         <Label x:Name="quattro" Text="     P.iva: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
-                        <Label x:Name="Piva" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                        <Label x:Name="Piva" Text="" Font="Medium" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
                     </StackLayout>
                 </ViewCell>
                 <ViewCell >
                     <StackLayout Orientation="Horizontal">
                         <Label x:Name="cinque" Text="     email: " Font="14" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" />
-                        <Label x:Name="email" Text="" Font="18" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
+                        <Label x:Name="email" Text="" Font="Medium" HorizontalOptions="End" VerticalOptions="Center" TextColor="Black" />
                     </StackLayout>
                 </ViewCell>
             </TableSection>
