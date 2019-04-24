@@ -96,6 +96,8 @@
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CustomEntryRenderer.cs" />
+    <Compile Include="CustomPickerRenderer.cs" />
+    <Compile Include="CustomDataPickerRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

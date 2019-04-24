@@ -11,7 +11,7 @@ namespace EventUPv2
        BindableProperty.Create(
            nameof(BorderColor),
            typeof(Color),
-           typeof(CustomEntry),
+           typeof(CustomPicker),
            Color.Gray);
 
         // Gets or sets BorderColor value
@@ -26,7 +26,7 @@ namespace EventUPv2
     BindableProperty.Create(
             nameof(BorderWidth),
             typeof(int),
-            typeof(CustomEntry),
+            typeof(CustomPicker),
            Device.OnPlatform<int>(1, 2, 2)
 
             );
@@ -42,7 +42,7 @@ namespace EventUPv2
         BindableProperty.Create(
             nameof(CornerRadius),
             typeof(double),
-            typeof(CustomEntry),
+            typeof(CustomPicker),
             Device.OnPlatform<double>(6, 7, 7));
 
         // Gets or sets CornerRadius value
@@ -56,7 +56,7 @@ namespace EventUPv2
         BindableProperty.Create(
             nameof(IsCurvedCornersEnabled),
             typeof(bool),
-            typeof(CustomEntry),
+            typeof(CustomPicker),
             true);
 
         // Gets or sets IsCurvedCornersEnabled value
