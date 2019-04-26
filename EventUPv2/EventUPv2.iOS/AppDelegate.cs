@@ -4,7 +4,7 @@ using System.Linq;
 using ImageCircle.Forms.Plugin.iOS;
 using Foundation;
 using UIKit;
-
+using ZXing.Mobile;
 namespace EventUPv2.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -26,8 +26,9 @@ namespace EventUPv2.iOS
             global::Xamarin.Forms.Forms.Init();
             ImageCircleRenderer.Init();
             Rg.Plugins.Popup.Popup.Init();
-
             LoadApplication(new App());
+
+
 
             return base.FinishedLaunching(app, options);
         }

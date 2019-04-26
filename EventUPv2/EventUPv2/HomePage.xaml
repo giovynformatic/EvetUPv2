@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TabbedPage  xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstraction"
              xmlns:custom="clr-namespace:EventUPv2"
              x:Class="EventUPv2.HomePage">
     
@@ -79,10 +79,185 @@
         <ScrollView BackgroundColor="White">
             <StackLayout Margin="20,10,20,0" Spacing="32" >
 
-             
+                <TableView Margin="0,0,0,0" Intent="Form"  WidthRequest="20" HeightRequest="40" BackgroundColor="White" >
+                    <TableRoot >
+                         <TableSection >
+                             <ViewCell Tapped="Evento">
+                      <StackLayout Orientation="Horizontal">
+                          <ic:CircleImage Source="immagine.png" 
+                                          HorizontalOptions="Start"
+                                 VerticalOptions="CenterAndExpand" 
+                                          />
+                          <Label Text="Titolo"
+                                 
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Start"
+                                 TextColor="#f35e20" />
+                          <Label Text="Descrizione"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="End"
+                                 TextColor="#503026" />
+                          
+                      </StackLayout>
+                  </ViewCell>
+                        </TableSection>
+                        
+                    </TableRoot>
+                </TableView>
 
 
             </StackLayout>
         </ScrollView>
+    </ContentPage>
+   
+<ContentPage Title="Eventi in corso">
+        <ScrollView BackgroundColor="White">
+            <StackLayout Margin="20,10,20,0" Spacing="32" >
+
+                <TableView Margin="0,0,0,0" Intent="Form"  WidthRequest="20" HeightRequest="40" BackgroundColor="White" >
+                    <TableRoot >
+                         <TableSection >
+                             <ViewCell Tapped="Evento">
+                      <StackLayout Orientation="Horizontal">
+                          <ic:CircleImage Source="immagine.png" 
+                                          HorizontalOptions="Start"
+                                 VerticalOptions="CenterAndExpand" 
+                                          />
+                          <Label Text="Titolo"
+                                 
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Start"
+                                 TextColor="#f35e20" />
+                          <Label Text="Descrizione"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="End"
+                                 TextColor="#503026" />
+                          
+                      </StackLayout>
+                  </ViewCell>
+                        </TableSection>
+                        
+                    </TableRoot>
+                </TableView>
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage>
+   
+<ContentPage Title="Eventi Passati">
+        <ScrollView BackgroundColor="White">
+            <StackLayout Margin="20,10,20,0" Spacing="32" >
+
+                <TableView Margin="0,0,0,0" Intent="Form"  WidthRequest="20" HeightRequest="40" BackgroundColor="White" >
+                    <TableRoot >
+                         <TableSection >
+                             <ViewCell Tapped="Evento">
+                      <StackLayout Orientation="Horizontal">
+                          <ic:CircleImage Source="immagine.png" 
+                                          HorizontalOptions="Start"
+                                 VerticalOptions="CenterAndExpand" 
+                                          />
+                          <Label Text="Titolo"
+                                 
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Start"
+                                 TextColor="#f35e20" />
+                          <Label Text="Descrizione"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="End"
+                                 TextColor="#503026" />
+                          
+                      </StackLayout>
+                  </ViewCell>
+                        </TableSection>
+                        
+                    </TableRoot>
+                </TableView>
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage>
+   
+<ContentPage Title="News">
+        <ListView ItemsSource="{Binding DataList}" Margin="20">
+            <ListView.Header>
+              
+                        <StackLayout Orientation="Horizontal">
+                <custom:CustomEntry CornerRadius="20" 
+                                HeightRequest="40" 
+                                IsCurvedCornersEnabled="True" 
+                                BorderColor="BlueViolet" 
+                                WidthRequest="300"    
+                                HorizontalOptions="StartAndExpand" 
+                                VerticalOptions="CenterAndExpand" 
+                                Placeholder="Ricerca" 
+                                FontSize="Medium" 
+                                BackgroundColor="Gray"
+                                PlaceholderColor="Blue"
+                                x:Name="search"/>
+                    <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/search/ultraviolet/50/3498db" Clicked="searchButton"/>
+                    <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/menu/ultraviolet/50/3498db" Clicked="menuButton"/>
+          </StackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                     <ViewCell Tapped="News">
+                        <StackLayout Orientation="Horizontal">
+                          <ic:CircleImage Source="{Binding News.imm}"
+                                          HorizontalOptions="Start"
+                                 VerticalOptions="CenterAndExpand" 
+                                          />
+                          <Label Text="{Binding News.Titolo}"
+                                 
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Start"
+                                 TextColor="#f35e20" />
+                          <Label Text="{Binding News.Descrizione}"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="End"
+                                 TextColor="#503026" />
+                          
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.Footer>  
+                </ListView.Footer>
+        </ListView>
+        
+        <!--<ScrollView BackgroundColor="White">
+            <StackLayout Margin="20,10,20,0" Spacing="32" >
+
+                <TableView Margin="0,0,0,0" Intent="Form"  WidthRequest="20" HeightRequest="40" BackgroundColor="White" >
+                    <TableRoot >
+                         <TableSection >
+                             <ViewCell Tapped="News">
+                      <StackLayout Orientation="Horizontal">
+                          <ic:CircleImage Source="immagine.png" 
+                                          HorizontalOptions="Start"
+                                 VerticalOptions="CenterAndExpand" 
+                                          />
+                          <Label Text="Titolo"
+                                 
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Start"
+                                 TextColor="#f35e20" />
+                          <Label Text="Descrizione"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="End"
+                                 TextColor="#503026" />
+                          
+                      </StackLayout>
+                  </ViewCell>
+                        </TableSection>
+                        
+                    </TableRoot>
+                </TableView>
+
+
+            </StackLayout>
+        </ScrollView>-->
     </ContentPage>
 </TabbedPage>
