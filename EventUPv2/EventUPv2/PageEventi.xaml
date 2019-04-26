@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="EventUPv2.PageEventi">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="200" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Image x:Name="immagine" Grid.Row="0"  Grid.Column="0" Grid.RowSpan="2" Source="immagine.png"/>
+        <Label Text="Titolo:" Grid.Row="0" Grid.Column="1" />
+        <Label x:Name="titolo" Text="titolo...." Grid.Row="1" Grid.Column="1"  />
+        <Label Text="Descrizione: " Grid.Row="2" Grid.Column="0" />
+        <Label Text="Descrizione....nfkjdznvòk jxncvkjzxnckvjòfjfjasdjjfkòjòlkjòkljlkòjòljjòdkccdlmsòznckkkjc ldjasnlcasjdnlajnjnascdjnlcajsndljcadlnskcndjksnckjsdanckjadsncjkdnskjacnadjksnckjdsncjkndskjnkcjnknlsdjnkjnalkanda" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" />
+       <Label Text="Data: " Grid.Row="4" Grid.Column="0" />
+        <Label x:Name="data" Text="26/04/2019 " Grid.Row="4" Grid.Column="1" />
+        <Button x:Name="partecipa" Text="Partecipa" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"/>
+</Grid>
+</ContentPage>
