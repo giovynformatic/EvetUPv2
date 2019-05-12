@@ -12,6 +12,9 @@ namespace EventUPv2
     {
         public List<User> listaUtenti;
         public List<Admin> listaAziende;
+        public List<Evento> listaEv;
+        public List<Evento> listaEvIncorso;
+        public List<Evento> listaEvPassati;
         public MainPage()
         {
             InitializeComponent();
@@ -28,6 +31,7 @@ namespace EventUPv2
         {
 
             //VerifyUser(emailUser.Text, passUser.Text);
+            await AssegnaEventi();
             await AssegnaUtenti();
             int acces = 0;
             Boolean AccesCons=false;
@@ -35,6 +39,11 @@ namespace EventUPv2
             {
                 if (emailUser.Text == listaUtenti.ElementAt(a).email && passUser.Text == listaUtenti.ElementAt(a).pass)
                 {
+                    /*
+                      * int tipo=1..2..3(indica al back end il tipo di lista chee li richiedi esempio 1 eventi passati,2 eventi in corso)
+                      Constants.listaEventiCorso = await App.EvManager.GetTasksAsync(tipo);
+                       Constants.listaEventiStorico = await App.EvManager.GetTasksAsync(tipo);
+                       Constants.listaEventi = await App.EvManager.GetTasksAsync(tipo);*/
                     Constants.CurrentUser = listaUtenti.ElementAt(a);
                     await Navigation.PushAsync(new HomePage());
                     AccesCons = true;
@@ -147,6 +156,28 @@ namespace EventUPv2
             listaUtenti.Add(us2);
         }
 
-
+        async Task AssegnaEventi()
+        {
+            //codice utilizzato per app senza back end
+            listaEv = new List<Evento>();
+            listaEvIncorso = new List<Evento>();
+            listaEvPassati = new List<Evento>();
+            byte[] im = null;
+            var ev1 = new Evento("Corso Cisco","25/05/2019",im,"Cisco", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
+            var ev2 = new Evento("Crazyland", "13/06/2019", im, "AWAproductions", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
+            var ev3 = new Evento("Medimex", "15/11/2019", im, "Puglia Records", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
+            listaEv.Add(ev1);
+            listaEv.Add(ev2);
+            listaEv.Add(ev3);
+            listaEvIncorso.Add(ev1);
+            listaEvIncorso.Add(ev2);
+            listaEvIncorso.Add(ev3);
+            listaEvPassati.Add(ev1);
+            listaEvPassati.Add(ev2);
+            listaEvPassati.Add(ev3);
+            Constants.listaEventi = listaEv;
+            Constants.listaEventiCorso = listaEvIncorso;
+            Constants.listaEventiStorico = listaEvPassati;
+        }
     }
 }

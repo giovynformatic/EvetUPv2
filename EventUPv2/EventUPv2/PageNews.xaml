@@ -1,31 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="EventUPv2.PageNews">
-  
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="20" />
-                                <RowDefinition Height="200" />
-                                <RowDefinition Height="20" />
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="20" />
-                                <RowDefinition Height="40" />
-                                </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Image x:Name="immagine" Grid.Row="0"  Grid.Column="0" Grid.RowSpan="2" Source="{Binding News.imm}"/>
-                            <Label Text="Titolo:" Grid.Row="0" Grid.Column="1" />
-                            <Label x:Name="titolo " Text="{Binding News.Titolo}" Grid.Row="1" Grid.Column="1"  />
-                            <Label Text="Descrizione: " Grid.Row="2" Grid.Column="0" />
-                            <Label Text="{Binding News.Descrizione}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" />
-                            <Label Text="Data: " Grid.Row="4" Grid.Column="0" />
-                            <Label x:Name="data" Text="{Binding News.Data}" Grid.Row="4" Grid.Column="1" />
-                            <Button  Text="Partecipa" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"/>
-                        </Grid>
 
-    
-    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="200" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Image x:Name="immagine" Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="2" Source="immagine.png"/>
+        <Label Text="Titolo:" Grid.Row="1" Grid.Column="0" />
+        <Label x:Name="titolo" Text="titolo...." Grid.Row="1" Grid.Column="1"  />
+        <Label Text="Azienda:" Grid.Row="2" Grid.Column="0" />
+        <Label x:Name="azienda" Text="Enersetting" Grid.Row="2" Grid.Column="1"  />
+        <Label Text="Descrizione: " Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" />
+        <Label x:Name="descrizione" Text="Descrizione....nfkjdznvòk jxncvkjzxnckvjòfjfjasdjjfkòjòlkjòkljlkòjòljjòdkccdlmsòznckkkjc ldjasnlcasjdnlajnjnascdjnlcajsndljcadlnskcndjksnckjsdanckjadsncjkdnskjacnadjksnckjdsncjkndskjnkcjnknlsdjnkjnalkanda" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"   />
+        <Label Text="Data: " Grid.Row="5" Grid.Column="0" />
+        <Label x:Name="data" Text="26/04/2019 " Grid.Row="5" Grid.Column="1" />
+        <!-- <Label Text="Titolo:" Grid.Row="0" Grid.Column="1" />
+        <Label x:Name="titolo" Text="titolo...." Grid.Row="0" Grid.Column="2"  />
+        <Label Text="Azienda:" Grid.Row="1" Grid.Column="1" />
+        <Label x:Name="azienda" Text="Enersetting" Grid.Row="1" Grid.Column="2"  />
+        <Image x:Name="immagine" Grid.Row="3"  Grid.Column="0" Source="immagine.png"/>
+        <Label Text="Descrizione: " Grid.Row="4" Grid.Column="0" />
+        <Label x:Name="descrizione" Text="Descrizione....nfkjdznvòk jxncvkjzxnckvjòfjfjasdjjfkòjòlkjòkljlkòjòljjòdkccdlmsòznckkkjc ldjasnlcasjdnlajnjnascdjnlcajsndljcadlnskcndjksnckjsdanckjadsncjkdnskjacnadjksnckjdsncjkndskjnkcjnknlsdjnkjnalkanda" Grid.Row="5" Grid.Column="0"  />
+        <Label Text="Data: " Grid.Row="6" Grid.Column="0" />
+        <Label x:Name="data" Text="26/04/2019 " Grid.Row="6" Grid.Column="1" />
+        <Button x:Name="partecipa" Margin="75,20,75,20" Text="Partecipa"   FontSize="Small" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"/>
+        -->
+    </Grid>
+
+
+
     <!--
     <Grid>
         <Grid.RowDefinitions>

@@ -25,7 +25,7 @@ namespace EventUPv2
             for (int a = 0; a < listaAziende.Count(); a++)
             {
                 SelectableData<ExampleData> s;
-                SelectedData.Add(s=new SelectableData<ExampleData>() { Data = new ExampleData() { NomeAzienda = listaAziende.ElementAt(a).NomeAzienda }});
+                SelectedData.Add(s=new SelectableData<ExampleData>() { Data = new ExampleData() { NomeAzienda = listaAziende.ElementAt(a).NomeAzienda }});   
                 s.Selected = Constants.CurrentUser.valAz.ElementAt(a);
 
 

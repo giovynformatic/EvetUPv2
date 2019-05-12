@@ -79,6 +79,51 @@
         <ScrollView BackgroundColor="White">
             <StackLayout Margin="20,10,20,0" Spacing="32" >
 
+                <ListView ItemsSource="{Binding DataList}" Margin="20">
+                    <ListView.Header>
+
+                        <StackLayout Orientation="Horizontal">
+                            <custom:CustomEntry CornerRadius="20" 
+                                HeightRequest="40" 
+                                IsCurvedCornersEnabled="True" 
+                                BorderColor="BlueViolet" 
+                                WidthRequest="300"    
+                                HorizontalOptions="StartAndExpand" 
+                                VerticalOptions="CenterAndExpand" 
+                                Placeholder="Ricerca" 
+                                FontSize="Medium" 
+                                PlaceholderColor="Gray"
+                                x:Name="searchEv"/>
+                            <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/search/ultraviolet/50/3498db" Clicked="searchButton"/>
+                            <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/menu/ultraviolet/50/3498db" Clicked="menuButton"/>
+                        </StackLayout>
+                    </ListView.Header>
+                    <ListView.ItemTemplate  >
+                        <DataTemplate >
+                            <ViewCell Tapped="Evento"  >
+                                <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+                                    <ic:CircleImage Source="{Binding Data.Immagine}"
+                                          HorizontalOptions="Start"
+                                 VerticalOptions="CenterAndExpand" 
+                                          />
+                                    <Label Text="{Binding Data.Titolo}"
+                                 
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Start"
+                                 TextColor="Black" />
+                                    <Label Text="{Binding Data.Descrizione}"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="End"
+                                 TextColor="Black" />
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                    </ListView.Footer>
+                </ListView>
+                <!--
                 <TableView Margin="0,0,0,0" Intent="Form"  WidthRequest="20" HeightRequest="40" BackgroundColor="White" >
                     <TableRoot >
                          <TableSection >
@@ -104,7 +149,7 @@
                         
                     </TableRoot>
                 </TableView>
-
+-->
 
             </StackLayout>
         </ScrollView>
@@ -194,8 +239,7 @@
                                 VerticalOptions="CenterAndExpand" 
                                 Placeholder="Ricerca" 
                                 FontSize="Medium" 
-                                BackgroundColor="Gray"
-                                PlaceholderColor="Blue"
+                                PlaceholderColor="Gray"
                                 x:Name="search"/>
                     <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/search/ultraviolet/50/3498db" Clicked="searchButton"/>
                     <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/menu/ultraviolet/50/3498db" Clicked="menuButton"/>

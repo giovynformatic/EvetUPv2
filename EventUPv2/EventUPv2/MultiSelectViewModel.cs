@@ -10,24 +10,27 @@ namespace EventUPv2
 {
 	public class MultiSelectViewModel
 	{
+        
 
-		public MultiSelectViewModel(List<SelectableData<ExampleData>> data)
+        public MultiSelectViewModel(List<SelectableData<ExampleData>> data)
 		{
 			DataList = data;
 		}
 
-		// As example if you need to convert
-		//private void LoadData(List<ExampleData> data)
-		//{
-		//	var list = new List<SelectableData<ExampleData>>();
+ 
 
-		//	foreach (var item in data)
-		//		list.Add(new SelectableData<ExampleData>() { Data = item });
+        // As example if you need to convert
+        //private void LoadData(List<ExampleData> data)
+        //{
+        //	var list = new List<SelectableData<ExampleData>>();
 
-		//	DataList = list;
-		//}
+        //	foreach (var item in data)
+        //		list.Add(new SelectableData<ExampleData>() { Data = item });
 
-		public List<SelectableData<ExampleData>> DataList { get; set; }
+        //	DataList = list;
+        //}
+
+        public List<SelectableData<ExampleData>> DataList { get; set; }
 
 		public List<SelectableData<ExampleData>> GetNewData()
 		{

@@ -13,6 +13,9 @@ namespace EventUPv2
     public partial class Registrati : ContentPage
     {
         public List<Admin> listaAziende;
+        public List<Evento> listaEv;
+        public List<Evento> listaEvIncorso;
+        public List<Evento> listaEvPassati;
         bool isNewItem;
         public Registrati (bool isNew = false)
         {
@@ -51,6 +54,13 @@ namespace EventUPv2
                         var us = new User(n, c, s, d, naz, tit, cit, codFisc, mail, p, inters, az, val);
 
                         Constants.CurrentUser = us;
+
+                        /*
+                         * int tipo=1..2..3(indica al back end il tipo di lista chee li richiedi esempio 1 eventi passati,2 eventi in corso)
+                         Constants.listaEventiCorso = await App.EvManager.GetTasksAsync(tipo);
+                          Constants.listaEventiStorico = await App.EvManager.GetTasksAsync(tipo);
+                          Constants.listaEventi = await App.EvManager.GetTasksAsync(tipo);*/
+                        await AssegnaEventi();
                         await Navigation.PushAsync(new RegistratiInteressi());
 
 
@@ -83,8 +93,30 @@ namespace EventUPv2
             listaAziende.Add(ad2);
             listaAziende.Add(ad3);
         }
-        
 
+        async Task AssegnaEventi()
+        {
+            //codice utilizzato per app senza back end
+            listaEv = new List<Evento>();
+            listaEvIncorso = new List<Evento>();
+            listaEvPassati = new List<Evento>();
+            byte[] im = null;
+            var ev1 = new Evento("Corso Cisco", "25/05/2019", im, "Cisco", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
+            var ev2 = new Evento("Crazyland", "13/06/2019", im, "AWAproductions", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
+            var ev3 = new Evento("Medimex", "15/11/2019", im, "Puglia Records", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
+            listaEv.Add(ev1);
+            listaEv.Add(ev2);
+            listaEv.Add(ev3);
+            listaEvIncorso.Add(ev1);
+            listaEvIncorso.Add(ev2);
+            listaEvIncorso.Add(ev3);
+            listaEvPassati.Add(ev1);
+            listaEvPassati.Add(ev2);
+            listaEvPassati.Add(ev3);
+            Constants.listaEventi = listaEv;
+            Constants.listaEventiCorso = listaEvIncorso;
+            Constants.listaEventiStorico = listaEvPassati;
+        }
 
 
     }

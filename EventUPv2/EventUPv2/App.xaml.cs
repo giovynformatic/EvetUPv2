@@ -22,6 +22,7 @@ namespace EventUPv2
         protected override void OnStart()
         {
             // Handle when your app starts
+          //  Constants.listaEventiCorso =await EvManager.GetTasksAsync();
         }
 
         protected override void OnSleep()
