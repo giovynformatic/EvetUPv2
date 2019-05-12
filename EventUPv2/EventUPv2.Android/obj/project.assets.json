@@ -629,8 +629,6 @@
           "Xam.Plugins.Forms.ImageCircle": "2.0.2",
           "Xamarin.Forms": "3.6.0.344457",
           "Xamd.Plugins.Forms.ImageCarousel": "1.0.2",
-          "ZXing.Net": "0.16.4",
-          "ZXing.Net.Mobile": "2.4.1",
           "ZXing.Net.Mobile.Forms": "2.4.1"
         },
         "compile": {

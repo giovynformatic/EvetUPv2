@@ -27,6 +27,7 @@ namespace EventUPv2.iOS
 
             ImageCircleRenderer.Init();
             Rg.Plugins.Popup.Popup.Init();
+            ZXing.Net.Mobile.Forms.iOS.Platform.Init();
             LoadApplication(new App());
 
 
