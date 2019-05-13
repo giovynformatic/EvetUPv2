@@ -22,7 +22,7 @@ namespace EventUPv2
             barcode.BarcodeOptions.Width = 300;
             barcode.BarcodeOptions.Height = 300;
             barcode.BarcodeOptions.Margin = 10;
-            barcode.BarcodeValue = "filippo";
+            barcode.BarcodeValue = "2503"+Constants.CurrentUser.email;
 
             StackLQr.Children.Insert(1, barcode);
         }
