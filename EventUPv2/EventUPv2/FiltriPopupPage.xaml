@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<popup:PopupPage 
+xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+xmlns:custom="clr-namespace:EventUPv2"
+x:Class="EventUPv2.FiltriPopupPage">
+    
+    <StackLayout Margin="100,300,100,300" BackgroundColor="White" x:Name="StackLFilter"  >
+         
+        <TableView Margin="0,0,0,40" Intent="Form"  WidthRequest="20" HeightRequest="40" BackgroundColor="White" >
+                <TableRoot >
+                    <TableSection Title="Interessi"  >
+                        <SwitchCell x:Name="dataf" Text="Data"  />
+                        <SwitchCell x:Name="nomef" Text="Nome"  />
+                        <SwitchCell x:Name="aziendaf" Text="Azienda"  />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <Button x:Name="OrdinaButton" Text="salva ordinamento" Margin="75,20,75,75"  FontSize="Small" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Clicked="FinishOrdinamento"/>
+
+        </StackLayout>
+       
+    
+</popup:PopupPage>
