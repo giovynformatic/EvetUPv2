@@ -33,7 +33,7 @@ namespace EventUPv2
             Boolean[] intersf = new Boolean[3] { dataf.On, nomef.On, aziendaf.On };
 
             await Navigation.PopAsync();
-            Constants.CurrentUser.interessi = intersf;
+            Constants.OrdineFiltri = intersf;
 
         }
     }
