@@ -7,9 +7,10 @@ namespace EventUPv2
 {
     public partial class PageEventi : ContentPage
     {
-        public PageEventi()
+        public PageEventi(String ev)
         {
             InitializeComponent();
+            descrizione.Text = ev;
         }
     }
 }

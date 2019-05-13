@@ -17,13 +17,13 @@ namespace EventUPv2
         public List<Evento> listaEv;
         public List<Evento> listaEvIncorso;
         public List<Evento> listaEvPassati;
-       
+        public List<SelectableDataEvento<ExampleDataEvento>> SelectedData1;
         public HomePage()
         {
             InitializeComponent();
             Utype.Text=Constants.CurrentUser.Cognome+" "+Constants.CurrentUser.Nome;
 
-            List<SelectableDataEvento<ExampleDataEvento>> SelectedData1 = new List<SelectableDataEvento<ExampleDataEvento>>();
+           SelectedData1 = new List<SelectableDataEvento<ExampleDataEvento>>();
             AssegnaEventi();
             for (int a = 0; a < listaEv.Count(); a++)
             {
@@ -34,10 +34,7 @@ namespace EventUPv2
             }
             BindingContext = new MultiSelectViewModelEvento(SelectedData1);
 
-
-
-
-
+          
 
 
         }
@@ -70,7 +67,7 @@ namespace EventUPv2
         async void Evento(object sender, EventArgs args)
         {
 
-            await Navigation.PushAsync(new PageEventi());
+            await Navigation.PushAsync(new PageEventi(eventiList.SelectedItem.ToString()));
 
         }
 
@@ -80,6 +77,7 @@ namespace EventUPv2
             await Navigation.PushAsync(new PageNews());
 
         }
+
         async void searchButton(object sender, EventArgs args)
         {
             if (search.Text != "" && search.Text != null){
@@ -95,6 +93,12 @@ namespace EventUPv2
 
         }
 
+        async void FilterButton(object sender, EventArgs args)
+        {
+
+            PopupNavigation.Instance.PushAsync(new FiltriPopupPage());
+
+        }
         async void interest(object sender, EventArgs args)
         {
 

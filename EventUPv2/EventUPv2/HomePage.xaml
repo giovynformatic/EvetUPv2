@@ -79,7 +79,7 @@
         <ScrollView BackgroundColor="White">
             <StackLayout Margin="20,10,20,0" Spacing="32" >
 
-                <ListView ItemsSource="{Binding DataList}" >
+                <ListView x:Name="eventiList" SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataList}" >
                     <ListView.Header>
 
                         <StackLayout  Orientation="Horizontal">
