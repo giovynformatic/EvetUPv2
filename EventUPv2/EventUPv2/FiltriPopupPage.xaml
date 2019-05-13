@@ -6,7 +6,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 xmlns:custom="clr-namespace:EventUPv2"
 x:Class="EventUPv2.FiltriPopupPage">
     
-    <StackLayout Margin="100,300,100,300" BackgroundColor="White" x:Name="StackLFilter"  >
+    <StackLayout Margin="50,100,50,100" BackgroundColor="White" x:Name="StackLFilter"  >
          
         <TableView Margin="0,0,0,40" Intent="Form"  WidthRequest="20" HeightRequest="40" BackgroundColor="White" >
                 <TableRoot >
