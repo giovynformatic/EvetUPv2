@@ -56,10 +56,10 @@ namespace EventUPv2
                         Constants.CurrentUser = us;
 
                        /*
-                      * int tipo=1..2..3(indica al back end il tipo di lista chee li richiedi esempio 1 eventi passati,2 eventi in corso)
+                     int tipo=1..2..3(indica al back end il tipo di lista chee li richiedi esempio 1 eventi passati,2 eventi in corso)
                       Constants.listaEventiCorso = await App.EvManager.GetTasksAsync(1,null,0);
                        Constants.listaEventiStorico = await App.EvManager.GetTasksAsync(2,null,0);
-                       Constants.listaEventi = await App.EvManager.GetTasksAsync(3,null,0);*//
+                       Constants.listaEventi = await App.EvManager.GetTasksAsync(3,null,0);*/
                         await AssegnaEventi();
                         await Navigation.PushAsync(new RegistratiInteressi());
 

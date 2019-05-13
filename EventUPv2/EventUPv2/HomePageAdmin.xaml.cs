@@ -48,8 +48,9 @@ namespace EventUPv2
                 ScannerPage.IsScanning = false;
 
                 // Alert com o código escaneado
-                Device.BeginInvokeOnMainThread(() => {
+                Device.BeginInvokeOnMainThread(async () => {
                     Navigation.PopAsync();
+                    //await App.PrManager.SaveTaskAsync(result.Text);
                     DisplayAlert("Codice scannerizzato", result.Text, "OK");
                 });
             };

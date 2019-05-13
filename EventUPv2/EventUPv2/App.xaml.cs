@@ -10,12 +10,14 @@ namespace EventUPv2
         public static UserManager UsManager { get; private set; }
         public static AdminManager AdManager { get; private set; }
         public static EventoManager EvManager { get; private set; }
+        public static PresenzeManager PrManager { get; private set; }
         public App()
         {
             InitializeComponent();
             UsManager = new UserManager(new RestServiceUser());
             EvManager = new EventoManager(new RestServiceEvento());
             AdManager = new AdminManager(new RestServiceAdmin());
+            PrManager = new PresenzeManager(new RestServicePresenze());
             MainPage = new NavigationPage(new MainPage());
         }
 

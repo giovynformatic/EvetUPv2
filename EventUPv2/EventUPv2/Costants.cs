@@ -12,8 +12,10 @@ namespace EventUPv2
         public static string UserUrl = null;
         public static string AdminUrl = null;
         public static string EventoUrl = null;
+        public static string PresenzeUrl = null;
         public static Admin CurrentAdmin = null;
         public static User CurrentUser = null;
+        public static Boolean[] OrdineFiltri;
         public static List<Admin> listaAziende;
         public static List<Evento> listaEventiStorico;
         public static List<Evento> listaEventiCorso;
