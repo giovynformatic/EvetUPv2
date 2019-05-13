@@ -32,10 +32,10 @@ namespace EventUPv2
         {
 
             //VerifyUser(emailUser.Text, passUser.Text);
-            await AssegnaEventi();
-            
-            await AssegnaNews();
-            await AssegnaUtenti();
+             AssegnaEventi();
+
+             AssegnaNews();
+             AssegnaUtenti();
             int acces = 0;
             Boolean AccesCons=false;
             for (int a = 0; a < listaUtenti.Count; a++)
@@ -76,9 +76,9 @@ namespace EventUPv2
         {
 
             //VerifyUser(emailUser.Text, passUser.Text);
-            await AssegnaAziende();
-            await AssegnaEventi();
-            await AssegnaNews();
+             AssegnaAziende();
+             AssegnaEventi();
+             AssegnaNews();
             int acces = 0;
             Boolean AccesCons = false;
             for (int a=0;a<listaAziende.Count;a++)
@@ -142,7 +142,7 @@ namespace EventUPv2
             }
         }*/
 
-        async Task AssegnaAziende()
+        public void AssegnaAziende()
         {
             listaAziende = new List<Admin>();
             // listaAziende = await App.AdManager.GetTasksAsync();// codice da usare per connessione back-end
@@ -157,11 +157,11 @@ namespace EventUPv2
             
         }
 
-        async Task AssegnaUtenti()
+        public void AssegnaUtenti()
         {
             listaUtenti = new List<User>();
             Boolean[] inters = new Boolean[7] { true, false, false, true, false, false, false };//carico interessi per usare app senza back end
-            await AssegnaAziende();
+             AssegnaAziende();
             String[] az = new String[listaAziende.Count];//uso due vettori da riempire con valori back end
             Boolean[] val = new Boolean[listaAziende.Count];// uso due vettori da riempire con valori back end
             val[0] = true;//riempo il vettore con il valore dell'ineteresse di un azienda N.B nel back end sarà fatto con un for unico
@@ -178,7 +178,7 @@ namespace EventUPv2
             listaUtenti.Add(us2);
         }
 
-        async Task AssegnaEventi()
+        public void AssegnaEventi()
         {
             //codice utilizzato per app senza back end
             listaEv = new List<Evento>();
@@ -202,7 +202,7 @@ namespace EventUPv2
             Constants.listaEventiStorico = listaEvPassati;
             Constants.listaEventiAzienda = listaEvIncorso;//utilizzato solo per esempio
         }
-        async Task AssegnaNews()
+        public void AssegnaNews()
         {
             //codice utilizzato per app senza back end
             listaNews = new List<News>();

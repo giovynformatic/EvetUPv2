@@ -19,7 +19,9 @@ namespace EventUPv2
         public List<Evento> listaEvPassati;
         public List<News> listaNews;
         public List<SelectableDataEvento<ExampleDataEvento>> SelectedDataEventi;
-        public List<SelectableDataEvento<ExampleDataEvento>> SelectedDataEventiInCorso;
+        public List<SelectableDataEventoIncorso<ExampleDataEvento>> SelectedDataEventiInCorso;
+        public List<SeletableDataEventoPassato<ExampleDataEvento>> SelectedDataEventiPassati;
+        public List<SelectableDataNews<ExampleDataNews>> SelectedDataNews;
         public HomePage()
         {
             InitializeComponent();
@@ -39,21 +41,42 @@ namespace EventUPv2
             }
             BindingContext = new MultiSelectViewModelEvento(SelectedDataEventi);
 
-            SelectedDataEventiInCorso = new List<SelectableDataEvento<ExampleDataEvento>>();
-            AssegnaEventi();
+            SelectedDataEventiInCorso = new List<SelectableDataEventoIncorso<ExampleDataEvento>>();
+
             for (int a = 0; a < listaEvIncorso.Count(); a++)
             {
-                SelectableDataEvento<ExampleDataEvento> s;
-                SelectedDataEventiInCorso.Add(s = new SelectableDataEvento<ExampleDataEvento>() { Data = new ExampleDataEvento() { Titolo = listaEvIncorso.ElementAt(a).Titolo } });
+                SelectableDataEventoIncorso<ExampleDataEvento> s;
+                SelectedDataEventiInCorso.Add(s = new SelectableDataEventoIncorso<ExampleDataEvento>() { Data1 = new ExampleDataEvento() { Titolo = listaEvIncorso.ElementAt(a).Titolo } });
 
 
             }
-            BindingContext = new MultiSelectViewModelEvento(SelectedDataEventiInCorso);
+            BindingContext = new MultiSelectViewModelEventoIncorso(SelectedDataEventiInCorso);
 
+            SelectedDataEventiPassati = new List<SeletableDataEventoPassato<ExampleDataEvento>>();
+           
+            for (int a = 0; a < listaEvPassati.Count(); a++)
+            {
+                SeletableDataEventoPassato<ExampleDataEvento> s;
+                SelectedDataEventiPassati.Add(s = new SeletableDataEventoPassato<ExampleDataEvento>() { Data2 = new ExampleDataEvento() { Titolo = listaEvPassati.ElementAt(a).Titolo } });
+
+
+            }
+            BindingContext = new MultiSelectViewModelEventoPassato(SelectedDataEventiPassati);
+
+            SelectedDataNews = new List<SelectableDataNews<ExampleDataNews>>();
+
+            for (int a = 0; a < listaNews.Count(); a++)
+            {
+                SelectableDataNews<ExampleDataNews> s;
+                SelectedDataNews.Add(s = new SelectableDataNews<ExampleDataNews>() { Data3 = new ExampleDataNews() { Titolo = listaNews.ElementAt(a).Titolo } });
+
+
+            }
+            BindingContext = new MultiSelectViewModelNews(SelectedDataNews);
 
 
         }
-       
+
         public void datiAnagrafici(object sender, EventArgs args) {
 
             
@@ -108,7 +131,7 @@ namespace EventUPv2
 
         }
 
-        async void FilterButton(object sender, EventArgs args)
+        public void FilterButton(object sender, EventArgs args)
         {
 
             PopupNavigation.Instance.PushAsync(new FiltriPopupPage());
@@ -120,7 +143,7 @@ namespace EventUPv2
             await Navigation.PushAsync(new RegistratiInteressi());
 
         }
-        async Task AssegnaEventi()
+        public void AssegnaEventi()
         {
             //codice utilizzato per app senza back end
             listaEv = new List<Evento>();
@@ -144,7 +167,7 @@ namespace EventUPv2
             Constants.listaEventiStorico = listaEvPassati;
             Constants.listaEventiAzienda = listaEvIncorso;//utilizzato solo per esempio
         }
-        async Task AssegnaNews()
+        public void AssegnaNews()
         {
             //codice utilizzato per app senza back end
             listaNews = new List<News>();

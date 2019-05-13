@@ -185,16 +185,16 @@
                             <ViewCell Tapped="Evento" x:Name="cella"  >
                                 <StackLayout  Orientation="Horizontal" Margin="0,20,0,0">
                                    
-                                    <ic:CircleImage Source="{Binding Data.Immagine}"
+                                    <ic:CircleImage Source="{Binding Data1.Immagine}"
                                           HorizontalOptions="Start"
                                  VerticalOptions="CenterAndExpand" 
                                           />
-                                    <Label Text="{Binding Data.Titolo}"
+                                    <Label Text="{Binding Data1.Titolo}"
                                  
                                  HorizontalOptions="Start"
                                  VerticalOptions="Start"
                                  TextColor="Black" />
-                                    <Label Text="{Binding Data.Descrizione}"
+                                    <Label Text="{Binding Data1.Descrizione}"
                                  HorizontalOptions="Start"
                                  VerticalOptions="End"
                                  TextColor="Black" />
@@ -240,16 +240,16 @@
                             <ViewCell Tapped="Evento" x:Name="cella"  >
                                 <StackLayout  Orientation="Horizontal" Margin="0,20,0,0">
                                    
-                                    <ic:CircleImage Source="{Binding Data.Immagine}"
+                                    <ic:CircleImage Source="{Binding Data2.Immagine}"
                                           HorizontalOptions="Start"
                                  VerticalOptions="CenterAndExpand" 
                                           />
-                                    <Label Text="{Binding Data.Titolo}"
+                                    <Label Text="{Binding Data2.Titolo}"
                                  
                                  HorizontalOptions="Start"
                                  VerticalOptions="Start"
                                  TextColor="Black" />
-                                    <Label Text="{Binding Data.Descrizione}"
+                                    <Label Text="{Binding Data2.Descrizione}"
                                  HorizontalOptions="Start"
                                  VerticalOptions="End"
                                  TextColor="Black" />
@@ -292,16 +292,16 @@
                 <DataTemplate>
                      <ViewCell Tapped="News">
                         <StackLayout Orientation="Horizontal">
-                          <ic:CircleImage Source="{Binding News.imm}"
+                          <ic:CircleImage Source="{Binding Data3.imm}"
                                           HorizontalOptions="Start"
                                  VerticalOptions="CenterAndExpand" 
                                           />
-                          <Label Text="{Binding News.Titolo}"
+                          <Label Text="{Binding Data3.Titolo}"
                                  
                                  HorizontalOptions="Start"
                                  VerticalOptions="Start"
                                  TextColor="#f35e20" />
-                          <Label Text="{Binding News.Descrizione}"
+                          <Label Text="{Binding Data3.Descrizione}"
                                  HorizontalOptions="Start"
                                  VerticalOptions="End"
                                  TextColor="#503026" />

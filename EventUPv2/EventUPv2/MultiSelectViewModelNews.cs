@@ -30,7 +30,7 @@ namespace EventUPv2
                 var list = new List<SelectableDataNews<ExampleDataNews>>();
 
                 foreach (var data in DataList)
-                    list.Add(new SelectableDataNews<ExampleDataNews>() { Data = data.Data.Clone(), Selected = data.Selected });
+                    list.Add(new SelectableDataNews<ExampleDataNews>() { Data3 = data.Data3.Clone(), Selected = data.Selected });
 
                 return list;
             }
