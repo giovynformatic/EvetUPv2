@@ -18,6 +18,7 @@ namespace EventUPv2
         public List<Evento> listaEvIncorso;
         public List<Evento> listaEvPassati;
         public List<SelectableDataEvento<ExampleDataEvento>> SelectedDataEventi;
+        public List<SelectableDataEvento<ExampleDataEvento>> SelectedDataEventiInCorso;
         public HomePage()
         {
             InitializeComponent();
@@ -36,7 +37,17 @@ namespace EventUPv2
             }
             BindingContext = new MultiSelectViewModelEvento(SelectedDataEventi);
 
-          
+            SelectedDataEventiInCorso = new List<SelectableDataEvento<ExampleDataEvento>>();
+            AssegnaEventi();
+            for (int a = 0; a < listaEvIncorso.Count(); a++)
+            {
+                SelectableDataEvento<ExampleDataEvento> s;
+                SelectedDataEventiInCorso.Add(s = new SelectableDataEvento<ExampleDataEvento>() { Data = new ExampleDataEvento() { Titolo = listaEvIncorso.ElementAt(a).Titolo } });
+
+
+            }
+            BindingContext = new MultiSelectViewModelEvento(SelectedDataEventiInCorso);
+
 
 
         }
@@ -122,7 +133,7 @@ namespace EventUPv2
             listaEv.Add(ev3);
             listaEvIncorso.Add(ev1);
             listaEvIncorso.Add(ev2);
-            listaEvIncorso.Add(ev3);
+      //      listaEvIncorso.Add(ev3);
             listaEvPassati.Add(ev1);
             listaEvPassati.Add(ev2);
             listaEvPassati.Add(ev3);

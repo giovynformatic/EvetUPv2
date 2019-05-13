@@ -77,12 +77,12 @@
     </ContentPage>
 <ContentPage Title="Eventi" Icon="https://png.icons8.com/event/ultraviolet/50/3498db" >
         <ScrollView BackgroundColor="White">
-            <StackLayout Margin="20,10,20,0" Spacing="32" >
+            <StackLayout Margin="10,10,5,0" Spacing="32" >
 
                 <ListView x:Name="eventiList" SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataList}" >
                     <ListView.Header>
 
-                        <StackLayout  Orientation="Horizontal">
+                        <StackLayout  Orientation="Horizontal" Margin="0,0,0,0">
                             <custom:CustomEntry CornerRadius="20" 
                                 HeightRequest="40" 
                                 IsCurvedCornersEnabled="True" 
@@ -93,7 +93,8 @@
                                 Placeholder="Ricerca" 
                                 FontSize="Medium" 
                                 PlaceholderColor="Gray"
-                                x:Name="searchEv"/>
+                                x:Name="searchEv"
+                                />
                             <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/search/ultraviolet/50/3498db" Clicked="searchButton"/>
                             <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/menu/ultraviolet/50/3498db" Clicked="FilterButton"/>
                         </StackLayout>
@@ -158,7 +159,7 @@
    
 <ContentPage Title="Eventi in corso">
         <ScrollView BackgroundColor="White">
-            <StackLayout Margin="20,10,20,0" Spacing="32" >
+            <StackLayout  Margin="10,10,5,0" Spacing="32" >
 
                  <ListView x:Name="currenteventiList" SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataList}" >
                     <ListView.Header>
@@ -213,7 +214,7 @@
    
 <ContentPage Title="Eventi Passati">
         <ScrollView BackgroundColor="White">
-            <StackLayout Margin="20,10,20,0" Spacing="32" >
+            <StackLayout  Margin="10,10,5,0" Spacing="32" >
 
                  <ListView x:Name="pasteventiList" SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataList}" >
                     <ListView.Header>
@@ -267,10 +268,11 @@
     </ContentPage>
    
 <ContentPage Title="News">
-        <ListView ItemsSource="{Binding DataList}" Margin="20">
+        <ScrollView BackgroundColor="White">
+            <StackLayout  Margin="10,10,5,0" Spacing="32" >
+                <ListView x:Name="newsList" SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataList}">
             <ListView.Header>
-              
-                        <StackLayout Orientation="Horizontal">
+                         <StackLayout  Orientation="Horizontal">
                 <custom:CustomEntry CornerRadius="20" 
                                 HeightRequest="40" 
                                 IsCurvedCornersEnabled="True" 
@@ -344,5 +346,7 @@
 
             </StackLayout>
         </ScrollView>-->
+            </StackLayout>
+        </ScrollView>
     </ContentPage>
 </TabbedPage>
