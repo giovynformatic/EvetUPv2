@@ -34,5 +34,6 @@ namespace EventUPv2.iOS
 
             return base.FinishedLaunching(app, options);
         }
+
     }
 }
