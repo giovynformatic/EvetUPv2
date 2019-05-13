@@ -41,9 +41,9 @@ namespace EventUPv2
                 {
                     /*
                       * int tipo=1..2..3(indica al back end il tipo di lista chee li richiedi esempio 1 eventi passati,2 eventi in corso)
-                      Constants.listaEventiCorso = await App.EvManager.GetTasksAsync(tipo);
-                       Constants.listaEventiStorico = await App.EvManager.GetTasksAsync(tipo);
-                       Constants.listaEventi = await App.EvManager.GetTasksAsync(tipo);*/
+                      Constants.listaEventiCorso = await App.EvManager.GetTasksAsync(1,null,0);
+                       Constants.listaEventiStorico = await App.EvManager.GetTasksAsync(2,null,0);
+                       Constants.listaEventi = await App.EvManager.GetTasksAsync(3,null,0);*/
                     Constants.CurrentUser = listaUtenti.ElementAt(a);
                     await Navigation.PushAsync(new HomePage());
                     AccesCons = true;
