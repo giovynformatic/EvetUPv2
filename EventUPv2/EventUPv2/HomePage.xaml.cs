@@ -142,7 +142,7 @@ namespace EventUPv2
             Constants.listaEventi = listaEv;
             Constants.listaEventiCorso = listaEvIncorso;
             Constants.listaEventiStorico = listaEvPassati;
-            Constants.listaEventiAzienda = listaEvIncorso//utilizzato solo per esempio
+            Constants.listaEventiAzienda = listaEvIncorso;//utilizzato solo per esempio
         }
         async Task AssegnaNews()
         {
