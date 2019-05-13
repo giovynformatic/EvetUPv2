@@ -17,22 +17,24 @@ namespace EventUPv2
         public List<Evento> listaEv;
         public List<Evento> listaEvIncorso;
         public List<Evento> listaEvPassati;
-        public List<SelectableDataEvento<ExampleDataEvento>> SelectedData1;
+        public List<SelectableDataEvento<ExampleDataEvento>> SelectedDataEventi;
         public HomePage()
         {
             InitializeComponent();
             Utype.Text=Constants.CurrentUser.Cognome+" "+Constants.CurrentUser.Nome;
-
-           SelectedData1 = new List<SelectableDataEvento<ExampleDataEvento>>();
+            Constants.listaEventi = listaEv;
+            Constants.listaEventiCorso = listaEvIncorso;
+            Constants.listaEventiStorico = listaEvPassati;
+            SelectedDataEventi = new List<SelectableDataEvento<ExampleDataEvento>>();
             AssegnaEventi();
             for (int a = 0; a < listaEv.Count(); a++)
             {
                 SelectableDataEvento<ExampleDataEvento> s;
-                SelectedData1.Add(s = new SelectableDataEvento<ExampleDataEvento>() { Data = new ExampleDataEvento() { Titolo = listaEv.ElementAt(a).Titolo } });
+                SelectedDataEventi.Add(s = new SelectableDataEvento<ExampleDataEvento>() { Data = new ExampleDataEvento() { Titolo = listaEv.ElementAt(a).Titolo } });
                
 
             }
-            BindingContext = new MultiSelectViewModelEvento(SelectedData1);
+            BindingContext = new MultiSelectViewModelEvento(SelectedDataEventi);
 
           
 
@@ -124,9 +126,7 @@ namespace EventUPv2
             listaEvPassati.Add(ev1);
             listaEvPassati.Add(ev2);
             listaEvPassati.Add(ev3);
-            Constants.listaEventi = listaEv;
-            Constants.listaEventiCorso = listaEvIncorso;
-            Constants.listaEventiStorico = listaEvPassati;
+        
         }
     }
 }
