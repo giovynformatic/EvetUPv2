@@ -18,11 +18,11 @@ namespace EventUPv2
             _client = new HttpClient();
         }
 
-        public async Task<List<Evento>> RefreshDataAsync(int tipo,String testoRicerca,int ordinamentoFiltri)
+        public async Task<List<Evento>> RefreshDataAsync(int tipo,String testoRicerca,int ordinamentoFiltri,String Azienda)
         {
             Items = new List<Evento>();
 
-            var uri = new Uri(string.Format(Constants.EventoUrl,tipo, testoRicerca, ordinamentoFiltri, string.Empty));
+            var uri = new Uri(string.Format(Constants.EventoUrl,tipo, testoRicerca, ordinamentoFiltri,Azienda, string.Empty));
             try
             {
                 var response = await _client.GetAsync(uri);
@@ -72,7 +72,7 @@ namespace EventUPv2
         }
         public async Task DeleteTodoItemAsync(Evento ad)
         {
-            var uri = new Uri(string.Format(Constants.UserUrl, ad));
+            var uri = new Uri(string.Format(Constants.EventoUrl, ad));
 
             try
             {

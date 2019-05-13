@@ -11,6 +11,7 @@ namespace EventUPv2
         public static AdminManager AdManager { get; private set; }
         public static EventoManager EvManager { get; private set; }
         public static PresenzeManager PrManager { get; private set; }
+        public static NewsManager NManager { get; private set; }
         public App()
         {
             InitializeComponent();
@@ -18,7 +19,9 @@ namespace EventUPv2
             EvManager = new EventoManager(new RestServiceEvento());
             AdManager = new AdminManager(new RestServiceAdmin());
             PrManager = new PresenzeManager(new RestServicePresenze());
+            NManager = new NewsManager(new RestServiceNews());
             MainPage = new NavigationPage(new MainPage());
+          
         }
 
         protected override void OnStart()

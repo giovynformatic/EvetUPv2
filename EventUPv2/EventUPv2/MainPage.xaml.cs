@@ -15,6 +15,7 @@ namespace EventUPv2
         public List<Evento> listaEv;
         public List<Evento> listaEvIncorso;
         public List<Evento> listaEvPassati;
+        public List<News> listaNews;
         public MainPage()
         {
             InitializeComponent();
@@ -32,6 +33,8 @@ namespace EventUPv2
 
             //VerifyUser(emailUser.Text, passUser.Text);
             await AssegnaEventi();
+            
+            await AssegnaNews();
             await AssegnaUtenti();
             int acces = 0;
             Boolean AccesCons=false;
@@ -40,10 +43,16 @@ namespace EventUPv2
                 if (emailUser.Text == listaUtenti.ElementAt(a).email && passUser.Text == listaUtenti.ElementAt(a).pass)
                 {
                     /*
-                      * int tipo=1..2..3(indica al back end il tipo di lista chee li richiedi esempio 1 eventi passati,2 eventi in corso)
-                      Constants.listaEventiCorso = await App.EvManager.GetTasksAsync(1,null,0);
-                       Constants.listaEventiStorico = await App.EvManager.GetTasksAsync(2,null,0);
-                       Constants.listaEventi = await App.EvManager.GetTasksAsync(3,null,0);*/
+                       int tipo=1..2..3(indica al back end il tipo di lista chee li richiedi esempio 1 eventi passati,2 eventi in corso  NB se =0 fare come se non ci fosse)
+                       String  testoRicerca= null....(testo presente nella ricerca)
+                       int ordinamentoFiltri=1...2...3(tipo di orfinamento che si vuole 1.per Data , 2.per ordine alfabetico, 3. raggrupati per azienda NB se =0 fare come se non ci fosse)
+                       String Azienda = null(nome dell'azienda in caso di admin che richiede la lista eventi e puo vedere solo i suoi eventi se null restituisci tuute)
+                      Constants.listaEventiCorso = await App.EvManager.GetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
+                       Constants.listaEventiStorico = await App.EvManagerGetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
+                       Constants.listaEventi = await App.EvManager.GetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
+                       Constants.listaNews = await App.NManager.GetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
+                   Constants.listaEventiAzienda = await App.EvManagerGetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
+                     * */
                     Constants.CurrentUser = listaUtenti.ElementAt(a);
                     await Navigation.PushAsync(new HomePage());
                     AccesCons = true;
@@ -68,12 +77,25 @@ namespace EventUPv2
 
             //VerifyUser(emailUser.Text, passUser.Text);
             await AssegnaAziende();
+            await AssegnaEventi();
+            await AssegnaNews();
             int acces = 0;
             Boolean AccesCons = false;
             for (int a=0;a<listaAziende.Count;a++)
             {
                 if (emailAdmin.Text == listaAziende.ElementAt(a).email && passAdmin.Text == listaAziende.ElementAt(a).pass)
                 {
+                    /*
+                      int tipo=1..2..3(indica al back end il tipo di lista chee li richiedi esempio 1 eventi passati,2 eventi in corso  NB se =0 fare come se non ci fosse)
+                      String  testoRicerca= null....(testo presente nella ricerca)
+                      int ordinamentoFiltri=1...2...3(tipo di orfinamento che si vuole 1.per Data , 2.per ordine alfabetico, 3. raggrupati per azienda NB se =0 fare come se non ci fosse)
+                      String Azienda = null(nome dell'azienda in caso di admin che richiede la lista eventi e puo vedere solo i suoi eventi se null restituisci tuute)
+                     Constants.listaEventiCorso = await App.EvManager.GetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
+                      Constants.listaEventiStorico = await App.EvManagerGetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
+                      Constants.listaEventi = await App.EvManager.GetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
+                      Constants.listaNews = await App.NManager.GetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
+                  Constants.listaEventiAzienda = await App.EvManagerGetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
+                    * */
                     Constants.CurrentAdmin = listaAziende.ElementAt(a);
                     await Navigation.PushAsync(new HomePageAdmin());
                     AccesCons = true;
@@ -164,20 +186,36 @@ namespace EventUPv2
             listaEvPassati = new List<Evento>();
             byte[] im = null;
             var ev1 = new Evento("Corso Cisco","25/05/2019",im,"Cisco", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
-            var ev2 = new Evento("Crazyland", "13/06/2019", im, "AWAproductions", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
+            var ev2 = new Evento("Crazyland", "13/06/2019", im, "Cisco", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
             var ev3 = new Evento("Medimex", "15/11/2019", im, "Puglia Records", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
             listaEv.Add(ev1);
             listaEv.Add(ev2);
             listaEv.Add(ev3);
             listaEvIncorso.Add(ev1);
             listaEvIncorso.Add(ev2);
-            listaEvIncorso.Add(ev3);
+          //  listaEvIncorso.Add(ev3);
             listaEvPassati.Add(ev1);
             listaEvPassati.Add(ev2);
             listaEvPassati.Add(ev3);
             Constants.listaEventi = listaEv;
             Constants.listaEventiCorso = listaEvIncorso;
             Constants.listaEventiStorico = listaEvPassati;
+            Constants.listaEventiAzienda = listaEvIncorso;//utilizzato solo per esempio
+        }
+        async Task AssegnaNews()
+        {
+            //codice utilizzato per app senza back end
+            listaNews = new List<News>();
+                
+            byte[] im = null;
+            var n1 = new News("Evento!!!", "25/05/2019", im, "EnerSetting", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
+            var n2 = new News("Secondo evento!!!", "13/06/2019", im, "EnerSetting", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
+            var n3 = new News("Terzo evento!!!", "15/11/2019", im, "Cisco", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
+            listaNews.Add(n1);
+            listaNews.Add(n2);
+            listaNews.Add(n3);
+            Constants.listaNews = listaNews;
+            
         }
     }
 }

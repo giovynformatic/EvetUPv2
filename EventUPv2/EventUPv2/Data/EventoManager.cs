@@ -13,9 +13,9 @@ namespace EventUPv2
             restService = service;
         }
 
-        public Task<List<Evento>> GetTasksAsync(int tipo, String testoRicerca, int ordinamentoFiltri)
+        public Task<List<Evento>> GetTasksAsync(int tipo, String testoRicerca, int ordinamentoFiltri,String Azienda)
         {
-            return restService.RefreshDataAsync(tipo, testoRicerca, ordinamentoFiltri);
+            return restService.RefreshDataAsync(tipo, testoRicerca, ordinamentoFiltri,Azienda);
         }
 
         public Task SaveTaskAsync(Evento item, bool isNewItem = false)
