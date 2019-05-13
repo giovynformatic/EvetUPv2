@@ -75,14 +75,14 @@
         </ScrollView>
 
     </ContentPage>
-<ContentPage Title="Eventi">
+<ContentPage Title="Eventi" BackgroundImage="https://png.icons8.com/event/ultraviolet/50/3498db" >
         <ScrollView BackgroundColor="White">
             <StackLayout Margin="20,10,20,0" Spacing="32" >
 
                 <ListView ItemsSource="{Binding DataList}" >
                     <ListView.Header>
 
-                        <StackLayout Orientation="Horizontal">
+                        <StackLayout  Orientation="Horizontal">
                             <custom:CustomEntry CornerRadius="20" 
                                 HeightRequest="40" 
                                 IsCurvedCornersEnabled="True" 
@@ -95,13 +95,14 @@
                                 PlaceholderColor="Gray"
                                 x:Name="searchEv"/>
                             <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/search/ultraviolet/50/3498db" Clicked="searchButton"/>
-                            <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/menu/ultraviolet/50/3498db" Clicked="menuButton"/>
+                            <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/menu/ultraviolet/50/3498db" Clicked="FilterButton"/>
                         </StackLayout>
                     </ListView.Header>
                     <ListView.ItemTemplate  >
                         <DataTemplate >
-                            <ViewCell Tapped="Evento"  >
-                                <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+                            <ViewCell Tapped="Evento" x:Name="cella"  >
+                                <StackLayout  Orientation="Horizontal" Margin="0,20,0,0">
+                                   
                                     <ic:CircleImage Source="{Binding Data.Immagine}"
                                           HorizontalOptions="Start"
                                  VerticalOptions="CenterAndExpand" 
