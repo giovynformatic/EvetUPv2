@@ -50,7 +50,7 @@ namespace EventUPv2
                       Constants.listaEventiCorso = await App.EvManager.GetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
                        Constants.listaEventiStorico = await App.EvManagerGetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
                        Constants.listaEventi = await App.EvManager.GetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
-                       Constants.listaNews = await App.NManager.GetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
+                       Constants.listaNews = await App.NManager.GetTasksAsync();
                    Constants.listaEventiAzienda = await App.EvManagerGetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
                      * */
                     Constants.CurrentUser = listaUtenti.ElementAt(a);
@@ -93,7 +93,7 @@ namespace EventUPv2
                      Constants.listaEventiCorso = await App.EvManager.GetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
                       Constants.listaEventiStorico = await App.EvManagerGetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
                       Constants.listaEventi = await App.EvManager.GetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
-                      Constants.listaNews = await App.NManager.GetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
+                      Constants.listaNews = await App.NManager.GetTasksAsync();
                   Constants.listaEventiAzienda = await App.EvManagerGetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
                     * */
                     Constants.CurrentAdmin = listaAziende.ElementAt(a);
