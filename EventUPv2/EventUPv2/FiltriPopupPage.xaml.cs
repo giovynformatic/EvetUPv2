@@ -19,6 +19,7 @@ namespace EventUPv2
         public FiltriPopupPage()
         {
             InitializeComponent();
+            Constants.OrdineFiltri = new Boolean[3] { false, false, false };
             dataf.On = Constants.OrdineFiltri.ElementAt(0);
             nomef.On = Constants.OrdineFiltri.ElementAt(1);
             aziendaf.On = Constants.OrdineFiltri.ElementAt(2);
