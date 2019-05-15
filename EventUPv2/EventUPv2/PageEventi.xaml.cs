@@ -7,10 +7,19 @@ namespace EventUPv2
 {
     public partial class PageEventi : ContentPage
     {
-        public PageEventi(String ev)
+        public PageEventi(int item,int tipo)
         {
             InitializeComponent();
-            descrizione.Text = ev;
+            String s;
+            switch (tipo) {
+                case 1:
+                 
+                    break;
+                case 2:
+                    break;
+            }
+                
+
         }
 
         async void Partecipa_Clicked(object sender, EventArgs e)

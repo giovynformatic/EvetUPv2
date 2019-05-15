@@ -107,10 +107,23 @@ namespace EventUPv2
 
         async void Evento(object sender, EventArgs args)
         {
-
-            await Navigation.PushAsync(new PageEventi(eventiList.SelectedItem.ToString()));
+            AssegnaEventi();
+            await Navigation.PushAsync(new PageEventi(0,1));
 
         }
+        async void EventoInCorso(object sender, EventArgs args)
+        {
+            AssegnaEventi();
+            await Navigation.PushAsync(new PageEventi(0,2));
+
+        }
+        async void EventoPassati(object sender, EventArgs args)
+        {
+            AssegnaEventi();
+            await Navigation.PushAsync(new PageEventi(0,3));
+
+        }
+
 
         async void News(object sender, EventArgs args)
         {

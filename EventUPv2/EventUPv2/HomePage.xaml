@@ -182,7 +182,7 @@
                     </ListView.Header>
                     <ListView.ItemTemplate  >
                         <DataTemplate >
-                            <ViewCell Tapped="Evento" x:Name="cella"  >
+                            <ViewCell Tapped="EventoInCorso" x:Name="cella"  >
                                 <StackLayout  Orientation="Horizontal" Margin="0,20,0,0">
                                    
                                     <ic:CircleImage Source="{Binding Data1.Immagine}"
@@ -237,7 +237,7 @@
                     </ListView.Header>
                     <ListView.ItemTemplate  >
                         <DataTemplate >
-                            <ViewCell Tapped="Evento" x:Name="cella"  >
+                            <ViewCell Tapped="EventoPassati" x:Name="cella"  >
                                 <StackLayout  Orientation="Horizontal" Margin="0,20,0,0">
                                    
                                     <ic:CircleImage Source="{Binding Data2.Immagine}"
