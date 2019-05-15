@@ -161,7 +161,7 @@
         <ScrollView BackgroundColor="White">
             <StackLayout  Margin="10,10,5,0" Spacing="32" >
 
-                <ListView x:Name="currenteventiList" SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataListEventoIncorso}" >
+                <ListView x:Name="currenteventiList"  SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataListEventoIncorso}" >
                     <ListView.Header>
 
                         <StackLayout  Orientation="Horizontal">

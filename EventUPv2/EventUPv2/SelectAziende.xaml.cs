@@ -75,17 +75,18 @@ namespace EventUPv2
 
             }
         }
-        async void AssegnaAziende()
+       async void AssegnaAziende()
         {
-           listaAziende = new List<Admin>();
-            // listaAziende = await OttieniAziendeAsync(); da correggere perche il metodo asincrono nel costruttore non si puo chiamare
-            var ad1 = new Admin("EnerSetting", "Locorotondo", "asd1234rt6f", "Setting@enersetting.com", "alternanza");
-            var ad2 = new Admin("Barilla", "Modena", "modbar459q7", "Admin@barilla.com", "pasta");
-            var ad3 = new Admin("ILVA", "Taranto", "dbbsjbkjsdab", "Ilva@ilva.com", "ferro");
+            listaAziende = new List<Admin>();
+            // listaAziende = await App.AdManager.GetTasksAsync();// codice da usare per connessione back-end
+            var ad1 = new Admin("EnerSetting", "Locorotondo", "asd1234rt6f", "setting@enersetting.com", "alternanza");
+            var ad2 = new Admin("Barilla", "Modena", "modbar459q7", "admin@barilla.com", "pasta");
+            var ad3 = new Admin("ILVA", "Taranto", "dbbsjbkjsdab", "ilva@ilva.com", "ferro");
+           
             listaAziende.Add(ad1);
             listaAziende.Add(ad2);
             listaAziende.Add(ad3);
-
+            Constants.listaAziende = listaAziende;
             
         }
        
