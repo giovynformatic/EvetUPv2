@@ -50,7 +50,8 @@ namespace EventUPv2
 
 
             }
-            BindingContext = new MultiSelectViewModelEventoIncorso(SelectedDataEventiInCorso);
+            var c = BindingContext;
+            c = new MultiSelectViewModelEventoIncorso(SelectedDataEventiInCorso);
 
             SelectedDataEventiPassati = new List<SeletableDataEventoPassato<ExampleDataEvento>>();
            
@@ -61,9 +62,10 @@ namespace EventUPv2
 
 
             }
-            BindingContext = new MultiSelectViewModelEventoPassato(SelectedDataEventiPassati);
-
-            SelectedDataNews = new List<SelectableDataNews<ExampleDataNews>>();
+            var b = BindingContext;
+           b = new MultiSelectViewModelEventoPassato(SelectedDataEventiPassati);
+            
+          /*  SelectedDataNews = new List<SelectableDataNews<ExampleDataNews>>();
 
             for (int a = 0; a < listaNews.Count(); a++)
             {
@@ -72,7 +74,7 @@ namespace EventUPv2
 
 
             }
-            BindingContext = new MultiSelectViewModelNews(SelectedDataNews);
+            BindingContext = new MultiSelectViewModelNews(SelectedDataNews);*/
 
 
         }

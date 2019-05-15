@@ -7,7 +7,7 @@ namespace EventUPv2
     {
         public MultiSelectViewModelEventoIncorso(List<SelectableDataEventoIncorso<ExampleDataEvento>> data)
         {
-            DataList = data;
+            DataListEventoIncorso = data;
         }
 
 
@@ -23,13 +23,13 @@ namespace EventUPv2
         //  DataList = list;
         //}
 
-        public List<SelectableDataEventoIncorso<ExampleDataEvento>> DataList { get; set; }
+        public List<SelectableDataEventoIncorso<ExampleDataEvento>> DataListEventoIncorso { get; set; }
 
         public List<SelectableDataEventoIncorso<ExampleDataEvento>> GetNewData()
         {
             var list = new List<SelectableDataEventoIncorso<ExampleDataEvento>>();
 
-            foreach (var data in DataList)
+            foreach (var data in DataListEventoIncorso)
                 list.Add(new SelectableDataEventoIncorso<ExampleDataEvento>() { Data1 = data.Data1.Clone(), Selected = data.Selected });
 
             return list;

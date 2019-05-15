@@ -79,7 +79,7 @@
         <ScrollView BackgroundColor="White">
             <StackLayout Margin="10,10,5,0" Spacing="32" >
 
-                <ListView x:Name="eventiList" SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataList}" >
+                <ListView x:Name="eventiList" SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataListEvento}" >
                     <ListView.Header>
 
                         <StackLayout  Orientation="Horizontal" Margin="0,0,0,0">
@@ -161,7 +161,7 @@
         <ScrollView BackgroundColor="White">
             <StackLayout  Margin="10,10,5,0" Spacing="32" >
 
-                 <ListView x:Name="currenteventiList" SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataList}" >
+                <ListView x:Name="currenteventiList" SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataListEventoIncorso}" >
                     <ListView.Header>
 
                         <StackLayout  Orientation="Horizontal">
@@ -216,7 +216,7 @@
         <ScrollView BackgroundColor="White">
             <StackLayout  Margin="10,10,5,0" Spacing="32" >
 
-                 <ListView x:Name="pasteventiList" SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataList}" >
+                <ListView x:Name="pasteventiList" SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataListEventoPassato}" >
                     <ListView.Header>
 
                         <StackLayout  Orientation="Horizontal">
@@ -270,7 +270,7 @@
 <ContentPage Title="News">
         <ScrollView BackgroundColor="White">
             <StackLayout  Margin="10,10,5,0" Spacing="32" >
-                <ListView x:Name="newsList" SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataList}">
+                <ListView x:Name="newsList" SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataListNews}">
             <ListView.Header>
                          <StackLayout  Orientation="Horizontal">
                 <custom:CustomEntry CornerRadius="20" 

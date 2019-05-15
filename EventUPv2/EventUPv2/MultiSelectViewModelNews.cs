@@ -7,7 +7,7 @@ namespace EventUPv2
        
             public MultiSelectViewModelNews(List<SelectableDataNews<ExampleDataNews>> data)
             {
-                DataList = data;
+                DataListNews = data;
             }
 
 
@@ -23,13 +23,13 @@ namespace EventUPv2
             //  DataList = list;
             //}
 
-            public List<SelectableDataNews<ExampleDataNews>> DataList { get; set; }
+            public List<SelectableDataNews<ExampleDataNews>> DataListNews { get; set; }
 
             public List<SelectableDataNews<ExampleDataNews>> GetNewData()
             {
                 var list = new List<SelectableDataNews<ExampleDataNews>>();
 
-                foreach (var data in DataList)
+                foreach (var data in DataListNews)
                     list.Add(new SelectableDataNews<ExampleDataNews>() { Data3 = data.Data3.Clone(), Selected = data.Selected });
 
                 return list;
