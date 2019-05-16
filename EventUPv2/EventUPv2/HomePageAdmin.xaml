@@ -62,10 +62,7 @@
                                  HorizontalOptions="Start"
                                  VerticalOptions="Start"
                                  TextColor="Black" />
-                                    <Label Text="{Binding Descrizione}"
-                                 HorizontalOptions="Start"
-                                 VerticalOptions="End"
-                                 TextColor="Black" />
+                                   
 
                                 </StackLayout>
                             </ViewCell>
@@ -99,10 +96,7 @@
                                  HorizontalOptions="Start"
                                  VerticalOptions="Start"
                                  TextColor="#f35e20" />
-                          <Label Text="{Binding Descrizione}"
-                                 HorizontalOptions="Start"
-                                 VerticalOptions="End"
-                                 TextColor="#503026" />
+                          
                           
                         </StackLayout>
                     </ViewCell>

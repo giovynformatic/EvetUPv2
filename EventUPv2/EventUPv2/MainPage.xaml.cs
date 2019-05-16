@@ -16,6 +16,8 @@ namespace EventUPv2
         public List<Evento> listaEvIncorso;
         public List<Evento> listaEvPassati;
         public List<News> listaNews;
+        public List<News> listaNewsAz;
+        public List<Evento> listaEvAz;
         public MainPage()
         {
             InitializeComponent();
@@ -31,9 +33,8 @@ namespace EventUPv2
         async void OnLoginUserClicked(object sender, EventArgs args)
         {
 
-            //VerifyUser(emailUser.Text, passUser.Text);
-             AssegnaEventi();
 
+             AssegnaEventi();
              AssegnaNews();
              AssegnaUtenti();
             int acces = 0;
@@ -77,8 +78,8 @@ namespace EventUPv2
 
             //VerifyUser(emailUser.Text, passUser.Text);
              AssegnaAziende();
-             AssegnaEventi();
-             AssegnaNews();
+             AssegnaEventiAzienda();
+             AssegnaNewsAzienda();
             int acces = 0;
             Boolean AccesCons = false;
             for (int a=0;a<listaAziende.Count;a++)
@@ -114,33 +115,7 @@ namespace EventUPv2
                 await DisplayAlert("Attenzione", "E-mail o Password non corretta!", "OK");
             }
         }
-        /*async void VerifyUser(string a, string b)
-        {
-            if (a == "User" && b == "user")
-            {
-                await Navigation.PushModalAsync(new HomePage());
-            }
-            else if (a == "Admin" && b == "admin") 
-            {
-                await Navigation.PushModalAsync(new HomePageAdmin());
-            }
-            else if (!string.IsNullOrEmpty(a) && a != "User" && a != "Admin")
-            {
-                await DisplayAlert("Alert", "E-mail non Corretta!", "OK");
-            }
-            else if (string.IsNullOrEmpty(a))
-            {
-                await DisplayAlert("Alert", "E-mail non Inserita!", "OK");
-            }
-            else if (!string.IsNullOrEmpty(b) && b != "user" && a != "admin")
-            {
-                await DisplayAlert("Alert", "Password non Corretta!", "OK");
-            }
-            else if (string.IsNullOrEmpty(b))
-            {
-                await DisplayAlert("Alert", "Password non Inserita!", "OK");
-            }
-        }*/
+        
 
         async void AssegnaAziende()
         {
@@ -184,30 +159,37 @@ namespace EventUPv2
             listaEv = new List<Evento>();
             listaEvIncorso = new List<Evento>();
             listaEvPassati = new List<Evento>();
-            byte[] im = null;
-            var ev1 = new Evento("Corso Cisco","25/05/2019",im,"Cisco", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
-            var ev2 = new Evento("Crazyland", "13/06/2019", im, "Cisco", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
-            var ev3 = new Evento("Medimex", "15/11/2019", im, "Puglia Records", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
+            String im = "https://png.icons8.com/car/ultraviolet/50/3498db";
+            var ev1 = new Evento("Corso Cisco", "25/05/2019", im, "Cisco", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf", true, false, false);
+            var ev2 = new Evento("Crazyland", "13/06/2019", im, "Cisco", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf", false, false, true);
+            var ev3 = new Evento("Medimex", "15/11/2019", im, "EnerSetting", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf", false, true, false);
+            var ev4 = new Evento("ZeroFest", "25/05/2019", im, "Puglia Records", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf", true, false, false);
             listaEv.Add(ev1);
-            listaEv.Add(ev2);
-            listaEv.Add(ev3);
-            listaEvIncorso.Add(ev1);
+            listaEv.Add(ev4);
             listaEvIncorso.Add(ev2);
-          //  listaEvIncorso.Add(ev3);
-            listaEvPassati.Add(ev1);
-            listaEvPassati.Add(ev2);
             listaEvPassati.Add(ev3);
             Constants.listaEventi = listaEv;
             Constants.listaEventiCorso = listaEvIncorso;
             Constants.listaEventiStorico = listaEvPassati;
-            Constants.listaEventiAzienda = listaEvIncorso;//utilizzato solo per esempio
+    
+        }
+        public void AssegnaEventiAzienda()
+        {
+            //codice utilizzato per app senza back end
+            listaEvAz = new List<Evento>();
+            String im = "https://png.icons8.com/car/ultraviolet/50/3498db";
+            
+            var ev = new Evento("Medimex", "15/11/2019", im, "EnerSetting", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf", false, true, false);
+           
+            listaEvAz.Add(ev);
+            Constants.listaEventiAzienda = listaEvAz;
         }
         public void AssegnaNews()
         {
             //codice utilizzato per app senza back end
             listaNews = new List<News>();
                 
-            byte[] im = null;
+            String im = null;
             var n1 = new News("Evento!!!", "25/05/2019", im, "EnerSetting", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
             var n2 = new News("Secondo evento!!!", "13/06/2019", im, "EnerSetting", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
             var n3 = new News("Terzo evento!!!", "15/11/2019", im, "Cisco", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
@@ -216,6 +198,21 @@ namespace EventUPv2
             listaNews.Add(n3);
             Constants.listaNews = listaNews;
             
+        }
+        public void AssegnaNewsAzienda()
+        {
+            //codice utilizzato per app senza back end
+            listaNewsAz = new List<News>();
+
+            String im = null;
+            var n1 = new News("Evento!!!", "25/05/2019", im, "EnerSetting", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
+            var n2 = new News("Secondo evento!!!", "13/06/2019", im, "EnerSetting", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
+          
+            listaNewsAz.Add(n1);
+            listaNewsAz.Add(n2);
+            
+            Constants.listaNewsAzienda = listaNewsAz;
+
         }
     }
 }

@@ -60,7 +60,7 @@ namespace EventUPv2
                       Constants.listaEventiCorso = await App.EvManager.GetTasksAsync(1,null,0);
                        Constants.listaEventiStorico = await App.EvManager.GetTasksAsync(2,null,0);
                        Constants.listaEventi = await App.EvManager.GetTasksAsync(3,null,0);*/
-                        await AssegnaEventi();
+                         AssegnaEventi();
                         await Navigation.PushAsync(new RegistratiInteressi());
 
 
@@ -89,7 +89,7 @@ namespace EventUPv2
             var ad1 = new Admin("EnerSetting", "Locorotondo", "asd1234rt6f", "setting@enersetting.com", "alternanza");
             var ad2 = new Admin("Barilla", "Modena", "modbar459q7", "admin@barilla.com", "pasta");
             var ad3 = new Admin("ILVA", "Taranto", "dbbsjbkjsdab", "ilva@ilva.com", "ferro");
-
+        
             listaAziende.Add(ad1);
             listaAziende.Add(ad2);
             listaAziende.Add(ad3);
@@ -97,28 +97,25 @@ namespace EventUPv2
 
         }
 
-        async Task AssegnaEventi()
+          public void AssegnaEventi()
         {
             //codice utilizzato per app senza back end
             listaEv = new List<Evento>();
             listaEvIncorso = new List<Evento>();
             listaEvPassati = new List<Evento>();
-            byte[] im = null;
-            var ev1 = new Evento("Corso Cisco", "25/05/2019", im, "Cisco", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
-            var ev2 = new Evento("Crazyland", "13/06/2019", im, "AWAproductions", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
-            var ev3 = new Evento("Medimex", "15/11/2019", im, "Puglia Records", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
+            String im = "https://png.icons8.com/car/ultraviolet/50/3498db";
+            var ev1 = new Evento("Corso Cisco", "25/05/2019", im, "Cisco", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf", true, false, false);
+            var ev2 = new Evento("Crazyland", "13/06/2019", im, "Cisco", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf", false, false, true);
+            var ev3 = new Evento("Medimex", "15/11/2019", im, "EnerSetting", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf", false, true, false);
+            var ev4 = new Evento("ZeroFest", "25/05/2019", im, "Puglia Records", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf", true, false, false);
             listaEv.Add(ev1);
-            listaEv.Add(ev2);
-            listaEv.Add(ev3);
-            listaEvIncorso.Add(ev1);
+            listaEv.Add(ev4);
             listaEvIncorso.Add(ev2);
-            listaEvIncorso.Add(ev3);
-            listaEvPassati.Add(ev1);
-            listaEvPassati.Add(ev2);
             listaEvPassati.Add(ev3);
             Constants.listaEventi = listaEv;
             Constants.listaEventiCorso = listaEvIncorso;
             Constants.listaEventiStorico = listaEvPassati;
+
         }
 
 

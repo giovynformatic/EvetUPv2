@@ -113,10 +113,10 @@
                                  HorizontalOptions="Start"
                                  VerticalOptions="Start"
                                  TextColor="Black" />
-                                    <Label Text="{Binding Descrizione}"
+                                  <!-- <Label Text="{Binding Descrizione}"
                                  HorizontalOptions="Start"
                                  VerticalOptions="End"
-                                 TextColor="Black" />
+                                 TextColor="Black" />-->
 
                                 </StackLayout>
                             </ViewCell>
@@ -185,19 +185,16 @@
                             <ViewCell  x:Name="cella"  >
                                 <StackLayout  Orientation="Horizontal" Margin="0,20,0,0">
                                    
-                                    <ic:CircleImage Source="{Binding Data1.Immagine}"
+                                    <ic:CircleImage Source="{Binding Immagine}"
                                           HorizontalOptions="Start"
                                  VerticalOptions="CenterAndExpand" 
                                           />
-                                    <Label Text="{Binding Data1.Titolo}"
+                                    <Label Text="{Binding Titolo}"
                                  
                                  HorizontalOptions="Start"
                                  VerticalOptions="Start"
                                  TextColor="Black" />
-                                    <Label Text="{Binding Data1.Descrizione}"
-                                 HorizontalOptions="Start"
-                                 VerticalOptions="End"
-                                 TextColor="Black" />
+                                    
 
                                 </StackLayout>
                             </ViewCell>
@@ -240,19 +237,16 @@
                             <ViewCell x:Name="cella"  >
                                 <StackLayout  Orientation="Horizontal" Margin="0,20,0,0">
                                    
-                                    <ic:CircleImage Source="{Binding Data2.Immagine}"
+                                    <ic:CircleImage Source="{Binding Immagine}"
                                           HorizontalOptions="Start"
                                  VerticalOptions="CenterAndExpand" 
                                           />
-                                    <Label Text="{Binding Data2.Titolo}"
+                                    <Label Text="{Binding Titolo}"
                                  
                                  HorizontalOptions="Start"
                                  VerticalOptions="Start"
                                  TextColor="Black" />
-                                    <Label Text="{Binding Data2.Descrizione}"
-                                 HorizontalOptions="Start"
-                                 VerticalOptions="End"
-                                 TextColor="Black" />
+                                   
 
                                 </StackLayout>
                             </ViewCell>
@@ -292,19 +286,16 @@
                 <DataTemplate>
                      <ViewCell >
                         <StackLayout Orientation="Horizontal">
-                          <ic:CircleImage Source="{Binding Data3.imm}"
+                          <ic:CircleImage Source="{Binding Immagine}"
                                           HorizontalOptions="Start"
                                  VerticalOptions="CenterAndExpand" 
                                           />
-                          <Label Text="{Binding Data3.Titolo}"
+                          <Label Text="{Binding Titolo}"
                                  
                                  HorizontalOptions="Start"
                                  VerticalOptions="Start"
                                  TextColor="#f35e20" />
-                          <Label Text="{Binding Data3.Descrizione}"
-                                 HorizontalOptions="Start"
-                                 VerticalOptions="End"
-                                 TextColor="#503026" />
+                         
                           
                         </StackLayout>
                     </ViewCell>
