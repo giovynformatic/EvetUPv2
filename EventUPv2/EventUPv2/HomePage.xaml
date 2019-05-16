@@ -7,7 +7,7 @@
     
     <!--Pages can be added as references or inline-->
 <ContentPage Title="Profilo">
-        <ScrollView >
+        <ScrollView IsEnabled="True" VerticalScrollBarVisibility="Always" >
             <StackLayout Margin="20,20,20,0" Spacing="32" >
                 <ic:CircleImage    
             Margin="100,0,100,0"
@@ -31,39 +31,9 @@
                            <ViewCell x:Name="Interest" Tapped="interest"><Label Text="I miei interessi" Font="Medium" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" /></ViewCell>
                            
                           
-            
-       
-            <!--
-                            <ViewCell>
-                      <StackLayout Orientation="Horizontal">
-                          <ic:CircleImage Source="https://png.icons8.com/message/ultraviolet/50/3498db" 
-                                          HorizontalOptions="Start"
-                                 VerticalOptions="Center" />
-                          <Label Text="left"
-                                 HorizontalOptions="Start"
-                                 VerticalOptions="Center"
-                                 TextColor="#f35e20" />
-                          <Label Text="right"
-                                 HorizontalOptions="CenterAndExpand"
-                                 VerticalOptions="Center"
-                                 TextColor="#503026" />
-                                    <Switch IsToggled="{Binding RememberLastUser}"></Switch>
-                      </StackLayout>
-                  </ViewCell>-->
-            
+           
         </TableSection>
-                        <TableSection Title="Options"  >
-
-
-                            <SwitchCell x:Name="PosSwitch" Text="Posizione"    On="false" />
-                          
-
-                          
                         
-                            <SwitchCell x:Name="notggSwitch" Text="Avvisami il giorno prima" On="false" />
-                            <SwitchCell x:Name="nothrSwitch" Text="Avvisami un'ora prima" On="false" />
-                            <SwitchCell x:Name="notPosSwitch" Text="Notifiche eventi vicini" On="false" />
-                        </TableSection>
                         
                         
                         
