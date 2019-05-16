@@ -24,6 +24,7 @@ namespace EventUPv2
         public static List<Evento> listaEventi;
         public static List<News> listaNews;
         public static List<Evento> listaEventiAzienda;
+        public static List<News> listaNewsAzienda;
 
     }
 }
