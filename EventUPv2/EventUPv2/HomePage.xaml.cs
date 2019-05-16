@@ -113,7 +113,7 @@ namespace EventUPv2
             AssegnaEventi();
             //  String cc = eventiList.SelectedItem.ToString();
             //   Console.WriteLine(eventiList.ItemSel);
-            var mydetails = e.Item as Evento;
+            var mydetails = e.Item as ExampleDataEvento;
             await Navigation.PushAsync(new PageEventi(mydetails.Titolo,1));
 
         }
