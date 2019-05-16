@@ -1,40 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 namespace EventUPv2
 {
     public class MultiSelectViewModelNews
     {
-       
-            public MultiSelectViewModelNews(List<SelectableDataNews<ExampleDataNews>> data)
+
+        public ObservableCollection<ExampleDataNews> DataListNews { get; set; }
+        public List<News> listaN;
+        public MultiSelectViewModelNews()
+        {
+            DataListNews = new ObservableCollection<ExampleDataNews>();
+            listaN = Constants.listaNews;
+            for (int a = 0; a < listaN.Count(); a++)
             {
-                DataListNews = data;
+                DataListNews.Add(new ExampleDataNews() { Titolo = listaN.ElementAt(a).Titolo, Descrizione = listaN.ElementAt(a).Descrizione, Immagine = listaN.ElementAt(a).Immagine, Azienda = listaN.ElementAt(a).Azienda, Data = listaN.ElementAt(a).Data });
             }
-
-
-
-            // As example if you need to convert
-            //private void LoadData(List<ExampleData> data)
-            //{
-            //  var list = new List<SelectableData<ExampleData>>();
-
-            //  foreach (var item in data)
-            //      list.Add(new SelectableData<ExampleData>() { Data = item });
-
-            //  DataList = list;
-            //}
-
-            public List<SelectableDataNews<ExampleDataNews>> DataListNews { get; set; }
-
-            public List<SelectableDataNews<ExampleDataNews>> GetNewData()
-            {
-                var list = new List<SelectableDataNews<ExampleDataNews>>();
-
-                foreach (var data in DataListNews)
-                    list.Add(new SelectableDataNews<ExampleDataNews>() { Data3 = data.Data3.Clone(), Selected = data.Selected });
-
-                return list;
-            }
-
         }
+
+    }
 
 }
