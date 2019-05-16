@@ -5,7 +5,6 @@
              xmlns:custom="clr-namespace:EventUPv2"
              x:Class="EventUPv2.HomePageAdmin">
 
-    <!--Pages can be added as references or inline-->
     <ContentPage Title="Profilo">
         <ScrollView BackgroundColor="White">
             <StackLayout Margin="20,20,20,0" Spacing="32" >
@@ -28,12 +27,7 @@
                           
 
                         </TableSection>
-                      <!--  <TableSection Title="Options">
-
-                         
-                            <SwitchCell x:Name="PreSwitch" Text="Prenotazione Automatica" On="false" />
-                        </TableSection>  
-                        -->
+               
 
 
 
@@ -47,12 +41,76 @@
     </ContentPage>
     <ContentPage Title="Eventi">
         <ScrollView BackgroundColor="White">
-            <StackLayout Margin="20,10,20,0" Spacing="32" >
+            <StackLayout Margin="10,10,5,0" Spacing="32" >
+
+                <ListView x:Name="eventiAziendaList" ItemTapped="EventoAzienda"  BackgroundColor="White" ItemsSource="{Binding DataListEventoAzienda}" >
+                    <ListView.Header>
+
+                        
+                    </ListView.Header>
+                    <ListView.ItemTemplate  >
+                        <DataTemplate >
+                            <ViewCell  x:Name="cella"  >
+                                <StackLayout  Orientation="Horizontal" Margin="0,20,0,0">
+                                   
+                                    <ic:CircleImage Source="{Binding Immagine}"
+                                          HorizontalOptions="Start"
+                                 VerticalOptions="CenterAndExpand" 
+                                          />
+                                    <Label x:Name="EventoNome" Text="{Binding Titolo}"
+                                 
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Start"
+                                 TextColor="Black" />
+                                    <Label Text="{Binding Descrizione}"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="End"
+                                 TextColor="Black" />
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                    </ListView.Footer>
+                </ListView>
 
 
-
-            
-
+            </StackLayout>
+        </ScrollView>
+    </ContentPage>
+     <ContentPage Title="News">
+        <ScrollView BackgroundColor="White">
+            <StackLayout  Margin="10,10,5,0" Spacing="32" >
+                <ListView x:Name="newsList" ItemTapped="News" SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataListNewsAzienda}">
+            <ListView.Header>
+                        
+            </ListView.Header>
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                     <ViewCell >
+                        <StackLayout Orientation="Horizontal">
+                          <ic:CircleImage Source="{Binding Immagine}"
+                                          HorizontalOptions="Start"
+                                 VerticalOptions="CenterAndExpand" 
+                                          />
+                          <Label Text="{Binding Titolo}"
+                                 
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Start"
+                                 TextColor="#f35e20" />
+                          <Label Text="{Binding Descrizione}"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="End"
+                                 TextColor="#503026" />
+                          
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.Footer>  
+                </ListView.Footer>
+        </ListView>
             </StackLayout>
         </ScrollView>
     </ContentPage>
