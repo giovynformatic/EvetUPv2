@@ -104,16 +104,16 @@
                             <ViewCell  x:Name="cella"  >
                                 <StackLayout  Orientation="Horizontal" Margin="0,20,0,0">
                                    
-                                    <ic:CircleImage Source="{Binding Data.Immagine}"
+                                    <ic:CircleImage Source="{Binding Immagine}"
                                           HorizontalOptions="Start"
                                  VerticalOptions="CenterAndExpand" 
                                           />
-                                    <Label x:Name="EventoNome" Text="{Binding Data.Titolo}"
+                                    <Label x:Name="EventoNome" Text="{Binding Titolo}"
                                  
                                  HorizontalOptions="Start"
                                  VerticalOptions="Start"
                                  TextColor="Black" />
-                                    <Label Text="{Binding Data.Descrizione}"
+                                    <Label Text="{Binding Descrizione}"
                                  HorizontalOptions="Start"
                                  VerticalOptions="End"
                                  TextColor="Black" />
