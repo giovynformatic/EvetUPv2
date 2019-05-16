@@ -7,7 +7,7 @@
     
     <!--Pages can be added as references or inline-->
 <ContentPage Title="Profilo">
-        <ScrollView BackgroundColor="White">
+        <ScrollView >
             <StackLayout Margin="20,20,20,0" Spacing="32" >
                 <ic:CircleImage    
             Margin="100,0,100,0"
@@ -17,7 +17,7 @@
             />
                 <Label x:Name="Utype" HorizontalTextAlignment="Center"  FontSize="20"  />
 
-                <TableView Margin="0,0,0,0" Intent="Form"  WidthRequest="20" HeightRequest="40" BackgroundColor="White" >
+                <TableView Margin="0,0,0,0" Intent="Form"  WidthRequest="20" HeightRequest="40">
      <TableRoot >
         <TableSection >
            <!--
@@ -108,7 +108,7 @@
                                           HorizontalOptions="Start"
                                  VerticalOptions="CenterAndExpand" 
                                           />
-                                    <Label Text="{Binding Data.Titolo}"
+                                    <Label x:Name="EventoNome" Text="{Binding Data.Titolo}"
                                  
                                  HorizontalOptions="Start"
                                  VerticalOptions="Start"

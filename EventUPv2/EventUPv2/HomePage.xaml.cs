@@ -7,6 +7,7 @@ using System.Linq;
 
 using System.Threading.Tasks;
 using Xamarin.Forms.Xaml;
+using XLabs.Forms;
 
 namespace EventUPv2
 {
@@ -108,6 +109,8 @@ namespace EventUPv2
         async void Evento(object sender, EventArgs args)
         {
             AssegnaEventi();
+            String cc = eventiList.SelectedItem.ToString();
+            Console.WriteLine(cc);
             await Navigation.PushAsync(new PageEventi(0,1));
 
         }
