@@ -30,17 +30,17 @@ namespace EventUPv2
             Constants.listaEventi = listaEv;
             Constants.listaEventiCorso = listaEvIncorso;
             Constants.listaEventiStorico = listaEvPassati;
-            SelectedDataEventi = new List<SelectableDataEvento<ExampleDataEvento>>();
+           // SelectedDataEventi = new List<SelectableDataEvento<ExampleDataEvento>>();
             AssegnaEventi();
             AssegnaNews();
-            for (int a = 0; a < listaEv.Count(); a++)
+          /*  for (int a = 0; a < listaEv.Count(); a++)
             {
                 SelectableDataEvento<ExampleDataEvento> s;
                 SelectedDataEventi.Add(s = new SelectableDataEvento<ExampleDataEvento>() { Data = new ExampleDataEvento() { Titolo = listaEv.ElementAt(a).Titolo } });
                
 
-            }
-            //eventiList.BindingContext= new MultiSelectViewModelEvento(SelectedDataEventi);
+            }*/
+           // eventiList.BindingContext= new MultiSelectViewModelEvento(SelectedDataEventi);
 
             eventiList.BindingContext= new MultiSelectViewModelEvento();
             
