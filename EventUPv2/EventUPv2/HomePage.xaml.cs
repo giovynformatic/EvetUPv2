@@ -40,7 +40,9 @@ namespace EventUPv2
                
 
             }
-            eventiList.BindingContext= new MultiSelectViewModelEvento(SelectedDataEventi);
+            //eventiList.BindingContext= new MultiSelectViewModelEvento(SelectedDataEventi);
+
+            eventiList.BindingContext= new MultiSelectViewModelEvento();
             
 
             SelectedDataEventiInCorso = new List<SelectableDataEventoIncorso<ExampleDataEvento>>();
@@ -106,24 +108,25 @@ namespace EventUPv2
 
         }
 
-        async void Evento(object sender, EventArgs args)
+        async void Evento(object sender, ItemTappedEventArgs e)
         {
             AssegnaEventi();
-            String cc = eventiList.SelectedItem.ToString();
-            Console.WriteLine(cc);
-            await Navigation.PushAsync(new PageEventi(0,1));
+            //  String cc = eventiList.SelectedItem.ToString();
+            //   Console.WriteLine(eventiList.ItemSel);
+            var mydetails = e.Item as Evento;
+            await Navigation.PushAsync(new PageEventi(mydetails.Titolo,1));
 
         }
         async void EventoInCorso(object sender, EventArgs args)
         {
             AssegnaEventi();
-            await Navigation.PushAsync(new PageEventi(0,2));
+            await Navigation.PushAsync(new PageEventi("",2));
 
         }
         async void EventoPassati(object sender, EventArgs args)
         {
             AssegnaEventi();
-            await Navigation.PushAsync(new PageEventi(0,3));
+            await Navigation.PushAsync(new PageEventi("",3));
 
         }
 

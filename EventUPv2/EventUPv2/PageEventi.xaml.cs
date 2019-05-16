@@ -7,17 +7,10 @@ namespace EventUPv2
 {
     public partial class PageEventi : ContentPage
     {
-        public PageEventi(int item,int tipo)
+        public PageEventi(string item,int tipo)
         {
             InitializeComponent();
-            String s;
-            switch (tipo) {
-                case 1:
-                 
-                    break;
-                case 2:
-                    break;
-            }
+            titolo.Text = item;
                 
 
         }

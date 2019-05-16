@@ -79,7 +79,7 @@
         <ScrollView BackgroundColor="White">
             <StackLayout Margin="10,10,5,0" Spacing="32" >
 
-                <ListView x:Name="eventiList" SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataListEvento}" >
+                <ListView x:Name="eventiList" ItemTapped="Evento"  BackgroundColor="White" ItemsSource="{Binding DataListEvento}" >
                     <ListView.Header>
 
                         <StackLayout  Orientation="Horizontal" Margin="0,0,0,0">
@@ -101,7 +101,7 @@
                     </ListView.Header>
                     <ListView.ItemTemplate  >
                         <DataTemplate >
-                            <ViewCell Tapped="Evento" x:Name="cella"  >
+                            <ViewCell  x:Name="cella"  >
                                 <StackLayout  Orientation="Horizontal" Margin="0,20,0,0">
                                    
                                     <ic:CircleImage Source="{Binding Data.Immagine}"
@@ -161,7 +161,7 @@
         <ScrollView BackgroundColor="White">
             <StackLayout  Margin="10,10,5,0" Spacing="32" >
 
-                <ListView x:Name="currenteventiList"  SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataListEventoIncorso}" >
+                <ListView x:Name="currenteventiList" ItemTapped="EventoInCorso"  SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataListEventoIncorso}" >
                     <ListView.Header>
 
                         <StackLayout  Orientation="Horizontal">
@@ -182,7 +182,7 @@
                     </ListView.Header>
                     <ListView.ItemTemplate  >
                         <DataTemplate >
-                            <ViewCell Tapped="EventoInCorso" x:Name="cella"  >
+                            <ViewCell  x:Name="cella"  >
                                 <StackLayout  Orientation="Horizontal" Margin="0,20,0,0">
                                    
                                     <ic:CircleImage Source="{Binding Data1.Immagine}"
@@ -216,7 +216,7 @@
         <ScrollView BackgroundColor="White">
             <StackLayout  Margin="10,10,5,0" Spacing="32" >
 
-                <ListView x:Name="pasteventiList" SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataListEventoPassato}" >
+                <ListView x:Name="pasteventiList" ItemTapped="EventoPassati" SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataListEventoPassato}" >
                     <ListView.Header>
 
                         <StackLayout  Orientation="Horizontal">
@@ -237,7 +237,7 @@
                     </ListView.Header>
                     <ListView.ItemTemplate  >
                         <DataTemplate >
-                            <ViewCell Tapped="EventoPassati" x:Name="cella"  >
+                            <ViewCell x:Name="cella"  >
                                 <StackLayout  Orientation="Horizontal" Margin="0,20,0,0">
                                    
                                     <ic:CircleImage Source="{Binding Data2.Immagine}"
@@ -270,7 +270,7 @@
 <ContentPage Title="News">
         <ScrollView BackgroundColor="White">
             <StackLayout  Margin="10,10,5,0" Spacing="32" >
-                <ListView x:Name="newsList" SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataListNews}">
+                <ListView x:Name="newsList" ItemTapped="News" SelectionMode="Single" BackgroundColor="White" ItemsSource="{Binding DataListNews}">
             <ListView.Header>
                          <StackLayout  Orientation="Horizontal">
                 <custom:CustomEntry CornerRadius="20" 
@@ -290,7 +290,7 @@
             </ListView.Header>
             <ListView.ItemTemplate >
                 <DataTemplate>
-                     <ViewCell Tapped="News">
+                     <ViewCell >
                         <StackLayout Orientation="Horizontal">
                           <ic:CircleImage Source="{Binding Data3.imm}"
                                           HorizontalOptions="Start"
