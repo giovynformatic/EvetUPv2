@@ -102,11 +102,45 @@ namespace EventUPv2
 
         }
 
-        async void searchButton(object sender, EventArgs args)
+        async void searchButtonEv(object sender, EventArgs args)
         {
-            if (search.Text != "" && search.Text != null){
-                await DisplayAlert("Alert", search.Text, "ok");
+            if (searchEv.Text != "" && searchEv.Text != null){
+                await DisplayAlert("Alert", searchEv.Text, "ok");
             }else {
+                await DisplayAlert("Alert", "nessun testo inserito", "ok");
+            }
+        }
+        async void searchButtonEvCur(object sender, EventArgs args)
+        {
+            if (searchcurrentEv.Text != "" && searchcurrentEv.Text != null)
+            {
+                await DisplayAlert("Alert", searchcurrentEv.Text, "ok");
+            }
+            else
+            {
+                await DisplayAlert("Alert", "nessun testo inserito", "ok");
+            }
+        }
+        async void searchButtonEvPast(object sender, EventArgs args)
+        {
+            if (searchpastEv.Text != "" && searchpastEv.Text != null)
+            {
+                await DisplayAlert("Alert", searchpastEv.Text, "ok");
+            }
+            else
+            {
+                await DisplayAlert("Alert", "nessun testo inserito", "ok");
+            }
+        }
+
+        async void searchButtonNews(object sender, EventArgs args)
+        {
+            if (searchNews.Text != "" && searchNews.Text != null)
+            {
+                await DisplayAlert("Alert", searchNews.Text, "ok");
+            }
+            else
+            {
                 await DisplayAlert("Alert", "nessun testo inserito", "ok");
             }
         }

@@ -6,7 +6,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 xmlns:custom="clr-namespace:EventUPv2"
 x:Class="EventUPv2.QrCodePopup">
     
-    <StackLayout Margin="100,300,100,300" BackgroundColor="White" x:Name="StackLQr"  >
+    <StackLayout Margin="100,150,100,150" BackgroundColor="White" x:Name="StackLQr"  >
          
        
     </StackLayout>

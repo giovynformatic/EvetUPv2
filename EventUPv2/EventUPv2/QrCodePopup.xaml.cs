@@ -19,8 +19,8 @@ namespace EventUPv2
                 AutomationId = "zxingBarcodeImageView",
             };
             barcode.BarcodeFormat = ZXing.BarcodeFormat.QR_CODE;
-            barcode.BarcodeOptions.Width = 300;
-            barcode.BarcodeOptions.Height = 300;
+            barcode.BarcodeOptions.Width = 500;
+            barcode.BarcodeOptions.Height = 500;
             barcode.BarcodeOptions.Margin = 10;
             barcode.BarcodeValue = "2503"+Constants.CurrentUser.email;
 

@@ -65,7 +65,7 @@
                                 PlaceholderColor="Gray"
                                 x:Name="searchEv"
                                 />
-                            <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/search/ultraviolet/50/3498db" Clicked="searchButton"/>
+                            <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/search/ultraviolet/50/3498db" Clicked="searchButtonEv"/>
                             <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/menu/ultraviolet/50/3498db" Clicked="FilterButton"/>
                         </StackLayout>
                     </ListView.Header>
@@ -146,7 +146,7 @@
                                 FontSize="Medium" 
                                 PlaceholderColor="Gray"
                                 x:Name="searchcurrentEv"/>
-                            <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/search/ultraviolet/50/3498db" Clicked="searchButton"/>
+                            <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/search/ultraviolet/50/3498db" Clicked="searchButtonEvCur"/>
                             <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/menu/ultraviolet/50/3498db" Clicked="FilterButton"/>
                         </StackLayout>
                     </ListView.Header>
@@ -198,7 +198,7 @@
                                 FontSize="Medium" 
                                 PlaceholderColor="Gray"
                                 x:Name="searchpastEv"/>
-                            <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/search/ultraviolet/50/3498db" Clicked="searchButton"/>
+                            <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/search/ultraviolet/50/3498db" Clicked="searchButtonEvPast"/>
                             <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/menu/ultraviolet/50/3498db" Clicked="FilterButton"/>
                         </StackLayout>
                     </ListView.Header>
@@ -247,9 +247,9 @@
                                 Placeholder="Ricerca" 
                                 FontSize="Medium" 
                                 PlaceholderColor="Gray"
-                                x:Name="search"/>
-                    <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/search/ultraviolet/50/3498db" Clicked="searchButton"/>
-                    <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/menu/ultraviolet/50/3498db" Clicked="menuButton"/>
+                                x:Name="searchNews"/>
+                    <ImageButton HorizontalOptions="End" VerticalOptions="CenterAndExpand" Source="https://png.icons8.com/search/ultraviolet/50/3498db" Clicked="searchButtonNews"/>
+
           </StackLayout>
             </ListView.Header>
             <ListView.ItemTemplate >
