@@ -260,4 +260,10 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B16FA725-41AC-4C55-8F08-FA9D154AC0CB}
 	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.VersionControlPolicy = $1
+		$1.CommitMessageStyle = $2
+		$2.IncludeDirectoryPaths = True
+	EndGlobalSection
 EndGlobal

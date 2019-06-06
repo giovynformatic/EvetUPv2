@@ -19,11 +19,11 @@ namespace EventUPv2
             _client = new HttpClient();
         }
 
-        public async Task<List<String>> RefreshDataAsync()
+        public async Task<List<String>> RefreshDataAsync(String Evento)
         {
             Items = new List<String>();
 
-            var uri = new Uri(string.Format(Constants.PartecipaUrl, string.Empty));
+            var uri = new Uri(string.Format(Constants.PartecipaUrl,Evento, string.Empty));
             try
             {
                 var response = await _client.GetAsync(uri);

@@ -216,3 +216,10 @@ namespace EventUPv2
         }
     }
 }
+/*
+bottone evento in corso
+scanner in evento
+num di partecipanti attivi e non
+
+
+    */
