@@ -19,7 +19,7 @@ namespace EventUPv2
             _client = new HttpClient();
         }
 
-        public async Task<List<String>> RefreshDataAsync(String Evento)
+        public async Task<List<String[]>> RefreshDataAsync(String Evento)
         {
             Items = new List<String>();
 

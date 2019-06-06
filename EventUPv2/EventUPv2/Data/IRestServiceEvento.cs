@@ -7,9 +7,10 @@ namespace EventUPv2
 {
     public interface IRestServiceEvento
     {
-        Task<List<Evento>> RefreshDataAsync(int tipo, String testoRicerca, int ordinamentoFiltri, String Azienda);
+        Task<List<Evento>> RefreshDataAsync(int tipo, String testoRicerca, int ordinamentoFiltri,String emailUser, String Azienda);
 
         Task SaveTodoItemAsync(Evento item, bool isNewItem);
         Task DeleteTodoItemAsync(Evento ev);
     }
 }
+ 

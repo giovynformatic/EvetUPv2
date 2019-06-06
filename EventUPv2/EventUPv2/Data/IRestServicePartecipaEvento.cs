@@ -9,7 +9,7 @@ namespace EventUPv2
     {
 
 
-        Task<List<String>> RefreshDataAsync(String Evento);
+        Task<List<String[]>> RefreshDataAsync(String Evento);
 
         Task SaveTodoItemAsync(String item, bool isNewItem);
         Task DeleteTodoItemAsync(String ad);

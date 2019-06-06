@@ -91,7 +91,7 @@ namespace EventUPv2
                 Device.BeginInvokeOnMainThread(async () => {
                     Navigation.PopAsync();
                     //await App.PrManager.SaveTaskAsync(result.Text);
-                    DisplayAlert("Codice scannerizzato", result.Text, "OK");
+                    DisplayAlert("Codice scannerizzato", result.Text+"-"+titolo.Text, "OK");
                 });
             };
 

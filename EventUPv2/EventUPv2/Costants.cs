@@ -12,7 +12,6 @@ namespace EventUPv2
         public static string UserUrl = null;
         public static string AdminUrl = null;
         public static string EventoUrl = null;
-        public static string PresenzeUrl = null;
         public static string NewsUrl = null;
         public static string PartecipaUrl = null;
         public static Admin CurrentAdmin = null;
