@@ -26,7 +26,7 @@ namespace EventUPv2
             Utype.Text = Constants.CurrentAdmin.NomeAzienda;
             eventiAziendaList.BindingContext = new MultiSelectViewModelEventoAzienda();
             newsList.BindingContext = new MultiSelectViewModelNewsAzienda();
-            EventoAziendaInCorso.BindingContext = new MultiSelectViewModelEventoIncorso();
+            EventoAziendaInCorso.BindingContext = new MultiSelectViewModelEventoIncorsoAzienda();
         }
         public void datiAzienda(object sender, EventArgs args)
         {

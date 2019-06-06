@@ -183,6 +183,7 @@ namespace EventUPv2
            
             listaEvAz.Add(ev);
             Constants.listaEventiAzienda = listaEvAz;
+            Constants.listaEventiIncorsoAzienda = listaEvAz;
         }
         public void AssegnaNews()
         {
