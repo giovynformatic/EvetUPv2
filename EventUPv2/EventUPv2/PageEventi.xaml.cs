@@ -69,7 +69,7 @@ namespace EventUPv2
         async void Partecipanti_Clicked(object sender, EventArgs e)
         {
 
-
+             PopupNavigation.Instance.PushAsync(new Popup_Partecipanti()); 
            
         }
 

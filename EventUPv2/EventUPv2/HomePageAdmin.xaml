@@ -76,6 +76,43 @@
             </StackLayout>
         </ScrollView>
     </ContentPage>
+     <ContentPage Title="Eventi In Corso">
+        <ScrollView BackgroundColor="White">
+            <StackLayout Margin="10,10,5,0" Spacing="32" >
+
+                <ListView x:Name="eventiAziendaListincorso" ItemTapped="EventoAziendaInCorso"  BackgroundColor="White" ItemsSource="{Binding DataListEventoAziendaInCorso}" >
+                    <ListView.Header>
+
+                        
+                    </ListView.Header>
+                    <ListView.ItemTemplate  >
+                        <DataTemplate >
+                            <ViewCell  x:Name="cella"  >
+                                <StackLayout  Orientation="Horizontal" Margin="0,20,0,0">
+                                   
+                                    <ic:CircleImage Source="{Binding Immagine}"
+                                          HorizontalOptions="Start"
+                                 VerticalOptions="CenterAndExpand" 
+                                          />
+                                    <Label x:Name="EventoNome" Text="{Binding Titolo}"
+                                 
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Start"
+                                 TextColor="Black" />
+                                   
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                    </ListView.Footer>
+                </ListView>
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage>
      <ContentPage Title="News">
         <ScrollView BackgroundColor="White">
             <StackLayout  Margin="10,10,5,0" Spacing="32" >
