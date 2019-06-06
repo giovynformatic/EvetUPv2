@@ -12,7 +12,7 @@ namespace EventUPv2
 
         HttpClient _client;
 
-        public List<String> Items { get; private set; }
+        public List<String[]> Items { get; private set; }
 
         public RestServicePartecipaEvento()
         {
@@ -21,7 +21,7 @@ namespace EventUPv2
 
         public async Task<List<String[]>> RefreshDataAsync(String Evento)
         {
-            Items = new List<String>();
+            Items = new List<String[]>();
 
             var uri = new Uri(string.Format(Constants.PartecipaUrl,Evento, string.Empty));
             try
@@ -30,7 +30,7 @@ namespace EventUPv2
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    Items = JsonConvert.DeserializeObject<List<String>>(content);
+                    Items = JsonConvert.DeserializeObject<List<String[]>>(content);
                 }
             }
             catch (Exception ex)

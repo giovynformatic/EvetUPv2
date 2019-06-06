@@ -27,6 +27,7 @@ namespace EventUPv2
                     partecipa.IsEnabled = true;
                     Partecipanti.IsVisible = false;
                     Partecipanti.IsEnabled = false;
+                    partecipa.Clicked += Partecipa_Clicked;
                     partecipa.Text = "Partecipa";
                     break;
                 case 2:
@@ -34,6 +35,7 @@ namespace EventUPv2
                     partecipa.IsEnabled = false;
                     Partecipanti.IsVisible = false;
                     Partecipanti.IsEnabled = false;
+                    partecipa.Clicked += Partecipa_Clicked;
                     partecipa.Text = "Gia Iscritto a Quest'Evento";
                     break;
                 case 3:
@@ -42,10 +44,22 @@ namespace EventUPv2
                     Partecipanti.IsVisible = false;
                     Partecipanti.IsEnabled = false;
                     partecipa.Text = "Evento Scaduto";
+                    partecipa.Clicked += Partecipa_Clicked;
                     break;
                 case 4:
                     partecipa.IsVisible = true;
                     partecipa.IsEnabled = true;
+                    Partecipanti.IsVisible = true;
+                    Partecipanti.IsEnabled = true;
+                    partecipa.Text = "Prendi Presenza";
+                    Partecipanti.Text = "Partecipanti";
+                    partecipa.Clicked += OpenScanner;
+                    Partecipanti.Clicked += Partecipanti_Clicked;
+                    break;
+
+                case 5:
+                    partecipa.IsVisible = false;
+                    partecipa.IsEnabled = false;
                     Partecipanti.IsVisible = true;
                     Partecipanti.IsEnabled = true;
                     partecipa.Text = "Prendi Presenza";
@@ -73,14 +87,9 @@ namespace EventUPv2
            
         }
 
-        public void OpenScanner(object sender, EventArgs e)
+        async void OpenScanner(object sender, EventArgs e)
         {
-            Scanner();
-        }
-
-        public async void Scanner()
-        {
-
+          
             var ScannerPage = new ZXingScannerPage();
 
             ScannerPage.OnScanResult += (result) => {
@@ -91,13 +100,14 @@ namespace EventUPv2
                 Device.BeginInvokeOnMainThread(async () => {
                     Navigation.PopAsync();
                     //await App.PrManager.SaveTaskAsync(result.Text);
-                    DisplayAlert("Codice scannerizzato", result.Text+"-"+titolo.Text, "OK");
+                    DisplayAlert("Codice scannerizzato", result.Text + "-" + titolo.Text, "OK");
                 });
             };
 
 
             await Navigation.PushAsync(ScannerPage);
-
         }
+
+       
     }
 }

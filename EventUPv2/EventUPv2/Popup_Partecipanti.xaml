@@ -16,7 +16,7 @@ x:Class="EventUPv2.Popup_Partecipanti">
                                 
                             </Grid.ColumnDefinitions>
                             <StackLayout VerticalOptions="CenterAndExpand" BackgroundColor="White">
-                                <Label  BackgroundColor="White" Text="{Binding Data.NomePartecipanti}"  />
+                                <Label  BackgroundColor="White" Text="{Binding Data.Nome}"  />
                                 
                             </StackLayout>
                             <Switch x:Name="{Binding Data.NomePartecipanti}"  IsToggled="{Binding Selected}" Grid.Column="1" IsEnabled="false" />
@@ -26,7 +26,7 @@ x:Class="EventUPv2.Popup_Partecipanti">
             </ListView.ItemTemplate>
             <ListView.Footer>
                 
-                <Button x:Name="aziendeButton" Text="Salva Aziende" Margin="75,20,75,75"  FontSize="Small" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" />
+              <!--  <Button x:Name="aziendeButton" Text="Salva Aziende" Margin="75,20,75,75"  FontSize="Small" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" />-->
             </ListView.Footer>
         </ListView>
    

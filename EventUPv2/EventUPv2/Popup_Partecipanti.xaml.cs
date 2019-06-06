@@ -19,11 +19,12 @@ namespace EventUPv2
         public Popup_Partecipanti()
         {
             InitializeComponent();
+            AssegnaPresenze();
             SelectedData = new List<SelectableData<ExampleDataPresenze>>();
             for (int a = 0; a < listaPartecipanti.Count(); a++)
             {
                 SelectableData<ExampleDataPresenze> s;
-                SelectedData.Add(s = new SelectableData<ExampleDataPresenze>() { Data = new ExampleDataPresenze() { Nome = listaPartecipanti.ElementAt(a).ElementAt(0) } });
+                SelectedData.Add(s = new SelectableData<ExampleDataPresenze>() { Data = new ExampleDataPresenze() { Nome = listaPartecipanti.ElementAt(a).ElementAt(0) + " " + listaPartecipanti.ElementAt(a).ElementAt(1) } });
                 bool p = bool.Parse(listaPartecipanti.ElementAt(a).ElementAt(2));
                 s.Selected = p;
 
@@ -39,9 +40,9 @@ namespace EventUPv2
 
 
 
-        String[] ad1 = {"fdgs", "gdsg", "1"};
-        String[] ad2 = { "fdgs", "gdsg", "0" };
-        String[] ad3 = { "fdgs", "gdsg", "0" };
+        String[] ad1 = {"fdgs", "gdsg", "true"};
+        String[] ad2 = { "fdgs", "gdsg", "false" };
+        String[] ad3 = { "fdgs", "gdsg", "false" };
 
         listaPartecipanti.Add(ad1);
         listaPartecipanti.Add(ad2);

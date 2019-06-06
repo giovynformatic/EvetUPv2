@@ -26,7 +26,9 @@ namespace EventUPv2
             Utype.Text = Constants.CurrentAdmin.NomeAzienda;
             eventiAziendaList.BindingContext = new MultiSelectViewModelEventoAzienda();
             newsList.BindingContext = new MultiSelectViewModelNewsAzienda();
-            EventoAziendaInCorso.BindingContext = new MultiSelectViewModelEventoIncorsoAzienda();
+            eventiAziendaListincorso.BindingContext = new MultiSelectViewModelEventoIncorsoAzienda();
+            eventiAziendaListpassato.BindingContext = new MultiSelectViewModelEventoPassatoAzienda();
+
         }
         public void datiAzienda(object sender, EventArgs args)
         {
@@ -38,7 +40,7 @@ namespace EventUPv2
         async void EventoAzienda(object sender, ItemTappedEventArgs e)
         {
             var evento = e.Item as ExampleDataEvento;
-            await Navigation.PushAsync(new PageEventi(evento.Titolo, evento.Descrizione, evento.Data, evento.Azienda, evento.Immagine, 4));
+            await Navigation.PushAsync(new PageEventi(evento.Titolo, evento.Descrizione, evento.Data, evento.Azienda, evento.Immagine, 5));
 
         }
 
@@ -46,6 +48,13 @@ namespace EventUPv2
         {
             var evento = e.Item as ExampleDataEvento;
             await Navigation.PushAsync(new PageEventi(evento.Titolo, evento.Descrizione, evento.Data, evento.Azienda, evento.Immagine, 4));
+
+        }
+
+        async void EventoAziendaPassato(object sender, ItemTappedEventArgs e)
+        {
+            var evento = e.Item as ExampleDataEvento;
+            await Navigation.PushAsync(new PageEventi(evento.Titolo, evento.Descrizione, evento.Data, evento.Azienda, evento.Immagine, 5));
 
         }
 

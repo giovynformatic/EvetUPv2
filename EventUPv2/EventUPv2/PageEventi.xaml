@@ -25,7 +25,7 @@
         <Label x:Name="descrizione" Text="Descrizione....nfkjdznvòk jxncvkjzxnckvjòfjfjasdjjfkòjòlkjòkljlkòjòljjòdkccdlmsòznckkkjc ldjasnlcasjdnlajnjnascdjnlcajsndljcadlnskcndjksnckjsdanckjadsncjkdnskjacnadjksnckjdsncjkndskjnkcjnknlsdjnkjnalkanda" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"   />
         <Label Text="Data: " Grid.Row="5" Grid.Column="0" />
         <Label x:Name="data" Text="26/04/2019 " Grid.Row="5" Grid.Column="1" />
-        <Button x:Name="partecipa" Margin="00,00,00,00" Text="Partecipa"   FontSize="Small" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Clicked="Partecipa_Clicked"/>
+        <Button x:Name="partecipa" Margin="00,00,00,00" Text="Partecipa"   FontSize="Small" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" />
         <Button x:Name="Partecipanti" Margin="00,00,00,00" Text="Partecipanti"   FontSize="Small" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" />
         
         </Grid>
