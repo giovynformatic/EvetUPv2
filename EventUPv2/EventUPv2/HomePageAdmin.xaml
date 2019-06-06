@@ -22,9 +22,9 @@
 
                             <ViewCell x:Name="UserDataB" Tapped="datiAzienda"><Label Text="Dati Azienda" Font="Medium" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" /></ViewCell>
                             <ViewCell x:Name="UserPassB" Tapped="gestionePasswordAzienda"><Label Text="Gestione Password" Font="Medium" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" /></ViewCell>
-                           <ViewCell x:Name="qrscanner" Tapped="OpenScanner"><Label Text="QrScanner" Font="Medium" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" /></ViewCell>
+                          <!-- <ViewCell x:Name="qrscanner" Tapped="OpenScanner"><Label Text="QrScanner" Font="Medium" HorizontalOptions="Start" VerticalOptions="Center" TextColor="Black" /></ViewCell>
                            
-                          
+                          -->
 
                         </TableSection>
                

@@ -53,7 +53,7 @@ namespace EventUPv2
             PopupNavigation.Instance.PushAsync(new GestionePasswordPopupAzienda());
 
         }
-        private void OpenScanner(object sender, EventArgs e)
+       /* private void OpenScanner(object sender, EventArgs e)
         {
             Scanner();
         }
@@ -79,6 +79,6 @@ namespace EventUPv2
             await Navigation.PushAsync(ScannerPage);
 
         }
-
+        */
     }
 }

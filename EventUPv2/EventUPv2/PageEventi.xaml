@@ -10,6 +10,7 @@
             <RowDefinition Height="30" />
             <RowDefinition Height="40" />
             <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
             </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -25,6 +26,7 @@
         <Label Text="Data: " Grid.Row="5" Grid.Column="0" />
         <Label x:Name="data" Text="26/04/2019 " Grid.Row="5" Grid.Column="1" />
         <Button x:Name="partecipa" Margin="00,00,00,00" Text="Partecipa"   FontSize="Small" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Clicked="Partecipa_Clicked"/>
+        <Button x:Name="Partecipanti" Margin="00,00,00,00" Text="Partecipanti"   FontSize="Small" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" />
         
         </Grid>
 </ContentPage>

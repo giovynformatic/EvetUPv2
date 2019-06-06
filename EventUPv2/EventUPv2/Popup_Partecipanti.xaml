@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<popup:PopupPage 
+xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+x:Class="EventUPv2.Popup_Partecipanti">
+
+     <ListView ItemsSource="{Binding DataList}" Margin="20">
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Margin="0,0,0,0" BackgroundColor="White">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                
+                            </Grid.ColumnDefinitions>
+                            <StackLayout VerticalOptions="CenterAndExpand" BackgroundColor="White">
+                                <Label  BackgroundColor="White" Text="{Binding Data.NomePartecipanti}"  />
+                                
+                            </StackLayout>
+                            <Switch x:Name="{Binding Data.NomePartecipanti}"  IsToggled="{Binding Selected}" Grid.Column="1" IsEnabled="false" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.Footer>
+                
+                <Button x:Name="aziendeButton" Text="Salva Aziende" Margin="75,20,75,75"  FontSize="Small" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" />
+            </ListView.Footer>
+        </ListView>
+   
+</popup:PopupPage>
