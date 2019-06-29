@@ -44,9 +44,9 @@ namespace EventUPv2
         String[] ad2 = { "fdgs", "gdsg", "false" };
         String[] ad3 = { "fdgs", "gdsg", "false" };
 
-        listaPartecipanti.Add(ad1);
-        listaPartecipanti.Add(ad2);
-        listaPartecipanti.Add(ad3);
+            Constants.Presenze.Add(ad1);
+            Constants.Presenze.Add(ad2);
+            Constants.Presenze.Add(ad3);
        
 
     }

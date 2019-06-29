@@ -12,6 +12,17 @@ namespace EventUPv2
 {
     public partial class PageEventi : ContentPage
     {
+        async void AssegnaPresenze()
+        {
+
+            // Constants.Presenze = await App.AdManager.GetTasksAsync();// codice da usare per connessione back-end
+
+            Constants.Presenze.Add("pippo");
+            Constants.Presenze.Add("zio");
+            Constants.Presenze.Add("Lello");
+
+
+        }
         public PageEventi(string title,string description, string date , string factory, string image ,int tipo)
         {
             InitializeComponent();
@@ -20,6 +31,8 @@ namespace EventUPv2
             data.Text = date;
             azienda.Text = factory;
             immagine.Source = image;
+            Constants.Presenze.Clear();
+
 
             switch (tipo) {
                 case 1:
