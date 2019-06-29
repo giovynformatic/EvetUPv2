@@ -12,29 +12,24 @@ namespace EventUPv2
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class RegistratiInteressi : ContentPage
 	{
-        
 
+        List<String> interessi;
         public RegistratiInteressi ()
 		{
 			InitializeComponent ();
-            elettronicaSwitch.On = Constants.CurrentUser.interessi.ElementAt(0);
-            informaticaSwitch.On = Constants.CurrentUser.interessi.ElementAt(1);
-            architetturaSwitch.On = Constants.CurrentUser.interessi.ElementAt(2);
-            arteSwitch.On = Constants.CurrentUser.interessi.ElementAt(3);
-            musicaSwitch.On = Constants.CurrentUser.interessi.ElementAt(4);
-            lingueSwitch.On = Constants.CurrentUser.interessi.ElementAt(5);
+            AssegnaInteressi();
 
  
         }
         async void FinishInteressi(object sender, EventArgs args)
         {
-            Boolean[] inters = new Boolean[6] { elettronicaSwitch.On, informaticaSwitch.On, architetturaSwitch.On, arteSwitch.On, musicaSwitch.On, lingueSwitch.On };
+         //   Boolean[] inters = new Boolean[6] { elettronicaSwitch.On, informaticaSwitch.On, architetturaSwitch.On, arteSwitch.On, musicaSwitch.On, lingueSwitch.On };
 
             IReadOnlyList<Page> pagine = Navigation.NavigationStack;
             
             if (pagine.ElementAt(pagine.Count - 2).ToString() == "EventUPv2.Registrati")//utilizzo count-2 perchè all'interno della pila di navigazione da la pagina precedente
             {
-                Constants.CurrentUser.interessi = inters;
+               /// Constants.CurrentUser.interessi = inters;
                 await Navigation.PushAsync(new SelectAziende());
                // Console.WriteLine("pagine.ToString() returns {0}", pagine.ElementAt(pagine.Count - 2).ToString());
             }
@@ -44,7 +39,7 @@ namespace EventUPv2
                 {
                     await Navigation.PopAsync();
                     //await App.UsManager.DeleteTaskAsync(Constants.CurrentUser);//codice da usare per connesione backend
-                    Constants.CurrentUser.interessi = inters;
+                 ///   Constants.CurrentUser.interessi = inters;
                    // Console.WriteLine("pagine.ToString() returns {0}", pagine.ElementAt(pagine.Count - 2).ToString());
                     //  await App.UsManager.SaveTaskAsync(Constants.CurrentUser);//codice da usare per connesione backend
                 }
@@ -55,6 +50,22 @@ namespace EventUPv2
                 String s = pagine.ElementAt(i).ToString();
                 Console.WriteLine("pagine.ToString() returns {0}",s);
             }*/
+        }
+
+        async void AssegnaInteressi()
+        {
+            interessi = new List<string>();
+            String s = "Arte";
+            String s1 = "Musica";
+            String s2 = "Informatica";
+            String s3 = "Elettronica";
+            String s4 = "Architettura";
+            interessi.Add(s);
+            interessi.Add(s1);
+            interessi.Add(s2);
+            interessi.Add(s3);
+            interessi.Add(s4);
+
         }
     }
 }

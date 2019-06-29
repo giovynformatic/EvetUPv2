@@ -21,7 +21,8 @@ namespace EventUPv2
         public MainPage()
         {
             InitializeComponent();
-
+            AssegnaNews();
+            newsList.BindingContext = new MultiSelectViewModelNews();
         }
         async void OnRegisterUserClicked(object sender, EventArgs args)
         {
@@ -115,7 +116,24 @@ namespace EventUPv2
                 await DisplayAlert("Attenzione", "E-mail o Password non corretta!", "OK");
             }
         }
-        
+
+        async void News(object sender, ItemTappedEventArgs e)
+        {
+            var news = e.Item as ExampleDataNews;
+            await Navigation.PushAsync(new PageNews(news.Titolo, news.Descrizione, news.Data, news.Azienda, news.Immagine));
+
+        }
+        async void searchButtonNews(object sender, EventArgs args)
+        {
+            if (searchNews.Text != "" && searchNews.Text != null)
+            {
+                await DisplayAlert("Alert", searchNews.Text, "ok");
+            }
+            else
+            {
+                await DisplayAlert("Alert", "nessun testo inserito", "ok");
+            }
+        }
 
         async void AssegnaAziende()
         {
