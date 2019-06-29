@@ -101,6 +101,14 @@ namespace EventUPv2
                     Navigation.PopAsync();
                     //await App.PrManager.SaveTaskAsync(result.Text);
                     DisplayAlert("Codice scannerizzato", result.Text + "-" + titolo.Text, "OK");
+
+                    String a = result.Text;
+                    bool vero = a[4].Equals("-");
+
+                    if (vero)
+                    {
+                        Constants.Presenze.Add(a.Substring(5));
+                    }
                 });
             };
 
