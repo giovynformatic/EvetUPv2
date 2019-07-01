@@ -16,20 +16,6 @@ namespace EventUPv2
 		{
 			DataList = data;
 		}
-
- 
-
-        // As example if you need to convert
-        //private void LoadData(List<ExampleData> data)
-        //{
-        //	var list = new List<SelectableData<ExampleData>>();
-
-        //	foreach (var item in data)
-        //		list.Add(new SelectableData<ExampleData>() { Data = item });
-
-        //	DataList = list;
-        //}
-
         public List<SelectableData<ExampleData>> DataList { get; set; }
 
 		public List<SelectableData<ExampleData>> GetNewData()

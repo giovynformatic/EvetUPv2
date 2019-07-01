@@ -153,8 +153,9 @@ namespace EventUPv2
         public void AssegnaUtenti()
         {
             listaUtenti = new List<User>();
-            Boolean[] inters = new Boolean[7] { true, false, false, true, false, false, false };//carico interessi per usare app senza back end
-             AssegnaAziende();
+            String [] inters = new String[] { "Arte", "Musica", "Informatica", "Elettronica", "Architettura" };//carico interessi per usare app senza back end
+            Boolean[] valIn=new Boolean[] { false,true,true,false,true};
+            AssegnaAziende();
             String[] az = new String[listaAziende.Count];//uso due vettori da riempire con valori back end
             Boolean[] val = new Boolean[listaAziende.Count];// uso due vettori da riempire con valori back end
             val[0] = true;//riempo il vettore con il valore dell'ineteresse di un azienda N.B nel back end sarà fatto con un for unico
@@ -165,8 +166,8 @@ namespace EventUPv2
                 az[x] = listaAziende.ElementAt(x).NomeAzienda;
             }
             //listaUtenti=await App.UsManager.GetTasksAsync();// codice da usare per connessione back-end
-            var us1 = new User("Filippo", "Corni", "Maschio", "18/09/1998", "italiana", "ingegnere", "Milano", "qwertyuiop", "filippo.corni@gmail.com", "cocco", inters,az,val);
-            var us2 = new User("Giuseppe", "Gesualdo", "Maschio", "17/11/1981", "italiana", "falegname", "Betlemme", "gesdrtyuim", "gesu.gesualdo@gmail.com", "asinello", inters,az,val);
+            var us1 = new User("Filippo", "Corni", "Maschio", "18/09/1998", "italiana", "ingegnere", "Milano", "qwertyuiop", "filippo.corni@gmail.com", "cocco", inters,az,val,valIn);
+            var us2 = new User("Giuseppe", "Gesualdo", "Maschio", "17/11/1981", "italiana", "falegname", "Betlemme", "gesdrtyuim", "gesu.gesualdo@gmail.com", "asinello", inters,az,val, valIn);
             listaUtenti.Add(us1);
             listaUtenti.Add(us2);
         }

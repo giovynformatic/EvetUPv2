@@ -26,6 +26,6 @@ namespace EventUPv2
         public static List<Evento> listaEventiIncorsoAzienda;
         public static List<Evento> listEventoAziendaPassato;
         public static List<News> listaNewsAzienda;
-        public static List<String> Presenze;
+        public static List<String[]> Presenze;
     }
 }

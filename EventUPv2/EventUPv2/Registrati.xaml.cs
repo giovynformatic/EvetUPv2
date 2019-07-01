@@ -44,14 +44,16 @@ namespace EventUPv2
 
                     if (String.Equals(p, cp))
                     {
-                        Boolean[] inters = new Boolean[6] { false, false, false, false, false, false };
+                        String[] inters = new String[] { "Arte", "Musica", "Informatica", "Elettronica", "Architettura" };//carico interessi per usare app senza back end(caricare i dati da back end)
+                        Boolean[] valIn = new Boolean[] { false, false, false, false, false };
+                       
                         AssegnaAziende();
                         String[] az = new String[listaAziende.Count];
                         Boolean[] val = new Boolean[listaAziende.Count];
                         val[0] = false;
                         val[1] = false;
                         val[2] = false;
-                        var us = new User(n, c, s, d, naz, tit, cit, codFisc, mail, p, inters, az, val);
+                        var us = new User(n, c, s, d, naz, tit, cit, codFisc, mail, p, inters, az, val,valIn);
 
                         Constants.CurrentUser = us;
 

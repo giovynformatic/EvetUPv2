@@ -14,16 +14,22 @@ namespace EventUPv2
     {
         async void AssegnaPresenze()
         {
+            List<String[]> listaPartecipanti = listaPartecipanti = new List<String[]>();
+            // listaPartecipanti = await App.AdManager.GetTasksAsync();// codice da usare per connessione back-end
 
-            // Constants.Presenze = await App.AdManager.GetTasksAsync();// codice da usare per connessione back-end
 
-            Constants.Presenze.Add("pippo");
-            Constants.Presenze.Add("zio");
-            Constants.Presenze.Add("Lello");
+
+            String[] ad1 = { "fdgs", "gdsg", "true" };
+            String[] ad2 = { "fdgs", "gdsg", "false" };
+            String[] ad3 = { "fdgs", "gdsg", "false" };
+
+            Constants.Presenze.Add(ad1);
+            Constants.Presenze.Add(ad2);
+            Constants.Presenze.Add(ad3);
 
 
         }
-        public PageEventi(string title,string description, string date , string factory, string image ,int tipo)
+            public PageEventi(string title,string description, string date , string factory, string image ,int tipo)
         {
             InitializeComponent();
             titolo.Text = title;
@@ -120,7 +126,8 @@ namespace EventUPv2
 
                     if (vero)
                     {
-                        Constants.Presenze.Add(a.Substring(5));
+                       
+                      //  Constants.Presenze.Add(a.Substring(5)); giova cazzi tuoi
                     }
                 });
             };

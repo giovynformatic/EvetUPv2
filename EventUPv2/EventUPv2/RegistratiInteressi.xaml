@@ -16,10 +16,10 @@
                                 
                             </Grid.ColumnDefinitions>
                             <StackLayout VerticalOptions="CenterAndExpand" BackgroundColor="White">
-                                <Label  BackgroundColor="White" Text="{Binding Data.NomeAzienda}"  />
+                                <Label  BackgroundColor="White" Text="{Binding Data.NomeInteressi}"  />
                                 
                             </StackLayout>
-                            <Switch x:Name="{Binding Data.NomeAzienda}"  IsToggled="{Binding Selected}" Grid.Column="1" />
+                            <Switch x:Name="{Binding Data.NomeInteressi}"  IsToggled="{Binding Selected}" Grid.Column="1" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

@@ -17,10 +17,11 @@ namespace EventUPv2
         public String cf { get; set; }
         public String email { get; set; }
         public String pass { get; set; }
-        public Boolean[] interessi { get; set; }
+        public String[] interessi { get; set; }
+        public Boolean[] valIn { get; set; }
         public String[] aziende { get; set; }
         public Boolean[] valAz { get; set; }
-        public User(String Nome, String Cognome, String Sesso, String Data, String Nazionalità, String titolo, String Città, String cf, String email, String pass,Boolean[] interessi, String[] aziende,Boolean[] valAz)
+        public User(String Nome, String Cognome, String Sesso, String Data, String Nazionalità, String titolo, String Città, String cf, String email, String pass,String[] interessi, String[] aziende,Boolean[] valAz,Boolean[] valIn)
         {
             this.Nome = Nome; 
             this.Cognome = Cognome;
@@ -35,6 +36,7 @@ namespace EventUPv2
             this.interessi = interessi;
             this.aziende = aziende;
             this.valAz = valAz;
+            this.valIn = valIn;
         }
     }
 }
