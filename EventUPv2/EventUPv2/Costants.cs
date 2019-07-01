@@ -14,6 +14,7 @@ namespace EventUPv2
         public static string EventoUrl = null;
         public static string NewsUrl = null;
         public static string PartecipaUrl = null;
+        public static string InteressiUrl = "http://es.enersetting.com/EventUp/index.php";
         public static Admin CurrentAdmin = null;
         public static User CurrentUser = null;
         public static Boolean[] OrdineFiltri;

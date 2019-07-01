@@ -12,6 +12,7 @@ namespace EventUPv2
         public static EventoManager EvManager { get; private set; }
     //   public static PresenzeManager PrManager { get; private set; }
         public static NewsManager NManager { get; private set; }
+        public static InteressiManager InManager { get; private set; }
         public static PartecipaEventoManager ParManager { get; private set; }
         public App()
         {
@@ -21,6 +22,7 @@ namespace EventUPv2
             AdManager = new AdminManager(new RestServiceAdmin());
             //PrManager = new PresenzeManager(new RestServicePresenze());
             NManager = new NewsManager(new RestServiceNews());
+            InManager = new InteressiManager(new RestServiceInteressi());
             ParManager = new PartecipaEventoManager(new RestServicePartecipaEvento());
             MainPage = new NavigationPage(new MainPage());
           

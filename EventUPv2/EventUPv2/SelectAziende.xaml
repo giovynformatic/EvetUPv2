@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
              x:Class="EventUPv2.SelectAziende">
     <ContentPage.Content>
         <ListView ItemsSource="{Binding DataList}" Margin="20">
@@ -23,8 +24,8 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
             <ListView.Footer>
-                
-                <Button x:Name="aziendeButton" Text="Salva Aziende" Margin="75,20,75,75"  FontSize="Small" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Clicked="InteressiUser"/>
+              
+                <Button x:Name="aziendeButton" Text="Salva Aziende" Margin="75,20,75,75"  FontSize="Small" BackgroundColor="#6495ed" BorderRadius="23" TextColor="White" Clicked="AziendeUser"/>
             </ListView.Footer>
         </ListView>
     </ContentPage.Content>

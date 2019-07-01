@@ -44,9 +44,14 @@ namespace EventUPv2
 
                     if (String.Equals(p, cp))
                     {
-                        String[] inters = new String[] { "Arte", "Musica", "Informatica", "Elettronica", "Architettura" };//carico interessi per usare app senza back end(caricare i dati da back end)
+                        List<Interessi> a = await App.InManager.GetTasksAsync();
+                        String[] inters= new String[1];//{ "Arte", "Musica", "Informatica", "Elettronica", "Architettura" };//carico interessi per usare app senza back end(caricare i dati da back end)
                         Boolean[] valIn = new Boolean[] { false, false, false, false, false };
-                       
+                        
+                        for (int s1 = 0; s1 < a.Count; s1++)
+                        {
+                            inters[s1] = a.ElementAt(s1).titolo;
+                        }
                         AssegnaAziende();
                         String[] az = new String[listaAziende.Count];
                         Boolean[] val = new Boolean[listaAziende.Count];
@@ -56,7 +61,7 @@ namespace EventUPv2
                         var us = new User(n, c, s, d, naz, tit, cit, codFisc, mail, p, inters, az, val,valIn);
 
                         Constants.CurrentUser = us;
-
+                      
                        /*
                      int tipo=1..2..3(indica al back end il tipo di lista chee li richiedi esempio 1 eventi passati,2 eventi in corso)
                       Constants.listaEventiCorso = await App.EvManager.GetTasksAsync(1,null,0);

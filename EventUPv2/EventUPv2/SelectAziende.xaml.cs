@@ -34,47 +34,54 @@ namespace EventUPv2
 
 
         }
-        async void InteressiUser(object sender, EventArgs args)
+        async void AziendeUser(object sender, EventArgs args)
 
         {
-            az = new String[listaAziende.Count];//uso due vettori da riempire con valori back end
-            Boolean[] val = new Boolean[listaAziende.Count];// uso due vettori da riempire con valori back end
+           
+                az = new String[listaAziende.Count];//uso due vettori da riempire con valori back end
+                Boolean[] val = new Boolean[listaAziende.Count];// uso due vettori da riempire con valori back end
 
-            for (int x = 0; x < listaAziende.Count; x++)
-            {
-                az[x] = listaAziende.ElementAt(x).NomeAzienda;
-            }
-            for (int x = 0; x < listaAziende.Count; x++)
-            {
-                SelectableData<ExampleData> s;
-                s = SelectedData.ElementAt(x);
-                val[x] = s.Selected;
-            }
-
-
-            IReadOnlyList<Page> pagine = Navigation.NavigationStack;
-
-            if (pagine.ElementAt(pagine.Count - 2).ToString() == "EventUPv2.RegistratiInteressi")//utilizzo count-2 perchè all'interno della pila di navigazione da la pagina precedente
-            {
-                Constants.CurrentUser.valAz = val;
-                await Navigation.PushAsync(new HomePage());
-                //  await App.UsManager.SaveTaskAsync(Constants.CurrentUser);//codice da usare per connesione backend
-            }
-            else
-            {
-                if (pagine.ElementAt(pagine.Count - 2).ToString() == "EventUPv2.HomePage")//utilizzo count-2 perchè all'interno della pila di navigazione da la pagina precedente
+                for (int x = 0; x < listaAziende.Count; x++)
                 {
-
-                    //await App.UsManager.DeleteTaskAsync(Constants.CurrentUser);//codice da usare per connesione backend
-                    Constants.CurrentUser.valAz = val;
-                    Constants.CurrentUser.aziende = az;
-                    //  await App.UsManager.SaveTaskAsync(Constants.CurrentUser);//codice da usare per connesione backend
-                    await Navigation.PopAsync();
-
+                    az[x] = listaAziende.ElementAt(x).NomeAzienda;
+                }
+                for (int x = 0; x < listaAziende.Count; x++)
+                {
+                    SelectableData<ExampleData> s;
+                    s = SelectedData.ElementAt(x);
+                    val[x] = s.Selected;
                 }
 
+
+                IReadOnlyList<Page> pagine = Navigation.NavigationStack;
+
+                if (pagine.ElementAt(pagine.Count - 2).ToString() == "EventUPv2.RegistratiInteressi")//utilizzo count-2 perchè all'interno della pila di navigazione da la pagina precedente
+                {
+                    Constants.CurrentUser.valAz = val;
+                  //  await Navigation.PushAsync(new HomePage());
+                await DisplayAlert("Attendere", "Attendere conferma registrazione tramite mail", "OK");
+                await Navigation.PushAsync(new MainPage());
+                //  await App.UsManager.SaveTaskAsync(Constants.CurrentUser);//codice da usare per connesione backend
+
             }
-        }
+                else
+                {
+                    if (pagine.ElementAt(pagine.Count - 2).ToString() == "EventUPv2.HomePage")//utilizzo count-2 perchè all'interno della pila di navigazione da la pagina precedente
+
+                    {
+
+                        //await App.UsManager.DeleteTaskAsync(Constants.CurrentUser);//codice da usare per connesione backend
+                        Constants.CurrentUser.valAz = val;
+                        Constants.CurrentUser.aziende = az;
+                        //  await App.UsManager.SaveTaskAsync(Constants.CurrentUser);//codice da usare per connesione backend
+                        await Navigation.PopAsync();
+
+                    }
+
+                }
+            }
+            
+        
        async void AssegnaAziende()
         {
             listaAziende = new List<Admin>();
