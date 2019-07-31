@@ -8,9 +8,9 @@ namespace EventUPv2
 {
     public interface IRestServiceInteressi
     {
-        Task<List<Interessi>> RefreshDataAsync();
+        Task<Interessi> RefreshDataAsync();
 
-        Task SaveTodoItemAsync(Interessi item, bool isNewItem);
-        Task DeleteTodoItemAsync(Interessi ev);
+       /* Task SaveTodoItemAsync(Interessi item, bool isNewItem);
+        Task DeleteTodoItemAsync(Interessi ev);*/
     }
 }

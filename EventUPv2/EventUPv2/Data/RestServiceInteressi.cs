@@ -13,25 +13,25 @@ namespace EventUPv2
 
         HttpClient _client;
 
-        public List<Interessi> Items { get; private set; }
+        public Interessi Items { get; private set; }
 
         public RestServiceInteressi()
         {
             _client = new HttpClient();
         }
 
-        public async Task<List<Interessi>> RefreshDataAsync()
+        public async Task<Interessi> RefreshDataAsync()
         {
-            Items = new List<Interessi>();
+            Items = new Interessi();
 
             var uri = new Uri(string.Format(Constants.InteressiUrl, string.Empty));
             try
             {
-                var response = await _client.GetAsync(uri);
+                var response = _client.GetAsync(uri).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    Items = JsonConvert.DeserializeObject<List<Interessi>>(content);
+                    Items = JsonConvert.DeserializeObject<Interessi>(content);
                 }
             }
             catch (Exception ex)
@@ -42,7 +42,7 @@ namespace EventUPv2
             return Items;
         }
 
-        public async Task SaveTodoItemAsync(Interessi item, bool isNewItem = false)
+      /*  public async Task SaveTodoItemAsync(Interessi item, bool isNewItem = false)
         {
             var uri = new Uri(string.Format(Constants.InteressiUrl, string.Empty));
 
@@ -90,6 +90,6 @@ namespace EventUPv2
             {
                 Debug.WriteLine(@"\tERROR {0}", ex.Message);
             }
-        }
+        }*/
     }
 }

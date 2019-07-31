@@ -13,18 +13,20 @@ namespace EventUPv2
 	public partial class RegistratiInteressi : ContentPage
 	{
 
-        public List<String> interessi;
+        //   public List<String> interessi;
+        public Interessi interessi;
         public List<SelectableDataInteressi<ExampleDataInteressi>> SelectedData;
 
         public RegistratiInteressi ()
 		{
 			InitializeComponent();
-            AssegnaInteressi();
+            //   AssegnaInteressi();
+            interessi = Constants.inter;
             SelectedData = new List<SelectableDataInteressi<ExampleDataInteressi>>();
-            for (int a = 0; a < interessi.Count(); a++)
+            for (int a = 0; a < interessi.data.Count(); a++)
             {
                 SelectableDataInteressi<ExampleDataInteressi> s;
-               SelectedData.Add(s = new SelectableDataInteressi<ExampleDataInteressi>() { Data = new ExampleDataInteressi() {NomeInteressi = interessi.ElementAt(a) } });
+               SelectedData.Add(s = new SelectableDataInteressi<ExampleDataInteressi>() { Data = new ExampleDataInteressi() {NomeInteressi = interessi.data.ElementAt(a).ToString() } });
                 s.Selected = Constants.CurrentUser.valIn.ElementAt(a);
 
 
@@ -34,14 +36,14 @@ namespace EventUPv2
         }
         async void FinishInteressi(object sender, EventArgs args)
         {
-            String[] inters = new String[interessi.Count];
-            Boolean[] valIn = new Boolean[interessi.Count];
+            String[] inters = new String[interessi.data.Count];
+            Boolean[] valIn = new Boolean[interessi.data.Count];
             IReadOnlyList<Page> pagine = Navigation.NavigationStack;
-            for (int x = 0; x < interessi.Count; x++)
+            for (int x = 0; x < interessi.data.Count; x++)
             {
-                inters[x] = interessi.ElementAt(x);
+               // da scommentare inters[x] = interessi.ElementAt(x);
             }
-            for (int x = 0; x < interessi.Count; x++)
+            for (int x = 0; x < interessi.data.Count; x++)
             {
                 SelectableDataInteressi<ExampleDataInteressi> s;
                 s = SelectedData.ElementAt(x);
@@ -75,7 +77,7 @@ namespace EventUPv2
             }*/
         }
 
-        async void AssegnaInteressi()
+      /*  async void AssegnaInteressi()
         {
             interessi = new List<String>();
             String s = "Arte";
@@ -89,6 +91,6 @@ namespace EventUPv2
             interessi.Add(s3);
             interessi.Add(s4);
 
-        }
+        }*/
     }
 }

@@ -14,18 +14,18 @@ namespace EventUPv2
             restService = service;
         }
 
-        public Task<List<Interessi>> GetTasksAsync()
+        public Task<Interessi> GetTasksAsync()
         {
             return restService.RefreshDataAsync();
         }
 
-        public Task SaveTaskAsync(Interessi item, bool isNewItem = false)
+      /*  public Task SaveTaskAsync(Interessi item, bool isNewItem = false)
         {
             return restService.SaveTodoItemAsync(item, isNewItem);
         }
         public Task DeleteTaskAsync(Interessi ad)
         {
             return restService.DeleteTodoItemAsync(ad);
-        }
+        }*/
     }
 }

@@ -41,20 +41,26 @@ namespace EventUPv2
                     String mail = emailr_user.Text;
                     String p = passr_user.Text;
                     String cp = cpassr_user.Text;
-
+                    
                     if (String.Equals(p, cp))
                     {
-                        List<Interessi> a = await App.InManager.GetTasksAsync();
-                        String[] inters= new String[1];//{ "Arte", "Musica", "Informatica", "Elettronica", "Architettura" };//carico interessi per usare app senza back end(caricare i dati da back end)
+
+                        Interessi a = await App.InManager.GetTasksAsync();
+                        if (a.success == true)
+                        {
+                            String porva1=a.data.ElementAt(1).a1;
+                        }
+                        String[] inters= new String[a.data.Count];//{ "Arte", "Musica", "Informatica", "Elettronica", "Architettura" };//carico interessi per usare app senza back end(caricare i dati da back end)
                         Boolean[] valIn = new Boolean[] { false, false, false, false, false };
                         
-                        for (int s1 = 0; s1 < a.Count; s1++)
+                        for (int s1 = 0; s1 < a.data.Count; s1++)
                         {
-                            inters[s1] = a.ElementAt(s1).titolo;
+                            inters[s1] = a.data.ElementAt(s1).a1;
+                           
                         }
                         AssegnaAziende();
                         String[] az = new String[listaAziende.Count];
-                        Boolean[] val = new Boolean[listaAziende.Count];
+                        Boolean[] val = new Boolean[a.data.Count];
                         val[0] = false;
                         val[1] = false;
                         val[2] = false;
@@ -68,6 +74,7 @@ namespace EventUPv2
                        Constants.listaEventiStorico = await App.EvManager.GetTasksAsync(2,null,0);
                        Constants.listaEventi = await App.EvManager.GetTasksAsync(3,null,0);*/
                          AssegnaEventi();
+                        Constants.inter = a;
                         await Navigation.PushAsync(new RegistratiInteressi());
 
 
