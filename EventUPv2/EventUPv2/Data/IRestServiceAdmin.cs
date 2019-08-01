@@ -8,9 +8,9 @@ namespace EventUPv2
    public interface IRestServiceAdmin
     {
 
-        Task<List<Admin>> RefreshDataAsync();
+        Task<Admins> RefreshDataAsync();
 
-        Task SaveTodoItemAsync(Admin item, bool isNewItem);
-        Task DeleteTodoItemAsync(Admin ad);
+        Task SaveTodoItemAsync(Admins item, bool isNewItem);
+        Task DeleteTodoItemAsync(Admins ad);
     }
 }

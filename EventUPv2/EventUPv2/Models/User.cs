@@ -6,7 +6,6 @@ namespace EventUPv2
 {
    public  class User
     {
-        public int id { get; set; }
         public String Nome { get; set; }
         public String Cognome { get; set; }
         public String Sesso { get; set; }
@@ -18,6 +17,8 @@ namespace EventUPv2
         public String email { get; set; }
         public String pass { get; set; }
         public String[] interessi { get; set; }
+        public int[] idInteressi { get; set; }
+        public int[] idAziende { get; set; }
         public Boolean[] valIn { get; set; }
         public String[] aziende { get; set; }
         public Boolean[] valAz { get; set; }

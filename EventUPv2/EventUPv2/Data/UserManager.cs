@@ -14,16 +14,16 @@ namespace EventUPv2
             restService = service;
         }
 
-        public Task<List<User>> GetTasksAsync()
+        public Task<List<UserToBack>> GetTasksAsync()
         {
             return restService.RefreshDataAsync();
         }
 
-        public Task SaveTaskAsync(User item, bool isNewItem = false)
+        public Task SaveTaskAsync(UserToBack item, bool isNewItem = false)
         {
             return restService.SaveTodoItemAsync(item, isNewItem);
         }
-        public Task DeleteTaskAsync(User us)
+        public Task DeleteTaskAsync(UserToBack us)
         {
             return restService.DeleteTodoItemAsync(us);
         }

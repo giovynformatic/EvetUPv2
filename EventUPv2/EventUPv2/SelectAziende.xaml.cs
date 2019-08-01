@@ -14,18 +14,19 @@ namespace EventUPv2
     public partial class SelectAziende : ContentPage
     {
 
-        public List<Admin> listaAziende = new List<Admin>();
+        public Admins listaAziende = new Admins();
         public String[] az;
         public List<SelectableData<ExampleData>> SelectedData;
         public SelectAziende()
         {
             InitializeComponent();
              SelectedData = new List<SelectableData<ExampleData>>();
-            AssegnaAziende();
-            for (int a = 0; a < listaAziende.Count(); a++)
+            //AssegnaAziende();
+            listaAziende = Constants.listaAziende;
+            for (int a = 0; a < listaAziende.data.Length ; a++)
             {
                 SelectableData<ExampleData> s;
-                SelectedData.Add(s=new SelectableData<ExampleData>() { Data = new ExampleData() { NomeAzienda = listaAziende.ElementAt(a).NomeAzienda }});   
+                SelectedData.Add(s=new SelectableData<ExampleData>() { Data = new ExampleData() { NomeAzienda = listaAziende.data.ElementAt(a).nome }});   
                 s.Selected = Constants.CurrentUser.valAz.ElementAt(a);
 
 
@@ -38,14 +39,14 @@ namespace EventUPv2
 
         {
            
-                az = new String[listaAziende.Count];//uso due vettori da riempire con valori back end
-                Boolean[] val = new Boolean[listaAziende.Count];// uso due vettori da riempire con valori back end
+                az = new String[listaAziende.data.Length];//uso due vettori da riempire con valori back end
+                Boolean[] val = new Boolean[listaAziende.data.Length];// uso due vettori da riempire con valori back end
 
-                for (int x = 0; x < listaAziende.Count; x++)
+                for (int x = 0; x < listaAziende.data.Length; x++)
                 {
-                    az[x] = listaAziende.ElementAt(x).NomeAzienda;
+                    az[x] = listaAziende.data.ElementAt(x).nome;
                 }
-                for (int x = 0; x < listaAziende.Count; x++)
+                for (int x = 0; x < listaAziende.data.Length; x++)
                 {
                     SelectableData<ExampleData> s;
                     s = SelectedData.ElementAt(x);
@@ -55,13 +56,40 @@ namespace EventUPv2
 
                 IReadOnlyList<Page> pagine = Navigation.NavigationStack;
 
-                if (pagine.ElementAt(pagine.Count - 2).ToString() == "EventUPv2.RegistratiInteressi")//utilizzo count-2 perchè all'interno della pila di navigazione da la pagina precedente
+            if (pagine.ElementAt(pagine.Count - 2).ToString() == "EventUPv2.RegistratiInteressi")//utilizzo count-2 perchè all'interno della pila di navigazione da la pagina precedente
+            {
+                Constants.CurrentUser.valAz = val;
+                //  await Navigation.PushAsync(new HomePage());
+
+                UserToBack usBack = new UserToBack();
+                usBack.nome = Constants.CurrentUser.Nome;
+                usBack.cognome = Constants.CurrentUser.Cognome;
+                usBack.datanascita = Constants.CurrentUser.Data;
+                usBack.email = Constants.CurrentUser.email;
+                usBack.cf = Constants.CurrentUser.cf;
+                usBack.citta = Constants.CurrentUser.Città;
+                usBack.sesso = Constants.CurrentUser.Sesso;
+                usBack.password = Constants.CurrentUser.pass;
+                usBack.nazionalita = Constants.CurrentUser.Nazionalità;
+                for (int x=0;x<Constants.CurrentUser.interessi.Length;x++)
                 {
-                    Constants.CurrentUser.valAz = val;
-                  //  await Navigation.PushAsync(new HomePage());
+                    if(Constants.CurrentUser.valIn.ElementAt(x)==true)
+                    {
+                        usBack.interessi[x] = Constants.CurrentUser.idInteressi.ElementAt(x);
+                    }
+                }
+                for (int y = 0; y < Constants.CurrentUser.aziende.Length; y++)
+                {
+                    if (Constants.CurrentUser.valAz.ElementAt(y) == true)
+                    {
+                        usBack.aziende[y] = Constants.CurrentUser.idAziende.ElementAt(y);
+                    }
+                }
+                await App.UsManager.SaveTaskAsync(usBack);//codice da usare per connesione backend
                 await DisplayAlert("Attendere", "Attendere conferma registrazione tramite mail", "OK");
                 await Navigation.PushAsync(new MainPage());
-                //  await App.UsManager.SaveTaskAsync(Constants.CurrentUser);//codice da usare per connesione backend
+
+                
 
             }
                 else
@@ -81,21 +109,7 @@ namespace EventUPv2
                 }
             }
             
-        
-       async void AssegnaAziende()
-        {
-            listaAziende = new List<Admin>();
-            // listaAziende = await App.AdManager.GetTasksAsync();// codice da usare per connessione back-end
-            var ad1 = new Admin("EnerSetting", "Locorotondo", "asd1234rt6f", "setting@enersetting.com", "alternanza");
-            var ad2 = new Admin("Barilla", "Modena", "modbar459q7", "admin@barilla.com", "pasta");
-            var ad3 = new Admin("ILVA", "Taranto", "dbbsjbkjsdab", "ilva@ilva.com", "ferro");
-           
-            listaAziende.Add(ad1);
-            listaAziende.Add(ad2);
-            listaAziende.Add(ad3);
-            Constants.listaAziende = listaAziende;
-            
-        }
+   
        
 
     }

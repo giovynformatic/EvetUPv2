@@ -14,7 +14,7 @@ namespace EventUPv2
 		public PopupTaskViewAzienda ()
 		{
 			InitializeComponent ();
-            NomeAzienda.Text = Constants.CurrentAdmin.NomeAzienda;
+            NomeAzienda.Text = Constants.CurrentAdmin.nome;
             Sede.Text = Constants.CurrentAdmin.Sede;
             Piva.Text = Constants.CurrentAdmin.piva;
             email.Text = Constants.CurrentAdmin.email;

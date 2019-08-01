@@ -13,16 +13,16 @@ namespace EventUPv2
     {
         HttpClient _client;
 
-        public List<User> Items { get; private set; }
+        public List<UserToBack> Items { get; private set; }
 
         public RestServiceUser()
         {
             _client = new HttpClient();
         }
 
-        public async Task<List<User>> RefreshDataAsync()
+        public async Task<List<UserToBack>> RefreshDataAsync()
         {
-            Items = new List<User>();
+            Items = new List<UserToBack>();
 
             var uri = new Uri(string.Format(Constants.UserUrl, string.Empty));
             try
@@ -31,7 +31,7 @@ namespace EventUPv2
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    Items = JsonConvert.DeserializeObject<List<User>>(content);
+                    Items = JsonConvert.DeserializeObject<List<UserToBack>>(content);
                 }
             }
             catch (Exception ex)
@@ -42,7 +42,7 @@ namespace EventUPv2
             return Items;
         }
 
-        public async Task SaveTodoItemAsync(User item, bool isNewItem = false)
+        public async Task SaveTodoItemAsync(UserToBack item, bool isNewItem = false)
         {
             var uri = new Uri(string.Format(Constants.UserUrl, string.Empty));
 
@@ -73,7 +73,7 @@ namespace EventUPv2
             }
         }
 
-        public async Task DeleteTodoItemAsync(User us)
+        public async Task DeleteTodoItemAsync(UserToBack us)
         {
             var uri = new Uri(string.Format(Constants.UserUrl, us));
 

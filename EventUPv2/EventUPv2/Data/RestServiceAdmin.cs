@@ -12,16 +12,16 @@ namespace EventUPv2
     {
         HttpClient _client;
 
-        public List<Admin> Items { get; private set; }
+        public Admins Items { get; private set; }
 
         public RestServiceAdmin()
         {
             _client = new HttpClient();
         }
 
-        public async Task<List<Admin>> RefreshDataAsync()
+        public async Task<Admins> RefreshDataAsync()
         {
-            Items = new List<Admin>();
+            Items = new Admins();
 
             var uri = new Uri(string.Format(Constants.AdminUrl, string.Empty));
             try
@@ -30,7 +30,7 @@ namespace EventUPv2
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    Items = JsonConvert.DeserializeObject<List<Admin>>(content);
+                    Items = JsonConvert.DeserializeObject<Admins>(content);
                 }
             }
             catch (Exception ex)
@@ -41,7 +41,7 @@ namespace EventUPv2
             return Items;
         }
 
-        public async Task SaveTodoItemAsync(Admin item, bool isNewItem = false)
+        public async Task SaveTodoItemAsync(Admins item, bool isNewItem = false)
         {
             var uri = new Uri(string.Format(Constants.AdminUrl, string.Empty));
 
@@ -71,7 +71,7 @@ namespace EventUPv2
                 Debug.WriteLine(@"\tERROR {0}", ex.Message);
             }
         }
-        public async Task DeleteTodoItemAsync(Admin ad)
+        public async Task DeleteTodoItemAsync(Admins ad)
         {
             var uri = new Uri(string.Format(Constants.AdminUrl, ad));
 

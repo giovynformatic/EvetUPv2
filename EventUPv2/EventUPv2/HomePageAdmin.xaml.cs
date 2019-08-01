@@ -23,7 +23,7 @@ namespace EventUPv2
             InitializeComponent();
             listaEvAz = Constants.listaEventiAzienda;
             listaNewsAz = Constants.listaNewsAzienda;
-            Utype.Text = Constants.CurrentAdmin.NomeAzienda;
+            Utype.Text = Constants.CurrentAdmin.nome;
             eventiAziendaList.BindingContext = new MultiSelectViewModelEventoAzienda();
             newsList.BindingContext = new MultiSelectViewModelNewsAzienda();
             eventiAziendaListincorso.BindingContext = new MultiSelectViewModelEventoIncorsoAzienda();

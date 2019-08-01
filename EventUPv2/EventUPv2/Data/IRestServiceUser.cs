@@ -6,10 +6,10 @@ namespace EventUPv2
 {
     public interface IRestServiceUser
     {
-        Task<List<User>> RefreshDataAsync();
+        Task<List<UserToBack>> RefreshDataAsync();
 
-        Task SaveTodoItemAsync(User item, bool isNewItem);
-        Task DeleteTodoItemAsync(User us);
+        Task SaveTodoItemAsync(UserToBack item, bool isNewItem);
+        Task DeleteTodoItemAsync(UserToBack us);
 
     }
 }

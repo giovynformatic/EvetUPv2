@@ -63,10 +63,9 @@
                                 BackgroundColor="White">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
-                        <x:String>Sesso</x:String>
-                        <x:String>Maschio</x:String>
-                        <x:String>Femmina</x:String>
-                        <x:String>Altro</x:String>
+                        <x:String>M</x:String>
+                        <x:String>F</x:String>
+                        
                     </x:Array>
                 </Picker.ItemsSource>
             </custom:CustomPicker>
