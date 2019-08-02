@@ -7,14 +7,14 @@ namespace EventUPv2
     public class MultiSelectViewModelNewsAzienda
     {
         public ObservableCollection<ExampleDataNews> DataListNewsAzienda { get; set; }
-        public List<News> listaEv;
+        public List<News> listaNews;
         public MultiSelectViewModelNewsAzienda()
         {
             DataListNewsAzienda = new ObservableCollection<ExampleDataNews>();
-            listaEv = Constants.listaNewsAzienda;
-            for (int a = 0; a < listaEv.Count(); a++)
+            listaNews = Constants.listaNewsAzienda;
+            for (int a = 0; a < listaNews.Count; a++)
             {
-                DataListNewsAzienda.Add(new ExampleDataNews() { Titolo = listaEv.ElementAt(a).Titolo, Descrizione = listaEv.ElementAt(a).Descrizione, Immagine = listaEv.ElementAt(a).Immagine, Azienda = listaEv.ElementAt(a).Azienda, Data = listaEv.ElementAt(a).Data });
+                DataListNewsAzienda.Add(new ExampleDataNews() { Titolo = listaNews.ElementAt(a).nome, Descrizione = listaNews.ElementAt(a).descrizione, Immagine = listaNews.ElementAt(a).immagine, Azienda = listaNews.ElementAt(a).Azienda, Data = listaNews.ElementAt(a)._Data });
             }
         }
     }

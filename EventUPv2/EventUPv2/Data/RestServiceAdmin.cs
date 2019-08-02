@@ -26,7 +26,7 @@ namespace EventUPv2
             var uri = new Uri(string.Format(Constants.AdminUrl, string.Empty));
             try
             {
-                var response = await _client.GetAsync(uri);
+                var response = _client.GetAsync(uri).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();

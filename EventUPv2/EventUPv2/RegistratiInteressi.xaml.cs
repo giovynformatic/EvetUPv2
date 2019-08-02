@@ -41,17 +41,12 @@ namespace EventUPv2
                 String[] inters = new String[interessi.data.Length];
                 Boolean[] valIn = new Boolean[interessi.data.Length];
                 IReadOnlyList<Page> pagine = Navigation.NavigationStack;
-            int[] provaId = new int[inters.Length];
-            for (int x = 0; x < Constants.listaAziende.data.Length; x++)
-            {
-
-                provaId[x] = Constants.listaAziende.data.ElementAt(x).id;
-            }
-            Constants.CurrentUser.idInteressi = provaId;
+          
+            
             for (int x = 0; x < interessi.data.Length; x++)
                 {
                     inters[x] = interessi.data.ElementAt(x).titolo;
-                Constants.CurrentUser.idInteressi[x] = 3;//interessi.data.ElementAt(x).id;
+              
                 }
                 for (int x = 0; x < interessi.data.Length; x++)
                 {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 namespace EventUPv2
@@ -8,7 +9,7 @@ namespace EventUPv2
     {
         Task<List<UserToBack>> RefreshDataAsync();
 
-        Task SaveTodoItemAsync(UserToBack item, bool isNewItem);
+        Task<HttpResponseMessage> SaveTodoItemAsync(UserToBack item, bool isNewItem);
         Task DeleteTodoItemAsync(UserToBack us);
 
     }

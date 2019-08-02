@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace EventUPv2
@@ -19,7 +20,7 @@ namespace EventUPv2
             return restService.RefreshDataAsync();
         }
 
-        public Task SaveTaskAsync(UserToBack item, bool isNewItem = false)
+        public Task<HttpResponseMessage> SaveTaskAsync(UserToBack item, bool isNewItem = true)
         {
             return restService.SaveTodoItemAsync(item, isNewItem);
         }

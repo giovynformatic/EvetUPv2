@@ -8,9 +8,9 @@ namespace EventUPv2
 {
     public interface IRestServiceNews
     {
-        Task<List<News>> RefreshDataAsync();
+        Task<BackNews> RefreshDataAsync();
 
-        Task SaveTodoItemAsync(News item, bool isNewItem);
-        Task DeleteTodoItemAsync(News ev);
+        Task SaveTodoItemAsync(BackNews item, bool isNewItem);
+        Task DeleteTodoItemAsync(BackNews ev);
     }
 }

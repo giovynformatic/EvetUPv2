@@ -15,7 +15,7 @@ namespace EventUPv2
             listaN = Constants.listaNews;
             for (int a = 0; a < listaN.Count(); a++)
             {
-                DataListNews.Add(new ExampleDataNews() { Titolo = listaN.ElementAt(a).Titolo, Descrizione = listaN.ElementAt(a).Descrizione, Immagine = listaN.ElementAt(a).Immagine, Azienda = listaN.ElementAt(a).Azienda, Data = listaN.ElementAt(a).Data });
+                DataListNews.Add(new ExampleDataNews() { Titolo = listaN.ElementAt(a).nome, Descrizione = listaN.ElementAt(a).descrizione, Immagine = listaN.ElementAt(a).immagine, Azienda = listaN.ElementAt(a).Azienda, Data = listaN.ElementAt(a)._Data });
             }
         }
 

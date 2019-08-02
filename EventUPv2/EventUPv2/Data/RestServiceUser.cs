@@ -42,7 +42,7 @@ namespace EventUPv2
             return Items;
         }
 
-        public async Task SaveTodoItemAsync(UserToBack item, bool isNewItem = false)
+        public async Task<HttpResponseMessage> SaveTodoItemAsync(UserToBack item, bool isNewItem)
         {
             var uri = new Uri(string.Format(Constants.UserUrl, string.Empty));
 
@@ -54,22 +54,26 @@ namespace EventUPv2
                 HttpResponseMessage response = null;
                 if (isNewItem)
                 {
-                    response = await _client.PostAsync(uri, content);
+                    response =  _client.PostAsync(uri, content).Result;
+                    return response;
                 }
                 else
                 {
-                    response = await _client.PutAsync(uri, content);
+                    response = _client.PutAsync(uri, content).Result;
+                    return response;
                 }
 
                 if (response.IsSuccessStatusCode)
                 {
                     Debug.WriteLine(@"\tTodoItem successfully saved.");
                 }
+                else { Debug.WriteLine("registraione fallita"); }
 
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(@"\tERROR {0}", ex.Message);
+                return null ;
             }
         }
 

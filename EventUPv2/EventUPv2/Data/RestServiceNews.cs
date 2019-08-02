@@ -13,25 +13,25 @@ namespace EventUPv2
 
         HttpClient _client;
 
-        public List<News> Items { get; private set; }
+        public BackNews Items { get; private set; }
 
         public RestServiceNews()
         {
             _client = new HttpClient();
         }
 
-        public async Task<List<News>> RefreshDataAsync()
+        public async Task<BackNews> RefreshDataAsync()
         {
-            Items = new List<News>();
+            Items = new BackNews();
 
             var uri = new Uri(string.Format(Constants.NewsUrl, string.Empty));
             try
             {
-                var response = await _client.GetAsync(uri);
+                var response = _client.GetAsync(uri).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    Items = JsonConvert.DeserializeObject<List<News>>(content);
+                    Items = JsonConvert.DeserializeObject<BackNews>(content);
                 }
             }
             catch (Exception ex)
@@ -42,7 +42,7 @@ namespace EventUPv2
             return Items;
         }
 
-        public async Task SaveTodoItemAsync(News item, bool isNewItem = false)
+        public async Task SaveTodoItemAsync(BackNews item, bool isNewItem = false)
         {
             var uri = new Uri(string.Format(Constants.NewsUrl, string.Empty));
 
@@ -72,7 +72,7 @@ namespace EventUPv2
                 Debug.WriteLine(@"\tERROR {0}", ex.Message);
             }
         }
-        public async Task DeleteTodoItemAsync(News ad)
+        public async Task DeleteTodoItemAsync(BackNews ad)
         {
             var uri = new Uri(string.Format(Constants.NewsUrl, ad));
 

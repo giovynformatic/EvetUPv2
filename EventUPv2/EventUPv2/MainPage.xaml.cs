@@ -15,14 +15,19 @@ namespace EventUPv2
         public List<Evento> listaEv;
         public List<Evento> listaEvIncorso;
         public List<Evento> listaEvPassati;
-        public List<News> listaNews;
+        public BackNews listaNewsPresa;
+        public List<News> listaVisualizzataNews;
         public List<News> listaNewsAz;
         public List<Evento> listaEvAz;
         public MainPage()
         {
             InitializeComponent();
-            AssegnaNews();
-            newsList.BindingContext = new MultiSelectViewModelNews();
+            listaNewsPresa = new BackNews();
+            // AssegnaNewsAsync();
+            if (listaNewsPresa.success == true)
+            {
+                newsList.BindingContext = new MultiSelectViewModelNews();
+            }
         }
         async void OnRegisterUserClicked(object sender, EventArgs args)
         {
@@ -36,8 +41,8 @@ namespace EventUPv2
 
 
              AssegnaEventi();
-             AssegnaNews();
-             AssegnaUtenti();
+             AssegnaNewsAsync();
+             //AssegnaUtenti();
             int acces = 0;
             Boolean AccesCons=false;
             for (int a = 0; a < listaUtenti.Count; a++)
@@ -80,7 +85,7 @@ namespace EventUPv2
             //VerifyUser(emailUser.Text, passUser.Text);
           // AssegnaAziende();
              AssegnaEventiAzienda();
-             AssegnaNewsAzienda();
+           //AssegnaNewsAzienda();
             int acces = 0;
             Boolean AccesCons = false;
             for (int a=0;a<listaAziende.Count;a++)
@@ -150,7 +155,7 @@ namespace EventUPv2
             
         }*/
 
-        public void AssegnaUtenti()
+     /*   public void AssegnaUtenti()
         {
             listaUtenti = new List<User>();
             String [] inters = new String[] { "Arte", "Musica", "Informatica", "Elettronica", "Architettura" };//carico interessi per usare app senza back end
@@ -171,7 +176,7 @@ namespace EventUPv2
             listaUtenti.Add(us1);
             listaUtenti.Add(us2);
         }
-
+        */
         public void AssegnaEventi()
         {
             //codice utilizzato per app senza back end
@@ -205,42 +210,50 @@ namespace EventUPv2
             Constants.listaEventiIncorsoAzienda = listaEvAz;
             Constants.listEventoAziendaPassato = listaEvAz;
         }
-        public void AssegnaNews()
+        public async Task AssegnaNewsAsync()
         {
-            //codice utilizzato per app senza back end
-            listaNews = new List<News>();
+            /*  //codice utilizzato per app senza back end
+              listaNews = new List<News>();
+
+              String im = null;
+              var n1 = new News("Evento!!!", "25/05/2019", im, "EnerSetting", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
+              var n2 = new News("Secondo evento!!!", "13/06/2019", im, "EnerSetting", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
+              var n3 = new News("Terzo evento!!!", "15/11/2019", im, "Cisco", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
+              listaNews.Add(n1);
+              listaNews.Add(n2);
+              listaNews.Add(n3);
+              Constants.listaNews = listaNews;*/
+            listaNewsPresa = await App.NManager.GetTasksAsync();
+            Constants.listaNewsBack = listaNewsPresa;
+            if (listaNewsPresa.success == true)
+            {
                 
-            String im = null;
-            var n1 = new News("Evento!!!", "25/05/2019", im, "EnerSetting", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
-            var n2 = new News("Secondo evento!!!", "13/06/2019", im, "EnerSetting", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
-            var n3 = new News("Terzo evento!!!", "15/11/2019", im, "Cisco", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
-            listaNews.Add(n1);
-            listaNews.Add(n2);
-            listaNews.Add(n3);
-            Constants.listaNews = listaNews;
+                for (int a = 0; a < listaNewsPresa.data.Length; a++)
+                {
+
+                    listaVisualizzataNews.Add(listaNewsPresa.data.ElementAt(a));
+
+
+                }
+                Constants.listaNews = listaVisualizzataNews;
+
+            }
             
         }
-        public void AssegnaNewsAzienda()
+      /*  public void AssegnaNewsAzienda()
         {
             //codice utilizzato per app senza back end
             listaNewsAz = new List<News>();
 
             String im = null;
-            var n1 = new News("Evento!!!", "25/05/2019", im, "EnerSetting", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
-            var n2 = new News("Secondo evento!!!", "13/06/2019", im, "EnerSetting", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
+            var n1 = new News();//("Evento!!!", "25/05/2019", im, "EnerSetting", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
+            var n2 = new News();//("Secondo evento!!!", "13/06/2019", im, "EnerSetting", "adsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdfadsdsdsdsdsdsdsddsdsdsddsdsdsdsddsdsdsdfsdfdsfhajgfyufgasdyugfyusdgyugfsgfhjsagkfhjgjhsdafghjfdsgajhgdsfahjghjsdagjhsdf");
           
             listaNewsAz.Add(n1);
             listaNewsAz.Add(n2);
             
             Constants.listaNewsAzienda = listaNewsAz;
 
-        }
+        }*/
     }
 }
-/*
-bottone evento in corso
-scanner in evento
-num di partecipanti attivi e non
-
-
-    */

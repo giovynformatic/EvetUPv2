@@ -7,6 +7,10 @@ using System.Collections.Generic;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Newtonsoft.Json;
+using System.Text;
+using System.Net.Http;
+using System.Web;
 
 namespace EventUPv2
 {
@@ -71,23 +75,61 @@ namespace EventUPv2
                 usBack.sesso = Constants.CurrentUser.Sesso;
                 usBack.password = Constants.CurrentUser.pass;
                 usBack.nazionalita = Constants.CurrentUser.Nazionalità;
-                for (int x=0;x<Constants.CurrentUser.interessi.Length;x++)
+                usBack.username = Constants.CurrentUser.Username;
+                int[] AzId = new int[Constants.listaAziende.data.Length];
+                for (int x = 0; x < Constants.listaAziende.data.Length; x++)
                 {
-                    if(Constants.CurrentUser.valIn.ElementAt(x)==true)
-                    {
-                        usBack.interessi[x] = Constants.CurrentUser.idInteressi.ElementAt(x);
-                    }
+
+                    AzId[x] = Constants.listaAziende.data.ElementAt(x).id;
                 }
+                int[] IntId = new int[Constants.inter.data.Length];
+                for (int x = 0; x < Constants.inter.data.Length; x++)
+                {
+
+                    IntId[x] = Constants.inter.data.ElementAt(x).id;
+                }
+                usBack.interessi = new int[Constants.CurrentUser.interessi.Length];
+                for (int x=0;x<Constants.CurrentUser.interessi.Length;x++)
+                 {
+                     if(Constants.CurrentUser.valIn.ElementAt(x)==true)
+                     {
+                        usBack.interessi[x] = IntId[x];
+                     }
+                 }
+                usBack.aziende = new int[Constants.CurrentUser.aziende.Length];
                 for (int y = 0; y < Constants.CurrentUser.aziende.Length; y++)
                 {
                     if (Constants.CurrentUser.valAz.ElementAt(y) == true)
                     {
-                        usBack.aziende[y] = Constants.CurrentUser.idAziende.ElementAt(y);
+                        usBack.aziende[y] =AzId[y];
                     }
                 }
-                await App.UsManager.SaveTaskAsync(usBack);//codice da usare per connesione backend
-                await DisplayAlert("Attendere", "Attendere conferma registrazione tramite mail", "OK");
-                await Navigation.PushAsync(new MainPage());
+              //  var json = JsonConvert.SerializeObject(usBack);
+              //  var content = new StringContent(json, Encoding.UTF8, "application/json");
+              //  await DisplayAlert("Attendere", json+"chiamata:"+content, "OK");
+               var response= await App.UsManager.SaveTaskAsync(usBack);//codice da usare per connesione backend
+                if (response.IsSuccessStatusCode)
+                {
+                    await DisplayAlert("Attendere", "Attendere conferma registrazione tramite mail", "OK");
+                }
+                else {
+                    String s = await response.Content.ReadAsStringAsync();
+                    await Navigation.PushAsync(new MainPage());
+                    string[] s1 =s.Split(':');
+               
+                    string S1 = s1[2].TrimEnd(new char[] { '}', '"' });
+                    byte[] bytes = Encoding.Default.GetBytes(S1);
+                    String S2 = Encoding.UTF32.GetString(bytes);
+                    await DisplayAlert("Errore", S2, "OK");
+                    await Navigation.PushAsync(new Registrati());
+
+                }
+
+                
+                
+            
+               
+                
 
                 
 

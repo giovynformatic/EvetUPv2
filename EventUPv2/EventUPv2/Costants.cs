@@ -9,7 +9,7 @@ namespace EventUPv2
         // The iOS simulator can connect to localhost. However, Android emulators must use the 10.0.2.2 special alias to your host loopback interface.
         //  public static string BaseAddress = Device.RuntimePlatform == Device.Android ? "https://10.0.2.2:5001" : "https://localhost:5001";
         //  public static string TodoItemsUrl = BaseAddress + "/api/todoitems/{0}";
-        public static string UserUrl = "http://newes.dlinkddns.com/EventUp/index.php?rest_route=/esanagrafica/register";
+        public static string UserUrl = "http://newes.dlinkddns.com/EventUp/index.php?rest_route=/enventup/client/register";
         public static string AdminUrl = "http://newes.dlinkddns.com/EventUp/index.php?rest_route=/enventup/company/list";
         public static string EventoUrl = null;
         public static string NewsUrl = null;
@@ -24,6 +24,7 @@ namespace EventUPv2
         public static List<Evento> listaEventiCorso;
         public static List<Evento> listaEventi;
         public static List<News> listaNews;
+        public static BackNews listaNewsBack;
         public static List<Evento> listaEventiAzienda;
         public static List<Evento> listaEventiIncorsoAzienda;
         public static List<Evento> listEventoAziendaPassato;

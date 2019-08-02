@@ -15,16 +15,16 @@ namespace EventUPv2
             restService = service;
         }
 
-        public Task<List<News>> GetTasksAsync()
+        public Task<BackNews> GetTasksAsync()
         {
             return restService.RefreshDataAsync();
         }
 
-        public Task SaveTaskAsync(News item, bool isNewItem = false)
+        public Task SaveTaskAsync(BackNews item, bool isNewItem = false)
         {
             return restService.SaveTodoItemAsync(item, isNewItem);
         }
-        public Task DeleteTaskAsync(News ad)
+        public Task DeleteTaskAsync(BackNews ad)
         {
             return restService.DeleteTodoItemAsync(ad);
         }

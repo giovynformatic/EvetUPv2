@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,6 +15,8 @@ namespace EventUPv2
         public string citta { get; set; }
         public string cf { get; set; }
         public string email { get; set; }
+        public string username { get; set; }
+        public string message { get; set; }
         public string password { get; set; }
         public int[] interessi { get; set; }
         

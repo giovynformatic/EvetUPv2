@@ -27,7 +27,7 @@ namespace EventUPv2
             Utype.Text=Constants.CurrentUser.Cognome+" "+Constants.CurrentUser.Nome;
            // SelectedDataEventi = new List<SelectableDataEvento<ExampleDataEvento>>();
             AssegnaEventi();
-            AssegnaNews();
+            //AssegnaNews();
           /*  for (int a = 0; a < listaEv.Count(); a++)
             {
                 SelectableDataEvento<ExampleDataEvento> s;
@@ -184,7 +184,7 @@ namespace EventUPv2
             Constants.listaEventiStorico = listaEvPassati;
             
         }
-        public void AssegnaNews()
+        /*public void AssegnaNews()
         {
             //codice utilizzato per app senza back end
             listaNews = new List<News>();
@@ -198,6 +198,6 @@ namespace EventUPv2
             listaNews.Add(n3);
             Constants.listaNews = listaNews;
 
-        }
+        }*/
     }
 }

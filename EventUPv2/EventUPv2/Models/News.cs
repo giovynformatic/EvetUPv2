@@ -9,18 +9,18 @@ namespace EventUPv2
     {
 
         public int id { get; set; }
-        public String Titolo { get; set; }
-        public String Data { get; set; }
-        public String Immagine { get; set; }
-        public String Descrizione { get; set; }
+        public String nome { get; set; }
+        public String _Data { get; set; }
+        public String immagine { get; set; }
+        public String descrizione { get; set; }
         public String Azienda { get; set; }
-        public News(String Titolo, String Data, String Immagine, String Azienda, String Descrizione)
+       /* public News(String Titolo, String Data, String Immagine, String Azienda, String Descrizione)
         {
-            this.Titolo = Titolo;
-            this.Data = Data;
-            this.Immagine = Immagine;
+            this.nome = Titolo;
+            this._Data = Data;
+            this.immagine = Immagine;
             this.Azienda = Azienda;
-            this.Descrizione = Descrizione;
-        }
+            this.descrizione = Descrizione;
+        }*/
     }
 }

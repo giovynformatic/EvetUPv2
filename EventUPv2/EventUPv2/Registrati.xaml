@@ -17,7 +17,17 @@
             Aspect="AspectFill"
             HorizontalOptions="Center" 
             ></ic:CircleImage>
-
+            <custom:CustomEntry 
+                                CornerRadius="20" 
+                                HeightRequest="40" 
+                                IsCurvedCornersEnabled="True" 
+                                BorderColor="BlueViolet" 
+                                Margin="20,0,20,20" 
+                                x:Name="username"
+                                Placeholder="Username" 
+                                FontSize="Medium" 
+                                BackgroundColor="White"
+                                PlaceholderColor="Gray" />
             <custom:CustomEntry 
                                 CornerRadius="20" 
                                 HeightRequest="40" 

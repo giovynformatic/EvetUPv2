@@ -20,6 +20,7 @@ namespace EventUPv2
         {
             InitializeComponent();
             isNewItem = isNew;
+            Constants.CurrentUser = null;
             sesso.SelectedIndex = 0;
             
         }
@@ -27,7 +28,7 @@ namespace EventUPv2
         {
             if (condizioni.Checked)
             {
-                if (nome.Text != null && cognome.Text != null && emailr_user.Text != null && passr_user != null)
+                if (nome.Text != null && cognome.Text != null && emailr_user.Text != null && passr_user != null && username.Text!=null && nazionalità.Text!=null&& città.Text!=null && cf.Text!=null)
                 {
                     String n = nome.Text;
                     String c = cognome.Text;
@@ -40,6 +41,7 @@ namespace EventUPv2
                     String mail = emailr_user.Text;
                     String p = passr_user.Text;
                     String cp = cpassr_user.Text;
+                    String usr = username.Text;
                     
                     if (String.Equals(p, cp))
                     {
@@ -58,7 +60,7 @@ namespace EventUPv2
                             String[] az = new String[ads.data.Length];
                             Boolean[] val = new Boolean[ads.data.Length];
                            
-                            var us = new User(n, c, s, d, naz, tit, cit, codFisc, mail, p, inters, az, val, valIn);
+                            var us = new User(n, c, s, d, naz, tit, cit, codFisc, mail, p, inters, az, val, valIn,usr);
 
                             Constants.CurrentUser = us;
 
@@ -84,7 +86,7 @@ namespace EventUPv2
                     }
                 }
                 else
-                { await DisplayAlert("Attenzione", "I campi nome, cognome, email e password sono obbligatori", "OK"); }
+                { await DisplayAlert("Attenzione", "I campi nome, cognome, nazionalità, cf, città, email, username e password sono obbligatori", "OK"); }
             }
             else
             {
