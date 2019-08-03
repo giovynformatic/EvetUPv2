@@ -11,7 +11,7 @@ namespace EventUPv2
     public partial class MainPage : TabbedPage
     {
         public List<User> listaUtenti;
-        public List<Admin> listaAziende;
+  //      public List<Admin> listaAziende;
         public List<Evento> listaEv;
         public List<Evento> listaEvIncorso;
         public List<Evento> listaEvPassati;
@@ -19,6 +19,8 @@ namespace EventUPv2
         public List<News> listaVisualizzataNews;
         public List<News> listaNewsAz;
         public List<Evento> listaEvAz;
+        public Admins ads;
+        public Interessi a;
         public MainPage()
         {
             InitializeComponent();
@@ -39,10 +41,13 @@ namespace EventUPv2
         async void OnLoginUserClicked(object sender, EventArgs args)
         {
 
-
-             AssegnaEventi();
-             AssegnaNewsAsync();
-             //AssegnaUtenti();
+            a = await App.InManager.GetTasksAsync();
+            ads = await App.AdManager.GetTasksAsync();
+            Constants.listaAziende = ads;
+            Constants.inter = a;
+            //  AssegnaEventi();
+            await  AssegnaNewsAsync();
+            AssegnaUtenti();
             int acces = 0;
             Boolean AccesCons=false;
             for (int a = 0; a < listaUtenti.Count; a++)
@@ -81,14 +86,14 @@ namespace EventUPv2
         }
         async void OnLoginAdminClicked(object sender, EventArgs args)
         {
-
+               /*login admin da scommentare dopo user
             //VerifyUser(emailUser.Text, passUser.Text);
           // AssegnaAziende();
              AssegnaEventiAzienda();
            //AssegnaNewsAzienda();
             int acces = 0;
             Boolean AccesCons = false;
-            for (int a=0;a<listaAziende.Count;a++)
+            for (int a=0;a<.Count;a++)
             {
                 if (emailAdmin.Text == listaAziende.ElementAt(a).email && passAdmin.Text == listaAziende.ElementAt(a).pass)
                 {
@@ -102,7 +107,7 @@ namespace EventUPv2
                       Constants.listaEventi = await App.EvManager.GetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
                       Constants.listaNews = await App.NManager.GetTasksAsync();
                   Constants.listaEventiAzienda = await App.EvManagerGetTasksAsync(tipo,testoRicerca,ordinamentoFiltri,Azienda);
-                    * */
+                    
                     Constants.CurrentAdmin = listaAziende.ElementAt(a);
                     await Navigation.PushAsync(new HomePageAdmin());
                     AccesCons = true;
@@ -119,7 +124,7 @@ namespace EventUPv2
            if (acces!= 0 && AccesCons == false)
             {
                 await DisplayAlert("Attenzione", "E-mail o Password non corretta!", "OK");
-            }
+            } */
         }
 
         async void News(object sender, ItemTappedEventArgs e)
@@ -155,28 +160,28 @@ namespace EventUPv2
             
         }*/
 
-     /*   public void AssegnaUtenti()
+      public void AssegnaUtenti()
         {
             listaUtenti = new List<User>();
-            String [] inters = new String[] { "Arte", "Musica", "Informatica", "Elettronica", "Architettura" };//carico interessi per usare app senza back end
-            Boolean[] valIn=new Boolean[] { false,true,true,false,true};
+            String[] inters = new String[Constants.inter.data.Length];//{ "Arte", "Musica", "Informatica", "Elettronica", "Architettura" };//carico interessi per usare app senza back end
+            Boolean[] valIn = new Boolean[Constants.inter.data.Length];// { false,true,true,false,true,true};
          //   AssegnaAziende();
-            String[] az = new String[listaAziende.Count];//uso due vettori da riempire con valori back end
-            Boolean[] val = new Boolean[listaAziende.Count];// uso due vettori da riempire con valori back end
-            val[0] = true;//riempo il vettore con il valore dell'ineteresse di un azienda N.B nel back end sarà fatto con un for unico
+            String[] az = new String[Constants.listaAziende.data.Length];//uso due vettori da riempire con valori back end
+            Boolean[] val = new Boolean[Constants.listaAziende.data.Length];// uso due vettori da riempire con valori back end
+           /* val[0] = true;//riempo il vettore con il valore dell'ineteresse di un azienda N.B nel back end sarà fatto con un for unico
             val[1] = false;//riempo il vettore con il valore dell'ineteresse di un azienda
             val[2] = true;//riempo il vettore con il valore dell'ineteresse di un azienda
             for (int x = 0; x < listaAziende.Count; x++)
             {
                 az[x] = listaAziende.ElementAt(x).nome;
-            }
+            }*/
             //listaUtenti=await App.UsManager.GetTasksAsync();// codice da usare per connessione back-end
-            var us1 = new User("Filippo", "Corni", "Maschio", "18/09/1998", "italiana", "ingegnere", "Milano", "qwertyuiop", "filippo.corni@gmail.com", "cocco", inters,az,val,valIn);
-            var us2 = new User("Giuseppe", "Gesualdo", "Maschio", "17/11/1981", "italiana", "falegname", "Betlemme", "gesdrtyuim", "gesu.gesualdo@gmail.com", "asinello", inters,az,val, valIn);
+            var us1 = new User("Filippo", "Corni", "Maschio", "18/09/1998", "italiana", "ingegnere", "Milano", "qwertyuiop", "filippo.corni@gmail.com", "cocco", inters,az,val,valIn,"F.Corni");
+            var us2 = new User("Giuseppe", "Gesualdo", "Maschio", "17/11/1981", "italiana", "falegname", "Betlemme", "gesdrtyuim", "gesu.gesualdo@gmail.com", "asinello", inters,az,val, valIn, "Cristoforo_Colombo");
             listaUtenti.Add(us1);
             listaUtenti.Add(us2);
         }
-        */
+       
         public void AssegnaEventi()
         {
             //codice utilizzato per app senza back end

@@ -49,7 +49,7 @@ namespace EventUPv2
                          a = await App.InManager.GetTasksAsync();
                         ads = await App.AdManager.GetTasksAsync();
 
-                        if (a.success == true)
+                        if (a.success == true )
                         {
                             
                             String[] inters = new String[a.data.Length];//{ "Arte", "Musica", "Informatica", "Elettronica", "Architettura" };//carico interessi per usare app senza back end(caricare i dati da back end)

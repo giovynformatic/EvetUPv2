@@ -125,14 +125,6 @@ namespace EventUPv2
 
                 }
 
-                
-                
-            
-               
-                
-
-                
-
             }
                 else
                 {

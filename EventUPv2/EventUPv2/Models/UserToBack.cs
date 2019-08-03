@@ -19,7 +19,6 @@ namespace EventUPv2
         public string message { get; set; }
         public string password { get; set; }
         public int[] interessi { get; set; }
-        
         public int[] aziende { get; set; }
         
     }
