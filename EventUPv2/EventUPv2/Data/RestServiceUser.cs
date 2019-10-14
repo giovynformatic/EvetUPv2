@@ -44,7 +44,7 @@ namespace EventUPv2
 
         public async Task<HttpResponseMessage> SaveTodoItemAsync(UserToBack item, bool isNewItem)
         {
-            var uri = new Uri(string.Format(Constants.UserUrl, string.Empty));
+            var uri = new Uri(string.Format(Constants.RegisterUserUrl, string.Empty));
 
             try
             {

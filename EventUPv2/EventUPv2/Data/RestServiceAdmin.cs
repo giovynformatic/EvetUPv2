@@ -43,7 +43,7 @@ namespace EventUPv2
 
         public async Task SaveTodoItemAsync(Admins item, bool isNewItem = false)
         {
-            var uri = new Uri(string.Format(Constants.AdminUrl, string.Empty));
+            var uri = new Uri(string.Format(Constants.RegisterAdminUrl, string.Empty));
 
             try
             {
