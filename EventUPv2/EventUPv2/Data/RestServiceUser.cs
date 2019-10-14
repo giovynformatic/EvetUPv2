@@ -79,7 +79,7 @@ namespace EventUPv2
 
         public async Task DeleteTodoItemAsync(UserToBack us)
         {
-            var uri = new Uri(string.Format(Constants.UserUrl, us));
+            var uri = new Uri(string.Format(Constants.DeleteUserUrl, us));
 
             try
             {

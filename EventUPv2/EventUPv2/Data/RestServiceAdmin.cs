@@ -73,7 +73,7 @@ namespace EventUPv2
         }
         public async Task DeleteTodoItemAsync(Admins ad)
         {
-            var uri = new Uri(string.Format(Constants.AdminUrl, ad));
+            var uri = new Uri(string.Format(Constants.DeleteAdminUrl, ad));
 
             try
             {

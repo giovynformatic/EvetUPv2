@@ -11,6 +11,8 @@ namespace EventUPv2
         //  public static string TodoItemsUrl = BaseAddress + "/api/todoitems/{0}";
         public static string UserUrl = null;
         public static string AdminUrl = null;
+        public static string DeleteUserUrl = null;
+        public static string DeleteAdminUrl = null;
         public static string RegisterUserUrl = "http://newes.dlinkddns.com/EventUp/index.php?rest_route=/enventup/client/register";
         public static string RegisterAdminUrl = "http://newes.dlinkddns.com/EventUp/index.php?rest_route=/enventup/company/list";
         public static string EventoUrl = null;
