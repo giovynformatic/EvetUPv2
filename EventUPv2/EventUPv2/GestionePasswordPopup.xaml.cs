@@ -15,12 +15,12 @@ namespace EventUPv2
 
         async void ModifyButton(object sender, EventArgs args)
         {
-            if (oldpass.Text == Constants.CurrentUser.pass)
+            if (oldpass.Text == Constants.CurrentUser.password)
             {
                 if (newpass.Text == confirm.Text)
                 {
                   //  await App.UsManager.DeleteTaskAsync(Constants.CurrentUser);//codice per back-end
-                    Constants.CurrentUser.pass = newpass.Text;
+                    Constants.CurrentUser.password = newpass.Text;
                     //   await App.UsManager.SaveTaskAsync(Constants.CurrentUser);//codice per back-end
                     await DisplayAlert("Attenzione", "Password modificata", "OK");
                     await PopupNavigation.Instance.PopAsync();
