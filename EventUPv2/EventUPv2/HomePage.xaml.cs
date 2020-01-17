@@ -24,7 +24,7 @@ namespace EventUPv2
         public HomePage()
         {
             InitializeComponent();
-            Utype.Text=Constants.CurrentUser.Cognome+" "+Constants.CurrentUser.Nome;
+            Utype.Text=Constants.CurrentUser.cognome+" "+Constants.CurrentUser.nome;
            // SelectedDataEventi = new List<SelectableDataEvento<ExampleDataEvento>>();
             AssegnaEventi();
             //AssegnaNews();

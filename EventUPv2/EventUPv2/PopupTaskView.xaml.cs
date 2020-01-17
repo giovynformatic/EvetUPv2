@@ -12,13 +12,13 @@ namespace EventUPv2
 
 
 
-            NomeP.Text = Constants.CurrentUser.Nome;
-            CognomeP.Text = Constants.CurrentUser.Cognome;
-            SessoP.Text = Constants.CurrentUser.Sesso;
-            DataP.Text = Constants.CurrentUser.Data;
-            NazP.Text = Constants.CurrentUser.Nazionalità;
+            NomeP.Text = Constants.CurrentUser.nome;
+            CognomeP.Text = Constants.CurrentUser.cognome;
+            SessoP.Text = Constants.CurrentUser.sesso;
+            DataP.Text = Constants.CurrentUser.datanascita;
+            NazP.Text = Constants.CurrentUser.nazionalita;
             TitoloP.Text = Constants.CurrentUser.titolo;
-            CittaP.Text = Constants.CurrentUser.Città;
+            CittaP.Text = Constants.CurrentUser.citta;
             CfP.Text = Constants.CurrentUser.cf;
             EmailP.Text = Constants.CurrentUser.email;
 

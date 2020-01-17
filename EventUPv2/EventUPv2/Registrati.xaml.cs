@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EventUPv2.Manager;
+using EventUPv2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,15 +14,14 @@ namespace EventUPv2
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Registrati : ContentPage
     {
-  
-        public Admins ads;
-        public Interessi a;
+    
         bool isNewItem;
         public Registrati (bool isNew = false)
         {
             InitializeComponent();
+           
             isNewItem = isNew;
-            Constants.CurrentUser = null;
+            
             sesso.SelectedIndex = 0;
             
         }
@@ -35,7 +36,7 @@ namespace EventUPv2
                     String s = sesso.SelectedItem.ToString();
                     String d = data.Date.ToString().Substring(0, 10);
                     String naz = nazionalità.Text;
-                    String tit = titolo.Text;
+                   
                     String cit = città.Text;
                     String codFisc = cf.Text;
                     String mail = emailr_user.Text;
@@ -45,40 +46,16 @@ namespace EventUPv2
                     
                     if (String.Equals(p, cp))
                     {
-
-                         a = await App.InManager.GetTasksAsync();
-                        ads = await App.AdManager.GetTasksAsync();
-
-                        if (a.success == true )
-                        {
-                            
-                            String[] inters = new String[a.data.Length];//{ "Arte", "Musica", "Informatica", "Elettronica", "Architettura" };//carico interessi per usare app senza back end(caricare i dati da back end)
-                            Boolean[] valIn = new Boolean[a.data.Length];
-
-                        
-                       
-                            String[] az = new String[ads.data.Length];
-                            Boolean[] val = new Boolean[ads.data.Length];
-                           
-                            var us = new User(n, c, s, d, naz, tit, cit, codFisc, mail, p, inters, az, val, valIn,usr);
-
-                            Constants.CurrentUser = us;
-
-                            /*
-                          int tipo=1..2..3(indica al back end il tipo di lista chee li richiedi esempio 1 eventi passati,2 eventi in corso)
-                           Constants.listaEventiCorso = await App.EvManager.GetTasksAsync(1,null,0);
-                            Constants.listaEventiStorico = await App.EvManager.GetTasksAsync(2,null,0);
-                            Constants.listaEventi = await App.EvManager.GetTasksAsync(3,null,0);*/
-                           
-                            Constants.inter = a;
-                            Constants.listaAziende = ads;
-                            await Navigation.PushAsync(new RegistratiInteressi());
-                        }
-                        else
-                        {
-                            await DisplayAlert("Errore", "errore nella chiamata al server", "OK");
-                        }
-
+                       var us = new User(n, c, s, d, naz,  cit, codFisc, mail, p,usr);
+                        Constants.CurrentUser = us;
+                        bool[] FalseAziende = new bool[Constants.aziende.Count];
+                        bool[] FalseInteressi= new bool[Constants.interessi.Count];
+                        for (int z = 0; z < Constants.aziende.Count; z++) { FalseAziende[z] = false; }
+                        for (int z = 0; z < Constants.interessi.Count; z++) { FalseInteressi[z] = false; }
+                        Constants.CurrentUser.valAz = FalseAziende;
+                        Constants.CurrentUser.valIn = FalseInteressi;
+                        await Navigation.PushAsync(new RegistratiInteressi());
+                    
                     }
                     else
                     {

@@ -113,17 +113,7 @@
                                 FontSize="Medium" 
                                 BackgroundColor="White" 
                                 PlaceholderColor="Gray" />
-            <custom:CustomEntry 
-                                CornerRadius="20" 
-                                HeightRequest="40" 
-                                IsCurvedCornersEnabled="True" 
-                                BorderColor="BlueViolet" 
-                                Margin="20,0,20,20"  
-                                x:Name="titolo" 
-                                Placeholder="Titolo di Studio" 
-                                FontSize="Medium" 
-                                BackgroundColor="White" 
-                                PlaceholderColor="Gray" />
+          
             <custom:CustomEntry 
                                 CornerRadius="20" 
                                 HeightRequest="40" 
